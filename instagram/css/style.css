@@ -1,0 +1,174 @@
+/*background color = #fafafa*/
+/*button blue = #3897f0*/
+/*border color = #e6e6e6*/
+/*footer link color = #003569*/
+/*text grey color = #999*/
+
+*{
+  box-sizing: border-box;
+}
+
+body, input {
+  font-family: 'Karla', sans-serif;
+  background-color: #fafafa;
+}
+
+main{
+  /*background-color: purple;*/
+  max-width: 960px;
+  margin: 0 auto;
+  margin-top: 2%;
+}
+
+div.left img{
+  float: right;
+  margin: 90px 10px 0 0;
+}
+
+div.left{
+  float: left;
+  width: 60%;
+  /*background: red;*/
+}
+
+div.right{
+  /*background: blue;*/
+  width: 40%;
+  float: right;
+  text-align: center;
+  /*margin-bottom: 170px;*/
+}
+
+h1{
+  margin: 22px auto 8px;
+}
+
+h2{
+  font-size: 17px;
+  line-height: 20px;
+  margin: 0 40px 10px;
+  text-align: center;
+  color: #999;
+  font-weight: 600;
+}
+span{
+  font-weight: 600;
+}
+
+.pushme{
+  padding: 0px 8px;
+  cursor: pointer;
+  background-color: #3897f0;
+  border-color: #3897f0;
+  color: #fff;
+  border: none;
+  border-radius: 3px;
+  border-width: 1px;
+  outline: none;
+  font-size: 14px;
+  font-weight: 600;
+  width: 100%;
+  line-height: 26px;
+  margin: 10px 0 10px 0;
+
+}
+div#or{
+  text-transform: uppercase;
+  font-weight: 600;
+  color: #999;
+  margin-bottom: 5px;
+}
+
+div.cage{
+  width: 95%;
+  border: 1px solid #ddd;
+  margin: auto;
+  padding: 35px;
+  background-color: #fff;
+  margin-bottom: 10px;
+}
+
+div.cage a{
+  color: blue;
+}
+
+footer{
+  /*background-color: white;*/
+  width: 100%;
+  clear: both;
+}
+
+a{
+  text-decoration: none;
+  color: #003569;
+}
+
+footer nav ul li {
+  display: inline;
+  text-transform: uppercase;
+  line-height: 40px;
+  font-size: 12px;
+  text-transform: uppercase;
+  margin-right: 15px;
+  font-weight: bold;
+
+}
+
+footer nav ul li:last-child{
+  float: right;
+  color: #999;
+  width: 20%;
+}
+
+input{
+  border: 1px solid #dbdbdb;
+  border-radius: 3px;
+  color: black;
+  font-size: 14px;
+  padding: 9px 8px 7px;
+  width: 100%;
+  margin: 5px 0 5px 0;
+  background: none;
+}
+
+div#privacy p{
+  color: #999;
+  margin:10px 50px;
+  font-size: small;
+}
+
+div#login p{
+   font-size: 14px;
+   color: black;
+   margin: 15px;
+}
+
+div#login{
+   padding: 10px;
+}
+
+div.app{
+  margin-top: 10px;
+  color: black;
+  font-size: 14px;
+  line-height: 18px;
+  margin: 10px;
+}
+
+div.app img{
+  display: inline;
+}
+
+@media only screen and (max-width: 960px) {
+  main{
+    width: auto;
+  }
+  div.left{
+    display: none;
+  }
+  div.right{
+    float: none;
+    max-width: 100%;
+    margin: 0 auto;
+  }
+}
