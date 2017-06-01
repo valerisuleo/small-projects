@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Rock Paper Scissors</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Electrolize" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script src="js/app.js" charset="utf-8"></script>
+  </head>
+  <body>
+    <main>
+      <audio src="sounds/bazinga.mp3" id="baz"></audio>
+      <div id="game">
+        <div class="big rowOne" >
+          <div class="small" id="scissors">
+            <p>Scissors</p>
+          </div>
+        </div>
+
+        <div class="big rowTwo">
+          <div class="small" id="paper">
+            <p>Paper</p>
+          </div>
+          <div class="small" id="rock">
+            <p>Rock</p>
+          </div>
+        </div>
+
+        <div class="big rowThree">
+          <div class="small" id="spock">
+            <p>Spock</p>
+          </div>
+          <div class="small" id="lizard">
+            <p>Lizard</p>
+          </div>
+        </div>
+    </div>
+    </main>
+    <footer>
+      <p>Player 1 chose: <span class="player1"></span></p>
+      <p>Player 2 chose: <span class="player2"></span></p>
+      <p class="result"></p>
+      <div class="reset">Reset</div>
+    </footer>
+  </body>
+</html>
