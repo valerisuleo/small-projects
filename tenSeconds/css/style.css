@@ -1,0 +1,136 @@
+*{
+  box-sizing: border-box;
+  font-family: 'Raleway', 'Arial', sans-serif;
+  color: white;
+  text-shadow: 1px 1px DarkTurquoise;
+  padding: 0;
+  margin: 0;
+}
+
+body{
+  background-image: url('https://www.jqueryscript.net/demo/Modern-Circular-jQuery-Countdown-Timer-Plugin-Final-Countdown/img/pattern.png');
+}
+
+header{
+  height: 150px;
+  /*background-color: silver;*/
+  /*position: relative;*/
+}
+
+header h1{
+  font-size: 75px;
+  /*position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);*/
+  height: 150px;
+  line-height: 150px;
+  text-align: center;
+}
+
+
+main{
+  max-width: 900px;
+  height: 600px;
+  /*background-color: DeepSkyBlue;*/
+  /*position: relative;*/
+  margin: auto;
+}
+
+/*///////////////////////////////////rowOne///////////////////////////////////*/
+
+.rowOne{
+  /*background-color: red;*/
+  width: 100%;
+  height: 20%;
+  position: relative;
+}
+
+div.console{
+  position: absolute;
+  top: 50%;
+  left: 55%;
+  transform: translate(-50%, -50%);
+  width: 55%;
+}
+
+button{
+	box-shadow:inset 0px -3px 7px 0px #29bbff;
+	background:linear-gradient(top, DarkTurquoise 5%, #0688fa 100%);
+	background:linear-gradient(to bottom, DarkTurquoise 5%, #0688fa 100%);
+	background-color:DarkTurquoise;
+	border-radius:3px;
+	border:1px solid #0b0e07;
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;
+	font-size:15px;
+	padding:9px 23px;
+  margin-right: 2%;
+	text-decoration:none;
+	text-shadow:0px 1px 0px #263666;
+}
+button:hover {
+	background:linear-gradient(to bottom, #0688fa 5%, DarkTurquoise 100%);
+	background-color:#0688fa;
+}
+button:active {
+	position:relative;
+	top:1px;
+}
+
+/*///////////////////////////////////rowTwo///////////////////////////////////*/
+
+.rowTwo{
+  /*background-color: green;*/
+  width: 100%;
+  height: 80%;
+  position: relative;
+}
+
+div#txt{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 450px;
+  height: 450px;
+  background-color: rgba(255, 255, 255, .1);
+  border: 1px solid black;
+  padding: 1%;
+  text-align: center;
+  border-radius: 50%;
+  border: 5px solid DarkTurquoise;
+}
+
+p{
+  color: white;
+  text-shadow: 1px 1px DarkTurquoise;
+}
+
+div#txt p#display{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 90px;
+  font-weight: bold;
+  text-align: center;
+  margin: 0px;
+}
+
+div#txt p{
+  font-size: 40px;
+  position: relative;
+  margin-top: 65%;
+}
+/*///////////////////////////////////footer///////////////////////////////////*/
+
+footer{
+  padding: 20px;
+  font-size: 12px;
+  color: #fff;
+  text-align: center;
+  width: 100%;
+  margin-top: 1%;
+}
