@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Express Portfolio Lab</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
+  </head>
+  <body>
+
+<%#-----------------------------------NAVABAR---------------------------------%>
+
+<nav class="navbar navbar-toggleable-md navbar-light bg-faded">
+  <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <a class="navbar-brand" href="#"></a>
+  <div class="collapse navbar-collapse" id="navbarNav">
+    <ul class="navbar-nav">
+      <li class="nav-item active">
+        <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/project">Project</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/contact">Contact Me</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link disabled" href="#">Buy me a Beer!</a>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+<%#-----------------------------------HEADER----------------------------------%>
+
+<div class="jumbotron jumbotron-fluid" id="projectOne">
+  <div class="container">
+    <h1 class="display-3">Contact Me Today!</h1>
+    <p class="lead">Please send me a message I will reply as soon as I can!</p>
+  </div>
+</div>
+
+<%#-----------------------------------MAIN------------------------------------%>
+
+<div class="container">
+
+    <form class="well form-horizontal" action=" " method="post"  id="contact_form">
+<fieldset>
+
+<!-- Text input-->
+
+<div class="form-group">
+  <label class="col-md-6 col-lg-12 control-label">First Name</label>
+  <div class="col-md-6 col-lg-12 inputGroupContainer">
+  <div class="input-group">
+  <input  name="first_name" placeholder="First Name" class="form-control"  type="text">
+    </div>
+  </div>
+</div>
+
+<!-- Text input-->
+
+<div class="form-group">
+  <label class="col-md-6 col-lg-12 control-label" >Last Name</label>
+    <div class="col-md-6 col-lg-12 inputGroupContainer">
+    <div class="input-group">
+  <input name="last_name" placeholder="Last Name" class="form-control"  type="text">
+    </div>
+  </div>
+</div>
+
+
+<!-- Text input-->
+
+<div class="form-group">
+  <label class="col-md-6 col-lg-12 control-label">Phone #</label>
+    <div class="col-md-6 col-lg-12 inputGroupContainer">
+    <div class="input-group">
+  <input name="phone" placeholder="(666)666-666" class="form-control" type="text">
+    </div>
+  </div>
+</div>
+
+<!-- Text input-->
+
+<div class="form-group">
+  <label class="col-md-6 col-lg-12 control-label">Address</label>
+    <div class="col-md-6 col-lg-12 inputGroupContainer">
+    <div class="input-group">
+  <input name="address" placeholder="Address" class="form-control" type="text">
+    </div>
+  </div>
+</div>
+
+<!-- Text input-->
+
+<div class="form-group">
+  <label class="col-md-6 col-lg-12 control-label">City</label>
+    <div class="col-md-6 col-lg-12 inputGroupContainer">
+    <div class="input-group">
+  <input name="city" placeholder="city" class="form-control"  type="text">
+    </div>
+  </div>
+</div>
+
+<!-- Select Basic -->
+
+<div class="form-group">
+  <label class="col-md-6 col-lg-12 control-label">State</label>
+    <div class="col-md-6 col-lg-12 selectContainer">
+    <div class="input-group">
+    <select name="state" class="form-control selectpicker" >
+      <option value=" " >Please select your Country</option>
+      <option>UK</option>
+      <option>France</option>
+      <option>Spain</option>
+      <option>Italy</option>
+      <option>Sweden</option>
+      <option>Turkey</option>
+    </select>
+  </div>
+</div>
+</div>
+
+
+
+<!-- Text area -->
+
+<div class="form-group">
+  <label class="col-md-6 col-lg-12 control-label">Project Description</label>
+    <div class="col-md-6 col-lg-12 inputGroupContainer">
+    <div class="input-group">
+        	<textarea class="form-control" name="comment" placeholder="Project Description"></textarea>
+  </div>
+  </div>
+</div>
+
+<!-- Button -->
+<div class="form-group">
+  <label class="col-md-6 col-lg-12 control-label"></label>
+  <div class="col-md-6 col-lg-12">
+    <button type="submit" class="btn btn-warning" >Send <span class="glyphicon glyphicon-send"></span></button>
+  </div>
+</div>
+
+</fieldset>
+</form>
+</div>
+    </div><!-- /.container -->
+
+<%#-----------------------------------FOOTER----------------------------------%>
+
+<footer class="big">
+  <p>Made with <span>&hearts;</span> by Valerio</p>
+</footer>
+
+<%#---------------------------------------------------------------------------%>
+
+  </body>
+</html>

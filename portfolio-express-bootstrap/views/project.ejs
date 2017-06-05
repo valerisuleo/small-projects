@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Express Portfolio Lab</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
+  </head>
+  <body>
+
+<%#-----------------------------------NAVABAR---------------------------------%>
+
+<nav class="navbar navbar-toggleable-md navbar-light bg-faded">
+  <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <a class="navbar-brand" href="#"></a>
+  <div class="collapse navbar-collapse" id="navbarNav">
+    <ul class="navbar-nav">
+      <li class="nav-item active">
+        <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/project">Project</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/contact">Contact Me</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link disabled" href="#">Buy me a Beer!</a>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+<%#-----------------------------------HEADER----------------------------------%>
+
+<div class="jumbotron jumbotron-fluid" id="projectOne">
+  <div class="container">
+    <h1 class="display-3">Steal My Deck</h1>
+    <p class="lead">Get the thrill of snatching your opponent's deck! But mind that your cards might be stolen too!</p>
+  </div>
+</div>
+
+<%#-----------------------------------MAIN------------------------------------%>
+
+<main class="container">
+<!-- The page is virtually split in 12 columns. We want to create 2 section so will split the column in two -->
+<!-- We create a bigger section with 8 column. We call it 'row' -->
+  <div class="row">
+      <div class="col-md-6 col-lg-12">
+      <img src="/images/smd.jpg" class="img-fluid img-thumbnail">
+    </div>
+  </div>
+  <div id="wrapper">
+    <h3>Cards</h3>
+    <ul class="spades">
+      <li>A deck of Italian cards consist of 40 cards (hand-crafted by your favourite designer for you!) divided into four suits. Neapolitan, Piacentine, Triestine, and Sicilian cards are divided into Coppe (Cups), Ori or Denari (Golds or Coins), Spade (Swords) and Bastoni (Clubs).</li><br>
+      <li>The values on the cards range numerically from one through seven, plus three face cards in each suit: Knave Fante in Italian, Knight [Cavallo in Italian] in the Neapolitan-type decks or Queen [Donna in Italian] in the Milanese-type decks (worth 9), and King Re in Italian. A Knave is a lone male figure standing. The Knight is a male figure riding a horse; the Queen is a female figure. The King is a male figure wearing a crown.</li>
+    </ul>
+
+    <h3>Play</h3>
+    <ul class="spades">
+      <li>The dealer shuffles, and then deals the cards out clockwise two at a time. The remainder of the pack is kept face down by the dealer and will be used later.</li><br>
+      <li>If the rank of the card you play is higher than you opponents's card, you must take the card you played and your opponent's card and place them in a face up pile in front of you. Any matched cards that you acquire during the game are always stacked on top of your bundle and this process continues until all the cards have been dealt and the player has played its last card.</li><br>
+      <li>If you play the 'Ace' you steal the opponent's bundle and add it to the top of yours
+      Now the cards in each are counted and whoever has the largest bundle wins.</li>
+    </ul>
+
+    <h3>Build</h3>
+    <ul class="spades" id="build">
+      <li>HTML 5, CSS and jQuery were used to create this game.</li>
+      <li>There are sounds on: The deck button hen your pick a card</li>
+      <li>The godfather theme plays on background by default. The Web Font 'Lapfino' has been used to style the game.</li>
+    </ul>
+
+    <h3>Problems and Challenges</h3>
+    <ul class="spades">
+      <p>The main challenge I faced building this game, was how to crate the deck and shuffle the cards. Also I needed to link the background-image to the card with the speecific name and value selected. I am very happy about the style of the game. Sadly I didn't have enought time to add more more cool stuff like: lock the frame around the player-select board, display the name and the picture of the player on the screen, make samples of the voice of characters and add zoom out div instead of Javascript alert and add animation.</p>
+    </ul>
+  </div>
+</main>
+
+
+<%#-----------------------------------FOOTER----------------------------------%>
+
+<footer class="big">
+  <p>Made with <span>&hearts;</span> by Valerio</p>
+</footer>
+
+<%#---------------------------------------------------------------------------%>
+
+  </body>
+</html>

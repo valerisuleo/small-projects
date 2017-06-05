@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Express Portfolio Lab</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
+  </head>
+  <body>
+
+<%#-----------------------------------NAVABAR---------------------------------%>
+
+<nav class="navbar navbar-toggleable-md navbar-light bg-faded">
+  <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <a class="navbar-brand" href="#"></a>
+  <div class="collapse navbar-collapse" id="navbarNav">
+    <ul class="navbar-nav">
+      <li class="nav-item active">
+        <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/project">Project</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="contact">Contact Me</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link disabled" href="#">Buy me a Beer!</a>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+<%#-----------------------------------HEADER----------------------------------%>
+
+<div class="jumbotron jumbotron-fluid" id="projectOne">
+  <div class="container">
+    <h1 class="display-3">Who Am I?</h1>
+  </div>
+</div>
+
+<%#-----------------------------------MAIN------------------------------------%>
+
+<!-- Stack the columns on mobile by making one full-width and the other half-width -->
+<main class="container">
+  <div class="row">
+    <div class="col-md-4 col-lg-4">
+      <h5>Key Skills</h5>
+      <ul class="skills">
+        <li>JavaScript</li>
+        <li>jQuery</li>
+         <li>HTML5</li>
+         <li>CSS</li>
+         <li>AngularJS</li>
+         <li>Express.js</li>
+         <li>Mongoose</li>
+         <li>MongoDB</li>
+         <li>SQL</li>
+         <li>Ruby</li>
+         <li>Ruby on Rails</li>
+       </ul>
+       <br>
+      <h5>Soft Skills</h5>
+      <ul class="skills">
+        <li> Creative sensibility</li>
+        <li> Attention to detail</li>
+        <li> Aptitude to work in a team</li>
+        <li> Definite attitude to communication and negotiation</li>
+        <li> Reliable</li>
+        <li> Work under pressure and to tight deadlines.</li>
+      </ul>
+    </div>
+    <div class="col-md-8 col-lg-8">
+
+      <section>
+        <h4>PERSONAL SUMMARY</h4>
+        <p class="title">About Me:</p>
+        <p>An ambitious front-end developer with a passion for online design, and who would like to
+        join a team of like-minded developers. I like creating logical and innovative design for
+        websites and apps. As someone who takes responsibility for his own personal development,
+        I’m constantly rating and upgrading my skills in order to be always competitive in the web
+        development world. I have a natural attitude for problem solving, who has been useful in my
+        previous jobs. In addition, I am flexible, detail oriented, motivated, hard working, and used to
+        busy and stressful environments.
+        Right now I’m looking for a suitable position with a company where I can build and improve my skills.</p>
+    </section>
+
+      <section>
+        <h4>Relevant Experiences</h4>
+
+      <article>
+        <p class="title">TRAINED WEB DEVELOPER, GENERAL ASSEMBLY; LONDON, UK | 2017</p>
+        <p>An intensive three month full-time programme, teaching the fundamentals of Web
+        Development through practical application delivered by industry experts. Throughout the
+        course, we have built on working practises around TDD, daily standup, pair programming
+        and presenting code to ensure real-world application. The course has focused on the output
+        of several projects both individual and team-led:</p>
+    </article>
+      <hr>
+      <article>
+        <p class="title">CO-FOUNDER, WEB DESIGNER, RADIO HOST AND BLOGGER, V-QUADRO; ROME, ITALY | 2012- 2014</p>
+      <p>Having been in this company for over two years, I have largely contributed in meeting corporate objectives through effective blogging, thereby driving traffic to our websites and
+      increasing our web visitors. I am very passionate about creating web contents, and knowledgeable in HTML, CSS and SEO.</p>
+    </article>
+      <hr>
+    <article>
+      <p class="title">ADMINISTRATIVE SUPERVISOR, STB CONSULTING S.R.L.; ROME, ITALY | 2007- 2009</p>
+      <p>Responsible for the overall administrative functions of the organisation and often oversee
+      the support of executives, as well. Supervising administrative staff, office managers and staff
+      assistants, offering guidance and training while delegating work tasks and running payroll.</p>
+    </article>
+      <hr>
+      <article>
+        <p class="title">VOLUNTEER, COMMUNITY OF S.EGIDIO ONLUS; ROME, ITALY | 2005-2007</p>
+        <p>Charities and community groups who saved good food destined for waste and transform it into nutritious meals for vulnerable people. I was in charge of collecting and delivering the
+        food in the city of Rome.</p>
+    </article>
+  </section>
+    </div>
+  </div>
+</main>
+
+
+<%#-----------------------------------FOOTER----------------------------------%>
+
+<footer class="big">
+  <p>Made with <span>&hearts;</span> by Valerio</p>
+</footer>
+
+<%#---------------------------------------------------------------------------%>
+
+  </body>
+</html>

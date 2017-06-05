@@ -1,0 +1,78 @@
+.jumbotron{
+  background-color: black;
+}
+
+
+#projectOne{
+  background-color: black;
+}
+
+h1.display-3, p#fun{
+  color: rgb(255, 255, 255);
+}
+
+hr.my-4{
+  border-color: silver;
+}
+h5{
+  color: silver;
+}
+
+div#wrapper{
+  padding: 3%;
+}
+p.lead{
+  color: rgb(255, 0, 0);
+}
+p.title{
+  color: silver;
+  font-weight: 400;
+  font-size: 15px;
+}
+
+ul, p{
+  text-align: justify;
+}
+
+ul.skills{
+  text-align: left;
+}
+
+#build{
+  line-height: 40px;
+}
+
+ul.spades {
+  list-style: none;
+  padding: 0;
+  margin: 2%;
+
+}
+
+ul.spades li {
+  padding-left: 1em;
+  text-indent: -.7em;
+}
+
+ul.spades li::before {
+  content: "♠ ";
+  color: red;
+}
+
+footer.big{
+  position: relative;
+  height: 100px;
+  background-color: #ddd;
+  margin-top: 1%;
+}
+
+footer.big p{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+span{
+  color: rgb(255, 0, 0);
+}

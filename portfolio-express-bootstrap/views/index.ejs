@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Express Portfolio Lab</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
+  </head>
+  <body>
+
+<%#-----------------------------------NAVABAR---------------------------------%>
+
+<nav class="navbar navbar-toggleable-md navbar-light bg-faded">
+  <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <a class="navbar-brand" href="#"></a>
+  <div class="collapse navbar-collapse" id="navbarNav">
+    <ul class="navbar-nav">
+      <li class="nav-item active">
+        <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/project">Project</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/contact">Contact Me</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link disabled" href="#">Buy me a Beer!</a>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+<%#-----------------------------------HEADER----------------------------------%>
+
+<div class="jumbotron">
+  <h1 class="display-3">Valerio Risuleo</h1>
+  <p class="lead"> "kinda smart, kinda geeky, kinda nerd, hysterically funny Web Developer who you would like to have in your team.”</p>
+  <hr class="my-4">
+  <p id="fun">This is a little preview of what I've done at GA. We don't just drinking coffee and tea all the time...we also are productive!</p>
+  <p class="lead">
+    <a class="btn btn-primary btn-lg" href="/about" role="button">Learn more about me!</a>
+  </p>
+</div>
+
+
+<%#-----------------------------------MAIN------------------------------------%>
+
+    <main class="container">
+      <div class="card-columns">
+
+  <div class="card">
+    <a href="/project"><img class="card-img-top img-fluid" src="images/smd.jpg" alt="Card image cap"></a>
+    <div class="card-block">
+      <a href="/project"><h4 class="card-title">Steal My Deck</h4></a>
+      <a href="/project"><p class="card-text">Get the thrill of snatching your opponent's deck! But mind that your cards might be stolen too!</p></a>
+    </div>
+  </div>
+
+  <div class="card p-3">
+    <blockquote class="card-block card-blockquote">
+      <p>Play with Daft Punk</p>
+      <footer>
+        <small class="text-muted">
+          Harder, Stronger, Faster, Better <cite title="Source Title">Daft Punk</cite>
+        </small>
+      </footer>
+    </blockquote>
+  </div>
+
+  <div class="card">
+    <a class="nav-link disabled" href=""><img class="card-img-top img-fluid" src="images/wltdo.jpg" alt="Card image cap"></a>
+    <div class="card-block">
+      <a class="nav-link disabled" href=""><h4 class="card-title">Who Let The Dogs Out?</h4></a>
+      <p class="card-text">An Express API App to help dog's Owner too keep safe their best friends</p>
+      <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+    </div>
+  </div>
+
+  <div class="card card-inverse card-primary p-3 text-center">
+    <blockquote class="card-blockquote">
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat.</p>
+      <footer>
+        <small>
+          Someone famous in <cite title="Source Title">Source Title</cite>
+        </small>
+      </footer>
+    </blockquote>
+  </div>
+
+  <div class="card text-center">
+    <div class="card-block">
+      <h4 class="card-title">Rock Scissor Paper</h4>
+      <p class="card-text">This is a jQuery game. Win 3 times in a row and unlock the secret level!</p>
+      <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+    </div>
+  </div>
+
+  <div class="card">
+    <a class="nav-link disabled" href=""><img class="card-img img-fluid" src="images/blog.png" alt="Card image"></a>
+  </div>
+  <div class="card p-3 text-right">
+    <blockquote class="card-blockquote">
+      <h4 class="card-title">10 Seconds</h4>
+      <p>A simple jQuey Countdown.</p>
+      <footer>
+        <small class="text-muted">
+          Someone famous in <cite title="Source Title">Source Title</cite>
+        </small>
+      </footer>
+    </blockquote>
+  </div>
+</div>
+<%#---------------------------------------------------------------------- %>
+      <div class="card-columns">
+  <div class="card">
+    <img class="card-img-top img-fluid" src="images/curtain.jpg" alt="Card image cap">
+    <div class="card-block">
+      <h4 class="card-title">Coming Soon...</h4>
+      <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+    </div>
+  </div>
+  <div class="card p-3">
+    <blockquote class="card-block card-blockquote">
+      <p>TIC TAC TOE</p>
+      <footer>
+        <small class="text-muted">
+          <p>Who's the strongest?</p>
+        </small>
+      </footer>
+    </blockquote>
+  </div>
+
+  <div class="card">
+    <div class="card-block">
+      <h4 class="card-title">Coming Soon2...</h4>
+      <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+      <img class="card-img-top img-fluid" src="images/curtain.jpg" alt="Card image cap">
+      <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+    </div>
+  </div>
+
+  <div class="card text-center">
+    <div class="card-block">
+      <h4 class="card-title">INSTAGRAM</h4>
+      <p class="card-text">Please take a look at my skills with CSS</p>
+      <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-block">
+      <h4 class="card-title">Coming Soon...</h4>
+      <img class="card-img img-fluid" src="images/curtain.jpg" alt="Card image">
+      <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+      <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+    </div>
+  </div>
+  <div class="card text-center">
+  </div>
+</div>
+</main>
+
+<%#-----------------------------------FOOTER----------------------------------%>
+<footer class="big">
+  <p>Made with <span>&hearts;</span> by Valerio</p>
+</footer>
+
+<%#---------------------------------------------------------------------------%>
+
+  </body>
+</html>
