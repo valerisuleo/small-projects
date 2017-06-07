@@ -1,0 +1,28 @@
+
+<%# stiamo dicendo di processare, tutta roba che sitrova dentro la sintassi dimmerda, come javascript. Tutto cio' che e' al di fuori verra' considerato normale HTML!%>
+
+
+
+  <div class="container">
+    <!-- columns should be the immediate child of a .row -->
+
+
+      <!-- Right Section
+      –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+      <div class="eight columns">
+        <% cantanti.forEach((cantante) => { %>
+        <div class="wrapper">
+          <div class="titolo">
+            <h3><span><%= cantante.band %></span> <%= cantante.firstName %> <%= cantante.lastName %></h3>
+            <p><strong><%= cantante.genre %></strong></p>
+            <p class="date"><%= cantante.create %></p>
+          </div>
+          <div class="big">
+            <img src="<%= cantante.image %>" alt="<%= cantante.model %>">
+          </div>
+      </div>
+      <p><%= cantante.description %></p>
+      <% }) %>
+      <%#end %>
+    </div>
+  <!-- End Document

@@ -1,0 +1,19 @@
+{
+  "name": "express-app-data-seed",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "bluebird": "^3.5.0",
+    "ejs": "^2.5.6",
+    "express": "^4.15.3",
+    "express-ejs-layouts": "^2.3.0",
+    "mongoose": "^4.10.4",
+    "morgan": "^1.8.2"
+  }
+}
