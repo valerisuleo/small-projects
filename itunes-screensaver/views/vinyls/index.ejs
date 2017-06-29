@@ -1,0 +1,12 @@
+<div id="dark">
+  <div class="wrapper">
+  <% vinyls.forEach((vinyl) => { %>
+    <a href="/vinyls/<%= vinyl.id %>"><div class="container">
+    <div class="card">
+      <div style="background-image: url('<%= vinyl.image %>')" class="front" ></div>
+      <div class="back"></div>
+    </div>
+    </div></a>
+    <% }); %>
+</div>
+</div>

@@ -1,0 +1,271 @@
+* {
+  box-sizing: border-box;
+  font-family: 'Roboto', sans-serif;
+  margin: 0px;
+  padding: 0px;
+}
+
+#dark{
+  background-color: black
+}
+.wrapper{
+  width: 98%;
+  margin: auto;
+  overflow: auto;
+}
+
+.success{
+  h5{
+    font-size: 0px
+  }
+}
+
+////////////////////////////// NAVBAR ////////////////////////////////////////
+nav{
+  width: 100%;
+  height: 40px;
+  background-color: #ddd;
+  // margin-b ottom: 2%;
+  ul{
+    line-height: 40px;
+    text-align: center;
+    li{
+      margin-right: 1%;
+      display: inline;
+      a{
+        font-weight:100;
+        color: black;
+        text-decoration: none;
+        font-size: 14px;
+      }
+    }
+  }
+}
+
+////////////////////////////// ANIMATE ////////////////////////////////////////
+div.container {
+    width: 201px;
+    height: 201px;
+    position: relative;
+    perspective: 800px;
+    // display: inline-block;
+    float: left;
+}
+
+div.card {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    transition: transform 1s;
+    transform-style: preserve-3d;
+}
+
+div.card div.front, div.back {
+    display: block;
+    height: 100%;
+    width: 100%;
+    line-height: 260px;
+    color: red;
+    text-align: center;
+    font-weight: bold;
+    font-size: 140px;
+    position: absolute;
+    backface-visibility: hidden;
+}
+
+ div.front {
+  background-size: cover;
+}
+
+ div.back {
+  //  background-color: grey;
+  transform: rotateY( 180deg );
+  background-size: contain;
+}
+
+.card.flipped{
+  transform: rotateY( 180deg );
+}
+
+////////////////////////////// SHOW PAGE ///////////////////////////////////////
+.review{
+  width: 100vw;
+  height: 100vh;
+  // background-color: grey;
+  overflow: auto;
+  position: relative;
+  margin-top: 2%;
+  padding: 1%;
+  #left{
+    width: 18%;
+    // background-color: pink;
+    float: left;
+    height: 50%;
+    overflow: auto;
+    text-align: center;
+    img{
+      margin: auto;
+      display: inherit;
+      width: 220px;
+      margin-bottom: 5%;
+      // position: fixed;
+    }
+  }
+  #right{
+    width: 82%;
+    // background-color: red;
+    float: right;
+    padding: 1%;
+    section#header{
+      h2{
+        margin-bottom: 1%;
+      }
+      p{
+        font-style: italic;
+      }
+    }
+    section#comments{
+      h4{
+        margin-top: 4%;
+        margin-bottom: 1%;
+      }
+      button{
+        padding: 4px;
+        margin-bottom: 1%;
+      }
+      .contenuto{
+        margin-top: 1%;
+        margin-bottom: 3%;
+        // padding: 1%;
+        p{
+          line-height: 20px;
+          font-size: small;
+          color: #474745;
+          &.content{
+            color: #939391;
+            margin-top: 1%;
+          }
+          &.titolo, span{
+            font-weight: bold;
+          }
+        }
+      }
+    }
+  }
+}
+
+////////////////////////// NEW, REG, LOG PAGE //////////////////////////////////
+.new, .registerForm, .loggami{
+  width: 100vw;
+  height: 100vh;
+  position: relative;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.7)), url('../images/tunes.jpg');
+  background-position: center;
+  background-size: cover;
+  form{
+    padding: 2em;
+    width: 600px;
+    // text-align: center;
+    background: #fff;
+    position: absolute;
+    top:50%;
+    left:50%;
+    transform: translate(-50%,-50%);
+    border-radius: 5px;
+    animation: fadein 2s;
+    @keyframes fadein {
+        from {
+            opacity:0;
+        }
+        to {
+            opacity:1;
+        }
+    }
+    label{
+      text-align: left;
+      display: block;
+    }
+    input {
+      margin: .8em auto;
+      width: 100%;
+      padding: .4em;
+    }
+    button{
+      float: right;
+    }
+  }
+}
+
+/////////////////////////////////// BUTTON /////////////////////////////////////
+.myButton {
+	-webkit-box-shadow:inset 0px 1px 0px 0px #fce2c1;
+	box-shadow:inset 0px 1px 0px 0px #fce2c1;
+	background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #ffc477), color-stop(1, #fb9e25));
+	background:linear-gradient(to bottom, #ffc477 5%, #fb9e25 100%);
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffc477', endColorstr='#fb9e25',GradientType=0);
+	background-color:#ffc477;
+	border-radius:6px;
+	border:1px solid #eeb44f;
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;
+	font-size:15px;
+	padding:6px 24px;
+	text-decoration:none;
+	text-shadow:0px 1px 0px #cc9f52;
+}
+.myButton:hover {
+	background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #fb9e25), color-stop(1, #ffc477));
+	background:linear-gradient(to bottom, #fb9e25 5%, #ffc477 100%);
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#fb9e25', endColorstr='#ffc477',GradientType=0);
+	background-color:#fb9e25;
+}
+
+///////////////////////////////// CONTACT FORM /////////////////////////////////
+.black{
+  display: none;
+  position: fixed;
+  top: 40px;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+#contactForm{
+  display: none;
+  padding: 2em;
+  width: 600px;
+  // text-align: center;
+  background: #fff;
+  position: absolute;
+  top:50%;
+  left:50%;
+  transform: translate(-50%,-50%);
+  border-radius: 5px;
+  p{
+    text-align: left;
+  }
+  small{
+    display: block;
+    margin-top: 3%;
+  }
+  button{
+    font-size: 11px;
+    float: right;
+  }
+
+}
+
+input, textarea {
+  margin: .8em auto;
+  width: 280px;
+  padding: .4em;
+}
+
+textarea {
+  height: 130px;
+  resize: none;
+  width: 100%;
+  float: left;
+}

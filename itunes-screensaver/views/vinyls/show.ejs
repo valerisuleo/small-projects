@@ -1,0 +1,71 @@
+<nav>
+  <ul>
+    <li><a href="/">Home</a></li>
+    <li><a href="/vinyls/new">New</a></li>
+    <li><a href="/register">Register</a></li>
+    <li><a href="/login">Login</a></li>
+  </ul>
+</nav>
+
+<div class="review">
+
+  <div id="left">
+    <img src="<%= vinyl.image %>" >
+    <a href="#" class="myButton">£ 8.99 Buy Now</a>
+  </div>
+
+  <div id="right">
+    <section id="header">
+      <h2><%= vinyl.album %></h2>
+      <p><%= vinyl.artist %></p>
+      <p style="margin-bottom: 2%"><%= vinyl.genre %></p>
+      <hr>
+    </section>
+
+    <section id="comments">
+      <h4>Customer Reviews</h4>
+
+      <button>Write a Review</button>
+
+      <% vinyl.comments.forEach((comment) => { %>
+        <div class="contenuto">
+          <p class="titolo"><%= comment.title %></p>
+          <p>by <span><%= comment.createdBy.username %></span></p>
+          <p class="content"><%= comment.content %></p>
+      </div>
+
+      <% if(locals.isAuthenticated) { %>
+        <form method="POST" action="/vinyls/<%= vinyl.id %>/comments/<%= comment.id %>">
+        <input type="hidden" name="_method" value="DELETE">
+        <button>Delete</button>
+        </form>
+      <% } %>
+      <hr>
+      <% }) %>
+    </section>
+
+    <section>
+      <% if(locals.isAuthenticated) { %>
+        <div class="black"></div>
+        <div id="contactForm">
+          <form method="POST" action="/vinyls/<%= vinyl.id %>/comments">
+
+          <p>Write a Review</p>
+          <div>
+          <small>Title:</small>
+            <label for="title"></label>
+            <input type="text" name="title" id="value">
+          </div>
+
+          <div>
+            <small>Review:</small>
+            <textarea name="content" id="content"></textarea>
+          </div>
+
+          <button class="myButton">Submit</button>
+          </form>
+        </div>
+        <% } %>
+    </section>
+    </div>
+</div>

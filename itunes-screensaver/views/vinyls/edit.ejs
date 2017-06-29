@@ -1,0 +1,23 @@
+<h1>EDIT</h1>
+
+  <form method="PUT" action="/vinyls">
+
+   <div>
+     <label for="album">Album Title</label>
+     <input type="text" name="album" id="album" value="<%= vinyl.album %>">
+   </div>
+
+   <div>
+     <label for="artist">Artist</label>
+     <input type="text" name="artist" id="artist" value="<%= vinyl.artist %>">
+    </div>
+
+    <div>
+      <label for="genre">Genre</label>
+      <input type="text" name="genre" id="genre" value="<%= vinyl.genre %>">
+
+    </div>
+
+   <button>Update</button>
+
+ </form>
