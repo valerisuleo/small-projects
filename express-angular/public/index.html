@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html ng-app="expressAngular">
+  <head>
+    <meta charset="utf-8">
+    <title>Property App</title>
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.min.js"></script>
+    <script src="js/app.js" charset="utf-8"></script>
+  </head>
+  <body ng-controller="PropertysCtrl as instanceOfPropertyCtrl">
+
+    <header>
+      <nav>
+        <div class="oneThird">
+          <!-- <h2>Bo$$ Playa</h2> -->
+        </div>
+        <ul id="nav">
+          <li><a href="#"></a>Blog</li>
+          <li><a href="#"></a>Contact Us</li>
+          <li><a href="#"></a>Properties</li>
+          <li><a href="#"></a>About Us</li>
+          <li><a href="#"></a>Home</li>
+        </ul>
+      </nav>
+
+      <form ng-submit="instanceOfPropertyCtrl.propertyCreate()">
+        <div>
+          <input ng-model="instanceOfPropertyCtrl.newProperty.address" type="text" name="address" placeholder="address">
+        </div>
+
+        <div>
+          <input ng-model="instanceOfPropertyCtrl.newProperty.postcode" type="text" name="postcode" placeholder="postcode">
+        </div>
+
+        <div>
+          <input ng-model="instanceOfPropertyCtrl.newProperty.bedrooms" type="text" name="bedrooms" placeholder="bedrooms">
+        </div>
+
+        <div>
+          <input ng-model="instanceOfPropertyCtrl.newProperty.bathrooms" type="text" name="bathrooms" placeholder="bathrooms">
+        </div>
+
+        <div>
+          <input ng-model="instanceOfPropertyCtrl.newProperty.askingPrice" type="text" name="price" placeholder="price">
+        </div>
+
+        <div>
+          <input ng-model="instanceOfPropertyCtrl.newProperty.floorArea" type="text" name="floor area" placeholder="floor area">
+        </div>
+
+        <div>
+          <input ng-model="instanceOfPropertyCtrl.newProperty.dateAvailable" type="date" name="date available" value="2017-10-11" placeholder="date available">
+        </div>
+
+        <div>
+          <input ng-model="instanceOfPropertyCtrl.newProperty.image" type="text" name="image" placeholder="image">
+        </div>
+
+        <input type="submit" value="Add Property">
+      </form>
+    </header>
+
+    <main>
+
+      <aside id="left">
+        <div class="smallPic" ng-repeat="property in instanceOfPropertyCtrl.all" style="background-image: url({{ property.image }})">
+        </div>
+      </aside>
+
+      <aside id="right">
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
+        <br>
+        <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+        <br>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+        <br>
+        <h3>Lorem ipsum dolor sit amet, consectetur adipisicing elit</h3>
+        <br>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
+        <br>
+        <h3>Lorem ipsum dolor sit amet, consectetur adipisicing elit</h3>
+        <br>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+
+        <h2>Our Properties</h2>
+        <ul>
+          <li ng-repeat="property in instanceOfPropertyCtrl.all">
+            <h3 class="show">{{ property.address }}</h3>
+            <div class="showPic" style="background-image: url({{ property.image }})"></div>
+            <h3>About This Property</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+            <strong><p>Postcode:</strong> {{ property.postcode }}</p>
+            <strong><p>Bedrooms:</strong> {{ property.bedrooms }}</p>
+            <strong><p>Bathrooms:</strong> {{ property.bathrooms }}</p>
+            <strong><p>Price:</strong> {{ property.askingPrice }} per month</p>
+            <strong><p>Square meters:</strong> {{ property.floorArea }}</p>
+            <strong><p>Available starting from: </strong>{{ property.dateAvailable }}</p>
+            <button ng-click="instanceOfPropertyCtrl.propertyDelete(property)">Delete Me!</button>
+            <hr>
+          </li>
+        </ul>
+      </aside>
+
+    </main>
+
+  </body>
+</html>
