@@ -88,7 +88,10 @@
         <ul>
           <li ng-repeat="property in instanceOfPropertyCtrl.all">
             <h3 class="show">{{ property.address }}</h3>
-            <div class="showPic" style="background-image: url({{ property.image }})"></div>
+            <div class="circle" ng-click="instanceOfPropertyCtrl.propertyDelete(property)" ng-show="open" ng-mouseover="open = true">
+              <p>x</p>
+            </div>
+            <div class="showPic" style="background-image: url({{ property.image }})" ng-mouseover="open = true" ng-mouseleave="open = false"></div>
             <h3>About This Property</h3>
             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
             <strong><p>Postcode:</strong> {{ property.postcode }}</p>
@@ -97,13 +100,15 @@
             <strong><p>Price:</strong> {{ property.askingPrice }} per month</p>
             <strong><p>Square meters:</strong> {{ property.floorArea }}</p>
             <strong><p>Available starting from: </strong>{{ property.dateAvailable }}</p>
-            <button ng-click="instanceOfPropertyCtrl.propertyDelete(property)">Delete Me!</button>
+            <!-- <button ng-click="instanceOfPropertyCtrl.propertyDelete(property)" ng-show="open">Delete Me!</button> -->
             <hr>
           </li>
         </ul>
       </aside>
-
     </main>
+    <footer>
+        <p>Made with <span>&hearts;</span> by Valerio</p>
+      </footer>
 
   </body>
 </html>

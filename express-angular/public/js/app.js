@@ -31,6 +31,7 @@ function PropertysCtrl($http) {
   }
 
   function propertyDelete(property) {
+    alert();
     $http.delete(`http://localhost:3000/propertys/${property.id}`)
     .then(() =>{
       const index = vm.all.indexOf(property);

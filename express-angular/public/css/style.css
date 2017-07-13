@@ -144,3 +144,41 @@ aside#right div.showPic{
   background-repeat: no-repeat;
   margin: auto;
 }
+
+/*--------------------------------DELELE BUTTON--------------------------------*/
+
+aside#right div.circle{
+  height: 50px;
+  width: 50px;
+  background-color: rgba(75,118,146,0.8);
+  z-index: 2;
+  float: right;
+  margin-right: 3%;
+  margin-top: 2%;
+  border-radius: 50px;
+  font-size: x-large;
+  cursor: pointer;
+  /*border: 3px solid white;*/
+}
+
+aside#right div.circle p{
+  line-height: 50px;
+  text-align: center;
+  color: pink;
+  z-index: 2;
+  /*font-weight: bold;*/
+}
+
+/*-----------------------------------FOOTER-----------------------------------*/
+
+footer{
+  background-color: #3c3c3c;
+  padding: 20px;
+  font-size: 12px;
+  color: #fff;
+  text-align: center;
+}
+
+footer span{
+  color: pink;
+}
