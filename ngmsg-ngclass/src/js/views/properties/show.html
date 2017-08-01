@@ -1,0 +1,20 @@
+<h2 class="show">{{ propertiesShow.property.address }}</h2>
+
+<div class="circle2" ng-click="propertiesShow.delete()" ng-show="open" ng-mouseover="open = true">
+  <p>x</p>
+</div>
+
+<div class="bird" style="background-image: url('{{ propertiesShow.property.image }}')" ng-mouseover="open = true" ng-mouseleave="open = false"></div>
+
+
+
+<h3>About This Property</h3>
+
+<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+
+<p><strong>Postcode:</strong> {{ propertiesShow.property.postcode }}</p>
+<p><strong>Bedrooms:</strong> {{ propertiesShow.property.bedrooms }}</p>
+<p><strong>Bathrooms:</strong> {{ propertiesShow.property.bathrooms }}</p>
+<p><strong>Price:</strong> {{ propertiesShow.property.askingPrice }} per month</p>
+<p><strong>Square meters:</strong> {{ propertiesShow.property.floorArea }}</p>
+<p><strong>Available starting from: </strong>{{ propertiesShow.property.dateAvailable }}</p>
