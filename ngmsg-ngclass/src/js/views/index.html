@@ -29,7 +29,7 @@
       <ul>
         <li ng-repeat="property in propertiesIndex.all">
 
-          <h3 class="show"><a ui-sref="propertiesShow({ id: property.id })">{{ property.address }}</a></h3>
+          <h3 class="show"><a ui-sref="showState({ id: property.id })">{{ property.address }}</a></h3>
 
           <div class="showPic" style="background-image: url({{ property.image }})" ng-mouseover="open = true" ng-mouseleave="open = false"></div>
 

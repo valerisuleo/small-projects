@@ -11,12 +11,12 @@ function Router($stateProvider, $urlRouterProvider, $locationProvider) {
     });
 
   $stateProvider
-  .state('propertiesIndex', {
+  .state('homeState', {
     url: '/properties',
     templateUrl: '/js/views/index.html',
     controller: 'PropertiesIndexCtrl as propertiesIndex'
   })
-  .state('show', {
+  .state('showState', {
     url: '/properties/:id',
     templateUrl: '/js/views/show.html',
     controller: 'PropertiesShowCtrl as propertiesShow'

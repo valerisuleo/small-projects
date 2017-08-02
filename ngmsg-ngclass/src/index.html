@@ -16,14 +16,95 @@
 <!--________________________________ navbar ________________________________-->
 <header>
   <nav>
-    <div class="oneThird">
-    </div>
+    <div class="oneThird"></div>
       <ul id="nav">
-        <li><a ui-sref="propertiesIndex">Home</a></li>
+        <li><a ui-sref="homeState">Home</a></li>
         <li><a ui-sref="about">about</a></li>
         <!-- <li><a ui-sref="contact">contact</a></li> -->
       </ul>
 </nav>
+
+
+<!-- _________________________________form_________________________________ -->
+
+<form name="main.myForm"  ng-submit="main.create(main.myForm)" novalidate>
+
+  <div>
+    <input id="address" type="text" name="address" placeholder="address" ng-model="main.newProperty.address" ng-minlength="5" required />
+  </div>
+  <!-- error message! -->
+  <div class="error" ng-messages="main.myForm.address.$error" ng-if="(main.submitted || main.myForm.address.$touched || main.myForm.address.$dirty)">
+    <div ng-message="required">You did not enter a field</div>
+    <div ng-message="minlength">Your field is too short</div>
+  </div>
+<!-- ______________________________________________________________________ -->
+  <div>
+    <input id="postcode" type="text" name="postcode" placeholder="postcode" ng-model="main.newProperty.postcode" ng-minlength="7" required />
+  </div>
+  <!-- error message! -->
+  <div class="error" ng-messages="main.myForm.postcode.$error" ng-if="(main.submitted || main.myForm.postcode.$touched || main.myForm.postcode.$dirty)">
+    <div ng-message="required">You did not enter a field</div>
+    <div ng-message="minlength">Your field is too short</div>
+  </div>
+<!-- ______________________________________________________________________ -->
+  <div>
+    <input id="bedrooms" type="text" name="bedrooms" placeholder="bedrooms" ng-model="main.newProperty.bedrooms" ng-minlength="1" required />
+  </div>
+  <!-- error message! -->
+  <div class="error" ng-messages="main.myForm.bedrooms.$error" ng-if="(main.submitted || main.myForm.bedrooms.$touched || main.myForm.bedrooms.$dirty)">
+    <div ng-message="required">Add at least 1 bedroom</div>
+    <div ng-message="minlength">Your field is too short</div>
+  </div>
+<!-- ______________________________________________________________________ -->
+  <div>
+    <input id="bathrooms" type="text" name="bathrooms" placeholder="bathrooms" ng-model="main.newProperty.bathrooms" ng-minlength="1" required />
+  </div>
+  <!-- error message! -->
+  <div class="error" ng-messages="main.myForm.bathrooms.$error" ng-if="(main.submitted || main.myForm.bathrooms.$touched || main.myForm.bathrooms.$dirty)">
+    <div ng-message="required">You did not enter a field</div>
+    <div ng-message="minlength">Add at least 1 bathroom</div>
+  </div>
+<!-- ______________________________________________________________________ -->
+  <div>
+    <input id="price" type="text" name="price" placeholder="price" ng-model="main.newProperty.price" required />
+  </div>
+  <!-- error message! -->
+  <div class="error" ng-messages="main.myForm.price.$error" ng-if="(main.submitted || main.myForm.price.$touched || main.myForm.price.$dirty)">
+    <div ng-message="required">You did not enter a field</div>
+    <div ng-message="minlength">The minimum is £100.000</div>
+  </div>
+<!-- ______________________________________________________________________ -->
+  <div>
+    <input id="floorarea" type="text" name="floorarea" placeholder="floorarea" ng-model="main.newProperty.floorarea" required />
+  </div>
+  <!-- error message! -->
+  <div class="error" ng-messages="main.myForm.floorarea.$error" ng-if="(main.submitted || main.myForm.floorarea.$touched || main.myForm.floorarea.$dirty)">
+    <div ng-message="required">You did not enter a field</div>
+    <div ng-message="minlength">The minimum size is 100sqm</div>
+  </div>
+<!-- ______________________________________________________________________ -->
+  <div>
+    <input id="dateavailable" type="date" name="dateavailable" placeholder="dateavailable" 2017-10-11 ng-model="main.newProperty.dateavailable" ng-minlength="1" required />
+  </div>
+  <!-- error message! -->
+  <div class="error" ng-messages="main.myForm.dateavailable.$error" ng-if="(main.submitted || main.myForm.dateavailable.$touched || main.myForm.dateavailable.$dirty)">
+    <div ng-message="required">You did not enter a field</div>
+    <div ng-message="minlength">Your field is too short</div>
+  </div>
+<!-- ______________________________________________________________________ -->
+  <div>
+    <input id="image" type="text" name="image" placeholder="image" ng-model="main.newProperty.image" ng-minlength="1" required />
+  </div>
+  <!-- error message! -->
+  <div class="error" ng-messages="main.myForm.image.$error" ng-if="(main.submitted || main.myForm.image.$touched || main.myForm.image.$dirty)">
+    <div ng-message="required">You did not enter a field</div>
+    <div ng-message="minlength">Your field is too short</div>
+  </div>
+<!-- ______________________________________________________________________ -->
+
+  <input type="submit"  value="Add Property">
+
+</form>
 </header>
 
 

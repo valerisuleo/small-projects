@@ -4,27 +4,40 @@ angular
   .controller('PropertiesIndexCtrl', PropertiesIndexCtrl)
   .controller('PropertiesShowCtrl', PropertiesShowCtrl);
 
-MainCtrl.$inject = ['$rootScope'];
-function MainCtrl($rootScope){
+
+
+///////////////////////////////////// MAIN /////////////////////////////////////
+
+MainCtrl.$inject = ['$rootScope','$resource', '$state', '$stateParams'];
+function MainCtrl($rootScope, $resource, $state, $stateParams){
   const vm = this;
 
-  vm.menuIsOpen = false; // when the page loads the menu is gonna be close
+  vm.newProperty = {};
 
+// __________________________________rootScope__________________________________
   function stateChange(e, toState) {
-    // In english: every time you change pages using ui-router is gonna run this function and adapdate the value of the property (vm.pageName) to be the name of our state. So in the router.js home, contact, about those will be the value of vm.pageName.
+    // In english: every time you change pages using ui-router is gonna run this function and adapted the value of the property (vm.pageName) to be the name of our state. So in the router.js home, contact, about those will be the value of vm.pageName.
     vm.pageName = toState.name;
     console.log(vm.pageName);
-
-    vm.menuIsOpen = false;
-    // console.log(vm.menuIsOpen);
-
   }
-
   $rootScope.$on('$stateChangeStart', stateChange);
+
+
+// _____________________________propertiesCreate________________________________
+  vm.create = propertiesCreate;
+
+  function propertiesCreate() {
+    const Property = new $resource('/api/properties/:id', { id: '@id' });
+
+    Property
+    .save(vm.newProperty)
+    .$promise
+    .then(() => $state.go('showState', $stateParams.id));
+  }
 }
 
-
 ///////////////////////////////////// INDEX ////////////////////////////////////
+
 PropertiesIndexCtrl.$inject = ['$resource'];
 function PropertiesIndexCtrl($resource) {
 
@@ -37,6 +50,7 @@ function PropertiesIndexCtrl($resource) {
 }
 
 ///////////////////////////////////// SHOW /////////////////////////////////////
+
 PropertiesShowCtrl.$inject = ['$resource','$stateParams'];
 function PropertiesShowCtrl($resource, $stateParams) {
 
