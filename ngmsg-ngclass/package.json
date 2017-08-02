@@ -1,7 +1,7 @@
 {
-  "name": "angular-gulp-setup",
+  "name": "angular-ng-class-and-ng-messages",
   "version": "1.0.0",
-  "description": "A example stack with gulp and angular",
+  "description": "Using NgMessages with forms to display better errors.",
   "main": "index.js",
   "scripts": {
     "postinstall": "bower install && gulp deploy"
@@ -53,7 +53,7 @@
     "bluebird": "^3.5.0",
     "body-parser": "^1.17.2",
     "express": "^4.15.3",
-    "mongoose": "^4.11.4",
+    "mongoose": "^4.11.5",
     "morgan": "^1.8.2"
   },
   "devDependencies": {
