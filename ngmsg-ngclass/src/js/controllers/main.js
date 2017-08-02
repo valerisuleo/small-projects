@@ -8,8 +8,8 @@ angular
 
 ///////////////////////////////////// MAIN /////////////////////////////////////
 
-MainCtrl.$inject = ['$rootScope','$resource', '$state', '$stateParams'];
-function MainCtrl($rootScope, $resource, $state, $stateParams){
+MainCtrl.$inject = ['$rootScope','$resource', '$state'];
+function MainCtrl($rootScope, $resource, $state){
   const vm = this;
 
   vm.newProperty = {};
@@ -32,7 +32,10 @@ function MainCtrl($rootScope, $resource, $state, $stateParams){
     Property
     .save(vm.newProperty)
     .$promise
-    .then(() => $state.go('showState', $stateParams.id));
+    .then((property) =>{
+      console.log('property', property.id);
+      $state.go('showState', property.id);
+    });
   }
 }
 
