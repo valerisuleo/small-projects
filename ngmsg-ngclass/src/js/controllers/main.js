@@ -2,7 +2,8 @@ angular
   .module('portfolioApp')
   .controller('MainCtrl', MainCtrl)
   .controller('PropertiesIndexCtrl', PropertiesIndexCtrl)
-  .controller('PropertiesShowCtrl', PropertiesShowCtrl);
+  .controller('PropertiesShowCtrl', PropertiesShowCtrl)
+  .controller('PropertiesState1Ctrl', PropertiesState1Ctrl);
 
 
 
@@ -69,4 +70,16 @@ function PropertiesShowCtrl($resource, $stateParams, $state, $rootScope) {
     .then(() => $state.go('homeState'));
   }
   vm.delete = propertiesDelete;
+}
+
+
+
+PropertiesState1Ctrl.$inject = ['$resource','$stateParams'];
+function PropertiesState1Ctrl($resource, $stateParams) {
+
+  const vm = this;
+  const Property = new $resource('/api/properties/:id', { id: '@id' });
+
+  vm.property = Property.get($stateParams);
+
 }

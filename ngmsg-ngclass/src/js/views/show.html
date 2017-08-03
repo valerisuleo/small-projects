@@ -8,15 +8,17 @@
   <!-- <div class="showImage" style="background-image: url('{{ propertiesShow.property.image }}')" ng-mouseover="open = true" ng-mouseleave="open = false"></div> -->
 
   <div class="wrapper" ng-controller="PropertiesShowCtrl as propertiesShow" ng-class="{'view-back': state.back, 'view-to-home': state.toHome}">
+
     <div class="header" ng-class="{ 'slide-top': !homePageIsShown}">
       {{ propertiesShow.property.name }}
       <div class="smaller">
         {{ propertiesShow.property.address }}
       </div>
     </div>
+
     <div class="start-btn-wrapper" ng-class="{ 'slide-bottom': !homePageIsShown}">
       <a ui-sref="state1">CLICK HERE</a>
     </div>
-  </div>
 
+  </div>
 </div>

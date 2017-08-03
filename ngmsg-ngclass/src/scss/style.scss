@@ -184,8 +184,8 @@ div.showContainer{
       }
   }
   // background-color: red;
-  position: relative;
-  height: 700px;
+  // position: relative;
+  height: 600px;
 }
 
 aside#right ul{
@@ -219,14 +219,11 @@ aside#right div.showPic{
 /*----------------------------------NG-ANIMATE--------------------------------*/
 
 .wrapper{
-  background-color: grey;
+  // background-color: grey;
   overflow: hidden;
   // position: absolute;
   height: 500px;
   width: 780px;
-  // top: 50%;
-  // left: 50%;
-  // transform: translate(-50%, -50%);
   margin: auto;
 }
 .header {
@@ -278,20 +275,15 @@ a {
 
 
 // ______________________styles for animation (ngAnimate)______________________
-// .slide-top {
-//    transform:(translate(0%, -150%));
-//   opacity: 0;
-// }
-// .slide-bottom {
-//    transform:(translate(0%, 150%));
-//   opacity: 0;
-// }
+
 [ui-view] {
   .inner-wrapper {
     height: 500px;
     width: 780px;
     padding: 20px;
     background-color: pink;
+    background-size: cover;
+    background-repeat: no-repeat;
     text-align: center;
     border-radius: 5px;
     box-shadow: 0px 2px 4px 0px rgba(0,0,0,0.14);
@@ -370,14 +362,14 @@ div.circle2 p{
 
 /*-----------------------------------FOOTER-----------------------------------*/
 
-footer{
-  background-color: #3c3c3c;
-  padding: 20px;
-  font-size: 12px;
-  color: #fff;
-  text-align: center;
-}
-
-footer span{
-  color: pink;
-}
+// footer{
+//   background-color: #3c3c3c;
+//   padding: 20px;
+//   font-size: 12px;
+//   color: #fff;
+//   text-align: center;
+// }
+//
+// footer span{
+//   color: pink;
+// }
