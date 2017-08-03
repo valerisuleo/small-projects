@@ -32,10 +32,7 @@ function MainCtrl($rootScope, $resource, $state){
     Property
     .save(vm.newProperty)
     .$promise
-    .then((property) =>{
-      console.log('property', property.id);
-      $state.go('showState', property.id);
-    });
+    .then((property) => $state.go('showState', {id: property.id}));
   }
 }
 
@@ -54,11 +51,22 @@ function PropertiesIndexCtrl($resource) {
 
 ///////////////////////////////////// SHOW /////////////////////////////////////
 
-PropertiesShowCtrl.$inject = ['$resource','$stateParams'];
-function PropertiesShowCtrl($resource, $stateParams) {
+PropertiesShowCtrl.$inject = ['$resource','$stateParams', '$state', '$rootScope'];
+function PropertiesShowCtrl($resource, $stateParams, $state, $rootScope) {
 
   const vm = this;
   const Property = new $resource('/api/properties/:id', { id: '@id' });
 
+  $rootScope.homePageIsShown = true;
+  vm.state = {};
+
   vm.property = Property.get($stateParams);
+
+// DELETE
+  function propertiesDelete() {
+    vm.property
+    .$remove()
+    .then(() => $state.go('homeState'));
+  }
+  vm.delete = propertiesDelete;
 }

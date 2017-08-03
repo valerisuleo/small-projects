@@ -12,6 +12,7 @@ Property.collection.drop();
 Property
   .create([{
     address: '30 Bow Common Lane',
+    name: 'Linea Court',
     postcode: 'E34AX',
     bedrooms: 3,
     bathrooms: 3,
@@ -21,6 +22,7 @@ Property
     image: 'https://lid.zoocdn.com/645/430/f9035eca8c8ea9d586fe5662aba8efd5939cc761.jpg'
   }, {
     address: '1 Battersea Square',
+    name: 'Sexy House',
     postcode: 'SW113RZ',
     bedrooms: 2,
     bathrooms: 2,
@@ -30,6 +32,7 @@ Property
     image: 'https://lid.zoocdn.com/645/430/5f685e8f46d2958cfb1eac2e8eb0a846b324a30a.jpg'
   }, {
     address: '27 Villa Nobus',
+    name: 'Manson House',
     postcode: 'E14RES',
     bedrooms: 5,
     bathrooms: 2,

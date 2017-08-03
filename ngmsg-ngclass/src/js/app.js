@@ -1,2 +1,2 @@
 angular
-  .module('portfolioApp', ['ui.router', 'ngResource', 'ngMessages']);
+  .module('portfolioApp', ['ui.router', 'ngResource', 'ngMessages', 'ngAnimate']);

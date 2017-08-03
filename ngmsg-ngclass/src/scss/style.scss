@@ -7,19 +7,32 @@
 
 
 /*-----------------------------------BODY-------------------------------------*/
-
-
+//
+//
 // body{
 //   &.showState{
+//     form{
+//       display: none;
+//     }
 //     header{
 //       display: none;
 //     }
+//     // header{
+//     //   animation: fadein 2s;
+//     //   @keyframes fadein {
+//     //       from {
+//     //           opacity:0;
+//     //       }
+//     //       to {
+//     //           opacity:1;
+//     //       }
+//     //   }
+//     // }
 //   }
 // }
-
-
-
-
+//
+//
+//
 /*-----------------------------------HEADER-----------------------------------*/
 
 header{
@@ -51,7 +64,7 @@ nav ul li{
   float: right;
   margin-right: 2%;
   line-height: 70px;
-  text-transform: uppercase;
+  text-transform:: uppercase;
   font-weight: bold;
   cursor: pointer;
   a{
@@ -84,7 +97,7 @@ input{
   width: 100%;
   margin: 5px 0 5px 0;
   background: none;
-  text-transform: uppercase;
+  text-transform:: uppercase;
   font-weight: lighter;
 }
 
@@ -97,7 +110,7 @@ input{
   // width: 100%;
   // margin: 5px 0 5px 0;
   background: none;
-  text-transform: uppercase;
+  text-transform:: uppercase;
   font-weight: lighter;
 }
 
@@ -115,14 +128,15 @@ input[type="submit"]{
 }
 
 
-/*-----------------------------------MAIN-----------------------------------*/
+// /*-----------------------------------MAIN-----------------------------------*/
 
 
 main{
   height: 700px;
   /*background-color: red;*/
-  overflow: auto;
-  padding: 0 4% 0 6%;
+  // overflow: auto;
+  // padding: 0 4% 0 6%;
+  position: relative;
 }
 
 aside#left{
@@ -145,7 +159,7 @@ aside#right{
 aside#right h2{
   color: #5585af;
   font-size: 28px;
-  text-transform: uppercase;
+  text-transform:: uppercase;
   margin: 5% 0 5% 0;
 }
 
@@ -158,6 +172,21 @@ div.smallPic{
 }
 
 /*-----------------------------------SHOW-----------------------------------*/
+
+div.showContainer{
+  animation: fadein 2s;
+  @keyframes fadein {
+      from {
+          opacity:0;
+      }
+      to {
+          opacity:1;
+      }
+  }
+  // background-color: red;
+  position: relative;
+  height: 700px;
+}
 
 aside#right ul{
   list-style-type: none;
@@ -178,14 +207,141 @@ aside#right div.showPic{
   margin: auto;
 }
 
-div.bird{
-  width: 780px;
+// div.showImage{
+//   width: 780px;
+//   height: 500px;
+//   background-size: cover;
+//   background-repeat: no-repeat;
+//   margin: auto;
+//   // background-color: pink
+// }
+
+/*----------------------------------NG-ANIMATE--------------------------------*/
+
+.wrapper{
+  background-color: grey;
+  overflow: hidden;
+  // position: absolute;
   height: 500px;
-  background-size: cover;
-  background-repeat: no-repeat;
+  width: 780px;
+  // top: 50%;
+  // left: 50%;
+  // transform: translate(-50%, -50%);
   margin: auto;
-  // background-color: pink
 }
+.header {
+  font-size: 43px;
+  color: #000000;
+  // line-height: 52px;
+  text-align: center;
+  margin: 50px 0;
+  position: relative;
+  // z-index: 3;
+  font-weight: 300;
+   transition:(all 0.3s ease);
+  .smaller {
+    font-size: 23px;
+    // line-height: 1;
+  }
+}
+a {
+  color: #28AEFD;
+  text-decoration: none;
+}
+.start-btn-wrapper {
+  text-align: center;
+  font-size: 20px;
+  font-weight: 300;
+  position: relative;
+  // z-index: 1;
+   transition:(all 0.3s ease);
+  a {
+    display: inline-block;
+    border: 1px solid #28AEFD;
+    padding: 5px 15px;
+  }
+}
+.slide-header {
+  font-weight: 100;
+  font-size: 33px;
+  color: #222222;
+  margin-bottom: 15px;
+  margin-top: 25px;
+}
+.button-wrapper a {
+  display: inline-block;
+  border: 1px solid #28AEFD;
+  padding: 5px 15px;
+  margin: 15px;
+  font-weight: 300;
+}
+
+
+// ______________________styles for animation (ngAnimate)______________________
+// .slide-top {
+//    transform:(translate(0%, -150%));
+//   opacity: 0;
+// }
+// .slide-bottom {
+//    transform:(translate(0%, 150%));
+//   opacity: 0;
+// }
+[ui-view] {
+  .inner-wrapper {
+    height: 500px;
+    width: 780px;
+    padding: 20px;
+    background-color: pink;
+    text-align: center;
+    border-radius: 5px;
+    box-shadow: 0px 2px 4px 0px rgba(0,0,0,0.14);
+    margin: auto;
+  }
+	// position: absolute;
+	// width: 500px;
+	margin: 0 auto;
+	top: 40px;
+	left: 0;
+	right: 0;
+  height: 160px;
+   transition:(all 0.45s cubic-bezier(0.350, 0.330, 0.250, 1.045));
+  opacity: 1;
+  &.ng-enter {
+     transform:(translate(150%, 0%));
+    opacity: 0;
+    .view-back & {
+       transform:(translate(-150%, 0%));
+    }
+	}
+	&.ng-enter-active {
+		opacity: 1;
+     transform:(translate(0%, 0%));
+		.view-back & {
+       transform:(translate(0%, 0%));
+    }
+	}
+	&.ng-leave {
+     transform:(translate(0%, 0%));
+		opacity: 1;
+		.view-back & {
+       transform:(translate(0%, 0%));
+    }
+    .view-to-home & {
+       transform:(scale(1, 1));
+    }
+	}
+	&.ng-leave-active {
+     transform:(translate(-150%, 0%));
+		opacity: 0;
+		.view-back & {
+       transform:(translate(150%, 0%));
+    }
+    .view-to-home & {
+       transform:(scale(2, 2));
+    }
+	}
+}
+
 
 /*--------------------------------DELELE BUTTON--------------------------------*/
 

@@ -2,6 +2,7 @@ const mongoose = require('mongoose');
 
 const propertySchema = new mongoose.Schema({
   address: { type: String, required: true },
+  name: { type: String, required: true },
   postcode: { type: String, required: true },
   bedrooms: Number,
   bathrooms: Number,
