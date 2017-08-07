@@ -19,7 +19,7 @@ Property
     askingPrice: 650.00,
     floorArea: 220,
     dateAvailable: '2017-10-11',
-    image: 'https://lid.zoocdn.com/645/430/f9035eca8c8ea9d586fe5662aba8efd5939cc761.jpg'
+    image: 'http://homeepiphany.s3.amazonaws.com/wp-content/uploads/2015/07/127-Luxury-Living-Room-Designs-title.jpg'
   }, {
     address: '1 Battersea Square',
     name: 'Sexy House',
@@ -29,7 +29,7 @@ Property
     askingPrice: 1000,
     floorArea: 100,
     dateAvailable: '2017-08-11',
-    image: 'https://lid.zoocdn.com/645/430/5f685e8f46d2958cfb1eac2e8eb0a846b324a30a.jpg'
+    image: 'http://s3-us-west-2.amazonaws.com/sola-images/wp-content/uploads/2015/09/09230808/Masonite_VistaGrande_Double_Door_Pool.56094dbdbe88e-1024x701.png'
   }, {
     address: '27 Villa Nobus',
     name: 'Manson House',
@@ -39,7 +39,7 @@ Property
     askingPrice: 700,
     floorArea: 180,
     dateAvailable: '2017-11-21',
-    image: 'https://lid.zoocdn.com/645/430/5d6c874c4f780de3efc37d8a2bba77ce960ef095.jpg'
+    image: 'http://www.idesignarch.com/wp-content/uploads/Luxury-Indoor-Pool-Ideas_6.jpg'
   }])
   .then((properties) => console.log(`${properties.length} properties created!`))
   .catch((err) => console.log(err))

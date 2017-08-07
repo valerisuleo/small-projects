@@ -1,24 +1,64 @@
 <div class="showContainer">
-  <!-- <h2 class="show">{{ propertiesShow.property.address }}</h2> -->
 
-  <!-- <div class="circle2" ng-click="propertiesShow.delete()" ng-show="open" ng-mouseover="open = true">
-    <p>x</p>
-  </div> -->
+  <div class="wrapper">
 
-  <!-- <div class="showImage" style="background-image: url('{{ propertiesShow.property.image }}')" ng-mouseover="open = true" ng-mouseleave="open = false"></div> -->
+    <div ng-include="propertiesShow.curTemplate" class="cassandra" ></div>
 
-  <div class="wrapper" ng-controller="PropertiesShowCtrl as propertiesShow" ng-class="{'view-back': state.back, 'view-to-home': state.toHome}">
+<!-- __________________________________MSG1__________________________________ -->
 
-    <div class="header" ng-class="{ 'slide-top': !homePageIsShown}">
-      {{ propertiesShow.property.name }}
-      <div class="smaller">
-        {{ propertiesShow.property.address }}
+
+    <script type="text/ng-template" id="msg1.html">
+      <div class="container">
+
+        <div class="header">{{ propertiesShow.property.name }}
+          <div class="smaller">{{ propertiesShow.property.address }}</div>
+
+          <a href="#" ng-click="propertiesShow.switch(1)">CLICK ME</a>
+        </div>
+      </div>
+    </script>
+
+
+<!-- __________________________________MSG2__________________________________ -->
+
+
+    <script type="text/ng-template" id="msg2.html">
+
+      <div class="container">
+
+        <!-- DELETE -->
+        <!-- <div class="circle2" ng-click="propertiesShow.delete()" ng-show="open" ng-mouseover="open = true">
+        <p>x</p>
+        </div> -->
+
+        <div class="showImage" style="background-image: url('{{ propertiesShow.property.image }}')" ng-mouseover="open = true" ng-mouseleave="open = false"></div>
+      </div>
+      <a class="moreInfo" href="#" ng-click="propertiesShow.switch(2)">MORE INFO</a>
+    </script>
+
+
+<!-- __________________________________MSG3__________________________________ -->
+
+
+
+    <script type="text/ng-template" id="msg3.html">
+      <div class="container">
+
+    <div class="details">
+      <div class="detailsContainer">
+        <p><span>Postcode</span>: {{ propertiesShow.property.postcode }}</p>
+        <p><span>Bedrooms</span>: {{ propertiesShow.property.bedrooms }}</p>
+        <p><span>Bathrooms</span>: {{ propertiesShow.property.bathrooms }}</p>
+        <p><span>Price</span>: {{ propertiesShow.property.askingPrice }} per month</p>
+        <p><span>Square meters</span>: {{ propertiesShow.property.floorArea }}</p>
+        <p><span>Available starting from</span>: {{ propertiesShow.property.dateAvailable }}</p>
       </div>
     </div>
 
-    <div class="start-btn-wrapper" ng-class="{ 'slide-bottom': !homePageIsShown}">
-      <a ui-sref="state1">CLICK HERE</a>
-    </div>
+      </div>
+      <a class="moreInfo" href="#" ng-click="propertiesShow.switch(0)">BACK</a>
+    </script>
 
   </div>
+
 </div>

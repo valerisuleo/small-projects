@@ -2,8 +2,7 @@ angular
   .module('portfolioApp')
   .controller('MainCtrl', MainCtrl)
   .controller('PropertiesIndexCtrl', PropertiesIndexCtrl)
-  .controller('PropertiesShowCtrl', PropertiesShowCtrl)
-  .controller('PropertiesState1Ctrl', PropertiesState1Ctrl);
+  .controller('PropertiesShowCtrl', PropertiesShowCtrl);
 
 
 
@@ -52,16 +51,24 @@ function PropertiesIndexCtrl($resource) {
 
 ///////////////////////////////////// SHOW /////////////////////////////////////
 
-PropertiesShowCtrl.$inject = ['$resource','$stateParams', '$state', '$rootScope'];
-function PropertiesShowCtrl($resource, $stateParams, $state, $rootScope) {
+PropertiesShowCtrl.$inject = ['$resource','$stateParams', '$state'];
+function PropertiesShowCtrl($resource, $stateParams, $state) {
 
   const vm = this;
   const Property = new $resource('/api/properties/:id', { id: '@id' });
 
-  $rootScope.homePageIsShown = true;
-  vm.state = {};
-
   vm.property = Property.get($stateParams);
+
+
+  vm.curTemplate = 'msg1.html';
+  vm.templates = ['msg1.html','msg2.html','msg3.html'];
+
+  vm.switch = function(index){
+    if(vm.templates.length > index){
+      console.log(vm.templates.length);
+      vm.curTemplate = vm.templates[index];
+    }
+  };
 
 // DELETE
   function propertiesDelete() {
@@ -70,16 +77,4 @@ function PropertiesShowCtrl($resource, $stateParams, $state, $rootScope) {
     .then(() => $state.go('homeState'));
   }
   vm.delete = propertiesDelete;
-}
-
-
-
-PropertiesState1Ctrl.$inject = ['$resource','$stateParams'];
-function PropertiesState1Ctrl($resource, $stateParams) {
-
-  const vm = this;
-  const Property = new $resource('/api/properties/:id', { id: '@id' });
-
-  vm.property = Property.get($stateParams);
-
 }

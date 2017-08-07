@@ -20,15 +20,6 @@ function Router($stateProvider, $urlRouterProvider, $locationProvider) {
     url: '/properties/:id',
     templateUrl: '/js/views/show.html',
     controller: 'PropertiesShowCtrl as propertiesShow'
-  })
-  .state('state1', {
-    url: '/state1',
-    templateUrl: '/js/views/stateone.html',
-    controller: 'propertiesState1Ctrl as stateOne'
-  })
-  .state('state2', {
-    url: '/state2',
-    templateUrl: '/js/views/statetwo.html'
   });
 
   $urlRouterProvider.otherwise('/properties');
