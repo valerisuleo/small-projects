@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html ng-app="morecoffee">
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="utf-8">
+    <title></title>
+    <link href="https://fonts.googleapis.com/css?family=Cabin:400,700" rel="stylesheet">
+    <!-- inject:js -->
+    <!-- endinject -->
+    <!-- inject:css -->
+    <!-- endinject -->
+  </head>
+  <body ng-controller="CoffeeIndexCtrl as coffees">
+    <ul>
+      <li ng-repeat="coffee in coffees.cruise | limitTo:coffees.limit">
+        <strong>{{ coffee.name }}</strong>
+        <p>{{ coffee.price }}</p>
+        <p>{{ coffee.strength }}</p>
+      </li>
+    </ul>
+    <button ng-click="coffees.more()">More Coffee!</button>
+  </body>
+</html>
