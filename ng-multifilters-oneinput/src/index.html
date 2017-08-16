@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html ng-app="asso">
+  <head>
+    <base href="/">
+    <meta charset="utf-8">
+    <title>Angular Stack Setup</title>
+    <!-- inject:js -->
+    <!-- endinject -->
+    <!-- inject:css -->
+    <!-- endinject -->
+  </head>
+  <body ng-controller="PhoneCtrl as phones">
+
+    <div>
+      <input type="text" placeholder="Search for smartphone in model and brand" ng-model="phones.q">
+    </div>
+
+    <div>
+      <div id="results">
+
+        <header>
+          <p>Brand</p>
+          <p>Model</p>
+          <p>Price</p>
+        </header>
+
+        <main>
+          <div ng-repeat="phone in phones.all | filter: asso ">
+          <div id="brand"><strong>{{phone.brand}}</strong></div>
+          <div id="model"><em>{{phone.model}}</em></div>
+          <div id="price">{{phone.price | currency}}</div>
+        </div>
+      </main>
+
+      </div>
+    </div>
+
+</body>
+</html>
