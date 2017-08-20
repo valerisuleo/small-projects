@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html ng-app="darkSkyApi">
+  <head>
+    <base href="/">
+    <meta charset="utf-8">
+    <title>Dark Skies Api</title>
+    <!-- inject:js -->
+    <!-- endinject -->
+    <!-- inject:css -->
+    <!-- endinject -->
+  </head>
+  <body ng-controller="DarkCtrl as darks">
+
+    <div>
+      <span class="title">Place:</span> {{ darks.sky.place().city }}
+    </div>
+
+    <div>
+      <span class="title">Time:</span> {{ darks.sky.time() | date: 'HH:mm:ss' }}
+    </div>
+
+    <hr>
+
+    <div ng-repeat=" today in darks.sky.daily.data">
+
+      <div>
+        <span>Max:</span> {{ today.apparentTemperatureMax}}
+      </div>
+
+      <div>
+        <span>Min:</span> {{ today.apparentTemperatureMin}}
+      </div>
+
+      <div>
+        <span>Min:</span> {{ today.summary}}
+      </div>
+
+      <div>
+        <span>Rain Probability:</span> {{ today.precipProbability}}%
+      </div>
+
+      <hr>
+    </div>
+  </body>
+</html>
