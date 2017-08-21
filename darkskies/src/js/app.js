@@ -1,2 +1,2 @@
 angular
-.module('darkSkyApi', ['ngResource']);
+.module('darkSkyApi', ['ngResource', 'google.places']);

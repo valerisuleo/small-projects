@@ -5,7 +5,8 @@ function forecasts(req, res) {
   const apiKey = process.env.DARKSKY_API_KEY;
   rp({
     method: 'GET',
-    url: `${baseUrl}${apiKey}/51.515559,-0.071746`,
+    url: `${baseUrl}${apiKey}/${req.query.lat},${req.query.lng}`,
+    // url: `${baseUrl}${apiKey}/51.515559,-0.071746`,
     json: true
   })
   .then((response) => {
