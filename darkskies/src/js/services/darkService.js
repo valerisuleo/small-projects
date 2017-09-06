@@ -11,6 +11,7 @@ function DarkService($http) {
     .get('/api/forecasts', { params: { lat, lng }})
     .then((response) => {
       const sky = response.data;
+      console.log('skyooooo', sky);
 
       sky.place = function() {
         return {
@@ -18,6 +19,54 @@ function DarkService($http) {
           city: this.timezone.split('/')[1].replace(/_/g, ' ')};
       };
       // console.log(sky.place());
+
+
+      // sky.weekday = function () {
+      //   const today = new Date();
+      //   const weekday = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+      //
+      //   var showToday = weekday[today.getUTCDay()];
+      //   return showToday;
+      // };
+
+
+
+
+
+      // sky.weekday = function () {
+      //
+      //   const dailySky = [];
+      //
+      //   const weekday = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'];
+      //   console.log(weekday);
+      //
+      //   const dailyTemperature = response.data.daily.data.temperatureHigh;
+      //   console.log('dailyTemperature', dailyTemperature);
+      //
+      //   weekday.forEach((weekday) =>{
+      //     dailyTemperature.forEach((temperature) => {
+      //       dailySky.push({
+      //         weekday: weekday,
+      //         value: temperature
+      //       });
+      //     });
+      //   });
+      //
+      //   console.log('dailySky', dailySky);
+      // };
+      //
+      // sky.weekday();
+
+      const dailyTemperature = response.data.daily.data.temperatureHigh;
+      console.log('dailyTemperature', dailyTemperature);
+
+
+
+
+
+
+
+
 
       sky.temperature = function () {
         const temperatureConverted = 5 / 9 * (this.currently.temperature - 32);

@@ -4,15 +4,8 @@
     <base href="/">
     <meta charset="utf-8">
     <title>Dark Skies Api</title>
-    <!-- <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBLmvIYuuszPZ6pNwmHh4o4YQi79H_g9K8"></script> -->
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBLmvIYuuszPZ6pNwmHh4o4YQi79H_g9K8&libraries=places,geometry"></script>
-
-
-
-
-
-    <!-- <script src="https://maps.googleapis.com/maps/api/js?libraries=geometry,places&key=AIzaSyBLmvIYuuszPZ6pNwmHh4o4YQi79H_g9K8"></script> -->
-
+    <!-- <script src="/bower_components/ngmap/build/scripts/ng-map.min.js"></script> -->
     <!-- inject:js -->
     <!-- endinject -->
     <!-- inject:css -->
@@ -20,25 +13,57 @@
   </head>
   <body ng-controller="DarkCtrl as darks">
 
-    <!-- <google-map center="{ lat: 51.1, lng: -0.085 }"></google-map> -->
+<main>
+
+  <section id="first">
     <form>
       <input type="text" g-places-autocomplete ng-model="darks.newPlace" id="autocomplete">
       <!-- ng-model is binding the value of the input field to the value of the object 'vm.newPlace' in our controller -->
-
       <button ng-click="darks.meteo()">Get new location</button>
     </form>
 
-
     <div>
       <span class="title">Place:</span> {{ darks.sky.place().city }}
+    </div>
+
+    <div>
+      <span class="title">Summary:</span> {{ darks.sky.daily.summary }}
+    </div>
+
+    <div>
       <span class="title">temp:</span> {{ darks.sky.temperature() }}
+    </div>
+
+    <div>
+      <!-- <span class="title">Today:</span> {{ darks.sky.weekday() }} -->
     </div>
 
     <div>
       <span class="title">Time:</span> {{ darks.sky.time() | date: 'HH:mm:ss' }}
     </div>
+  </section>
 
-    <hr>
+  <hr>
 
+
+
+    <section id="second">
+      <li ng-repeat="days in darks.sky.daily.data">
+        {{ (days.temperatureHigh - 32) * 5/9 | number: 0 }} &#8451
+      </li>
+    </section>
+
+    <section id="third">
+      <li ng-repeat="days in darks.sky.daily.data">
+        {{days.precipProbability * 100 | limitTo: 1}}%
+      </li>
+    </section>
+
+  </main>
+
+<!-- _________________________________MAPPA_________________________________ -->
+    <!-- <ng-map center="[{{darks.sky.latitude}}, {{darks.sky.longitude}}]" id="map" scrollwheel="false" zoom="12">
+      <marker position="[{{darks.sky.latitude}}, {{darks.sky.longitude}}]"></marker>
+    </ng-map> -->
   </body>
 </html>

@@ -1,13 +1,37 @@
-span{
-  font-weight: bold;
-  &.title{
-    font-size: larger;
-  }
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
-.google-map{
-  height: 300px;
-  width: 300px;
-  display: inline-block;
-  background-color: yellow;
+
+li{
+  display: inline;
 }
+
+main{
+  max-width: 960px;
+  margin: 0 auto;
+  background-color: grey;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// #map{
+//   height: 300px;
+//   width: 300px;
+//   display: inline-block;
+//   background-color: yellow;
+// }

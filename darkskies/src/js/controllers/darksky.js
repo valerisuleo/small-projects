@@ -48,7 +48,20 @@ function DarkCtrl(darkService) {
   }
   vm.meteo = getForecast;
 
-// ________________________________Autocomplete________________________________
+
+// -----------> MOVE INTO THE SERVICES
+//   days();
+//
+//   function days () {
+//     const today = new Date();
+//     const weekday = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+//
+//     var showToday = weekday[today.getUTCDay()];
+//     document.getElementById('demo').innerHTML = showToday;
+//   }
+// -------------->
+
+// ________________________________Autocomplete_________________________________
   const input = document.getElementById('autocomplete');
   const autocomplete = new google.maps.places.Autocomplete(input);
 
