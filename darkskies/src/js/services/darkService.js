@@ -33,35 +33,43 @@ function DarkService($http) {
 
 
 
-      // sky.weekday = function () {
-      //
-      //   const dailySky = [];
-      //
-      //   const weekday = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'];
-      //   console.log(weekday);
-      //
-      //   const dailyTemperature = response.data.daily.data.temperatureHigh;
-      //   console.log('dailyTemperature', dailyTemperature);
-      //
-      //   weekday.forEach((weekday) =>{
-      //     dailyTemperature.forEach((temperature) => {
-      //       dailySky.push({
-      //         weekday: weekday,
-      //         value: temperature
-      //       });
-      //     });
-      //   });
-      //
-      //   console.log('dailySky', dailySky);
-      // };
-      //
-      // sky.weekday();
+      sky.weekday = function () {
 
-      const dailyTemperature = response.data.daily.data.temperatureHigh;
-      console.log('dailyTemperature', dailyTemperature);
+        const dailySky = [];
 
+        const weekday = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'];
+        console.log(weekday);
 
+        const dailyTemperature = response.data.daily.data;
+        console.log('dailyTemperature', dailyTemperature);
 
+        const apparentTemperatureHigh = [];
+
+        dailyTemperature.forEach((data) => {
+          apparentTemperatureHigh.push(data.apparentTemperatureHigh);
+        });
+        console.log('apparentTemperatureHigh', apparentTemperatureHigh);
+
+        weekday.forEach((weekday) => {
+          apparentTemperatureHigh.forEach((temperature) => {
+            dailySky.push({
+              weekday: weekday,
+              value: temperature
+            });
+          });
+        });
+
+        console.log('dailySky', dailySky);
+      };
+
+      sky.weekday();
+
+      // const dailyTemperature = response.data.daily.data;
+      // const temperaturesss  = [];
+      // dailyTemperature.forEach((data) => {
+      //   temperaturesss.push(data.apparentTemperatureHigh);
+      // });
+      // console.log('dailyTemperature', dailyTemperature);
 
 
 
