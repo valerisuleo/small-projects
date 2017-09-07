@@ -35,7 +35,7 @@
     </div>
 
     <div>
-      <!-- <span class="title">Today:</span> {{ darks.sky.weekday() }} -->
+      <span class="title">Today:</span> {{ darks.sky.getToDay() }}
     </div>
 
     <div>
@@ -45,9 +45,13 @@
 
   <hr>
 
+  <div>
+   {{ darks.sky.daysOfTheWeek().weekday[0][0] }}
+    </div>
 
 
-    <section id="second">
+
+    <!-- <section id="second">
       <li ng-repeat="days in darks.sky.daily.data">
         {{ (days.temperatureHigh - 32) * 5/9 | number: 0 }} &#8451
       </li>
@@ -57,7 +61,7 @@
       <li ng-repeat="days in darks.sky.daily.data">
         {{days.precipProbability * 100 | limitTo: 1}}%
       </li>
-    </section>
+    </section> -->
 
   </main>
 
