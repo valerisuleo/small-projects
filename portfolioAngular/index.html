@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html ng-app="coddio">
+  <head>
+    <meta charset="utf-8">
+    <base href="/">
+    <title></title>
+    <link rel="stylesheet" href="dist/css/style.css">
+    <script src="bower_components/angular/angular.js"></script>
+    <script src="bower_components/angular-ui-router/release/angular-ui-router.min.js"></script>
+    <!-- <link rel="stylesheet" href="css/style.css"> -->
+    <script src="dist/js/app.js" charset="utf-8"></script>
+    <!-- <script src="js/app.js" charset="utf-8"></script> -->
+  </head>
+  <body ng-controller="MainCtrl as main" ng-class="main.pageName">
+    <!-- <nav>
+      <ul>
+        <li><a ui-sref="home" ui-sref-active="active">Home</a></li>
+        <li><a ui-sref="about" ui-sref-active="active">about</a></li>
+        <li><a ui-sref="contact" ui-sref-active="active">contact</a></li>
+      </ul>
+    </nav> -->
+
+    <main ui-view>
+      <div class="menu" ng-click="main.menuOpen = !main.menuOpen" ng-class="{'active' : main.menuOpen}" id="manuela" ng-mouseover="main.hoverIn($event)" ng-mouseleave="main.hoverOut($event)">
+
+        <div class="circle" ng-click="main.onClick()" ng-mouseover="main.hoverIn($event)" ng-mouseleave="main.hoverOut($event)"></div>
+        <div class="circle" ng-click="main.onClick()" ng-mouseover="main.hoverIn($event)" ng-mouseleave="main.hoverOut($event)"></div>
+        <div class="circle" ng-click="main.onClick()" ng-mouseover="main.hoverIn($event)" ng-mouseleave="main.hoverOut($event)"></div>
+
+      </div>
+
+      <audio src="src/sounds/click.wav" id="clickMe"></audio>
+      <audio src="src/sounds/cursor.wav" id="cursor"></audio>
+      <audio src="src/sounds/beat.mp3" id="beat"></audio>
+    </main>
+
+  </body>
+</html>

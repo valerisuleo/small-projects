@@ -1,0 +1,21 @@
+{
+  "name": "coddio",
+  "description": "",
+  "main": "index.js",
+  "authors": [
+    "valeriorisuleo <valerio.risuleo@gmail.com>"
+  ],
+  "license": "ISC",
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "^1.6.6",
+    "angular-ui-router": "^0.4.2"
+  }
+}
