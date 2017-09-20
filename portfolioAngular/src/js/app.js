@@ -29,6 +29,9 @@ function MainCtrl($rootScope) {
   const vm = this;
 
   vm.onClick = function() {
+    vm.menuOpen = !vm.menuOpen;
+    const a = document.getElementsByTagName('a');
+    console.log(a);
     const clickMe = document.getElementById('clickMe');
     clickMe.play();
   };
