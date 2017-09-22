@@ -22,23 +22,24 @@
 
     <main class="container" ui-view>
 
-      <div class="menu" ng-click="main.onClick()" ng-class="{'active' : main.menuOpen}" id="manuela">
+      <div class="menu" id="manuela">
 
-        <!-- <a ui-sref="home">
-          <div class="circle" ng-mouseover="main.hoverIn($event)" ng-mouseleave="main.hoverOut($event)" id="black"></div>
+        <a id="wow"  ui-sref="home">
+          <div class="circle" ng-mouseover="main.hoverIn($event)" ng-mouseleave="main.hoverOut($event)" ng-click="main.onClick()" ng-class="{'active' : main.menuOpen}" id="black"></div>
         </a>
 
-        <a ui-sref="about">
-          <div class="circle" ng-mouseover="main.hoverIn($event)" ng-mouseleave="main.hoverOut($event)"></div>
-        </a>
 
-        <a ui-sref="contact">
-          <div class="circle" ng-mouseover="main.hoverIn($event)" ng-mouseleave="main.hoverOut($event)"></div>
-        </a> -->
+          <a ui-sref="about">
+            <div class="circle" ng-mouseover="main.hoverIn($event)" ng-mouseleave="main.hoverOut($event)" ng-class="{'active' : main.menuOpen}" id="grey"></div>
+          </a>
 
-        <div class="circle" ng-mouseover="main.hoverIn($event)" ng-mouseleave="main.hoverOut($event)" id="black"></div>
-        <div class="circle" ng-mouseover="main.hoverIn($event)" ng-mouseleave="main.hoverOut($event)"></div>
-        <div class="circle" ng-mouseover="main.hoverIn($event)" ng-mouseleave="main.hoverOut($event)"></div>
+
+          <a ui-sref="contact">
+            <div class="circle" ng-mouseover="main.hoverIn($event)" ng-mouseleave="main.hoverOut($event)" ng-class="{'active' : main.menuOpen}" id="silver"></div>
+          </a>
+
+
+
       </div>
 
       <audio src="src/sounds/click.wav" id="clickMe"></audio>

@@ -6,62 +6,52 @@
 
 main.container{
   height: 100vh;
-  background-color: green;
+  background-color: white;
   z-index: 1;
     .menu{
       width: 100%;
       height: 12vh;
-      background-color: pink;
+      // background-color: pink;
       position: fixed;
       top: calc(50vh - 6vh);
       div.circle{
         width: 12vh;
         height: 12vh;
         border-radius: 100%;
-        background-color: brown;
         position: fixed;
         left: calc(50vw - 6vw);
         top: calc(50vh - 6vh);
         -webkit-transition: all .5s linear;
         cursor: pointer;
-        &:nth-child(1){
+        &#black{
           background-color: black;
           z-index: 6;
         }
-        &:nth-child(2){
+        &#grey{
           background-color: grey;
           z-index: 4;
         }
-        &:nth-child(3){
+        &#silver{
           background-color: silver;
           z-index: 2;
         }
-    }
-    &.active{
-      div.circle{
-        &:nth-child(1){
-          background-color: grey;
+        &.active{
+            &#black{
+              background-color: grey;
+            }
+            &#grey{
+              left: 25vw;
+              background-color: black;
+            }
+            &#silver{
+              left: 65.5vw;
+            }
         }
-        &:nth-child(2){
-          left: 25vw;
-          background-color: black;
-        }
-        &:nth-child(3){
-          left: 65.5vw;
-        }
-      }
     }
   }
 }
 
 
-a{
-  width: 12vh;
-  height: 12vh;
-  position: fixed;
-  left: calc(50vw - 6vh);
-  z-index: 6;
-}
 .heart {
   animation: HEARTBEAT 1s;
   animation-iteration-count: 60;

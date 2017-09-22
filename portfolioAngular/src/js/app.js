@@ -22,36 +22,68 @@ angular
   $urlRouterProvider.otherwise('/');
 });
 
-
 // _________________________________CONTROLLER_________________________________
 MainCtrl.$inject = ['$rootScope'];
 function MainCtrl($rootScope) {
   const vm = this;
 
   vm.onClick = function() {
-    vm.menuOpen = !vm.menuOpen;
-    const a = document.getElementsByTagName('a');
-    console.log(a);
+
+    vm.menuOpen = true;
+    // vm.menuOpen = !vm.menuOpen;
+
     const clickMe = document.getElementById('clickMe');
     clickMe.play();
+
+    removeAttr();
+
+    const black = document.getElementById('black');
+    black.addEventListener('webkitTransitionEnd', () => {
+      setAttr();
+    });
   };
 
-  // vm.onMouseOver = function() {
-  //   const cursor = document.getElementById('cursor');
-  //   console.log('cursor', cursor);
-  //   cursor.play();
-  // };
+  // _____________________________JS ONCE FUNCTION_____________________________
+
+  function once(fn, context) {
+    var result;
+
+    return function() {
+      if(fn) {
+        result = fn.apply(context || this, arguments);
+        fn = null;
+      }
+
+      return result;
+    };
+  }
+
+    // REMOVE ATTRIBUTE
+  var removeAttr = once(function() {
+    const remove = document.getElementById('wow');
+    remove.removeAttribute('href');
+    console.log('remove', remove);
+  });
+// _____________________________________________________________________________
 
 
-  // THIS WORKS
+// PUT THE ATTRIBUTE BACK
+  function setAttr() {
+    document.getElementById('wow').setAttribute('href', '/home');
+    const set = document.getElementById('wow');
+    console.log('set', set);
+  }
+
+// _________________________________MOUSE OVER_________________________________
+
   vm.hoverIn = function(event) {
-    const menuClass = document.getElementById('manuela');
+    const menuClass = document.getElementById('black');
     const beat = document.getElementById('beat');
     var el = getElement(event);
     if (menuClass.classList.contains('active')) {
       el.addClass('heart');
       beat.play();
-      // console.log('hoverIn', el);
+      console.log('hoverIn', el);
     }
   };
 
@@ -60,30 +92,12 @@ function MainCtrl($rootScope) {
     var el = getElement(event);
     el.removeClass('heart');
     beat.pause();
-    // console.log('hoverOut', el);
+    console.log('hoverOut', el);
   };
 
   function getElement(event) {
     return angular.element(event.srcElement || event.target);
   }
-
-
-  // THIS DOES NOT WORK
-  // vm.checkClass = function() {
-  //   const menuClass = document.getElementById('manuela');
-  //   // console.log('menuClass', menuClass);
-  //   const circle = document.getElementsByClassName('circle');
-  //   // console.log('circle', circle);
-  //   for (var i = 0; i < circle.length; i++) {
-  //     if (menuClass.classList.contains('active')) {
-  //       circle[i].addEventListener('click', (e) => {
-  //         var currentCircle = (e.target);
-  //         console.log('currentCircle', currentCircle);
-  //         currentCircle.classList.add('heart');
-  //       });
-  //     }
-  //   }
-  // };
 
 
 // _________________________________WATCH STATE_________________________________
