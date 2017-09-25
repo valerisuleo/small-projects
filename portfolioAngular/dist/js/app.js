@@ -66,8 +66,8 @@ function MainCtrl($rootScope) {
 
   // PUT THE ATTRIBUTE BACK
   function setAttr() {
-    document.getElementById('wow').setAttribute('href', '/home');
     var set = document.getElementById('wow');
+    set.setAttribute('href', '/home');
     console.log('set', set);
   }
 

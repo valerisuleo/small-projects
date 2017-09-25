@@ -4,23 +4,23 @@
   box-sizing: border-box;
 }
 
-main.container{
-  height: 100vh;
-  background-color: white;
+div#container{
+  height: 300px;
+  width: 100%;
+  position: fixed;
+  top: calc(50% - 100px);
   z-index: 1;
-    .menu{
-      width: 100%;
-      height: 12vh;
-      // background-color: pink;
-      position: fixed;
-      top: calc(50vh - 6vh);
+  background-color: grey;
+    .circleContainer{
+      height: 200px;
+      background-color: pink;
       div.circle{
-        width: 12vh;
-        height: 12vh;
-        border-radius: 100%;
+        width: 100px;
+        height: 100px;
+        border-radius: 100px;
         position: fixed;
-        left: calc(50vw - 6vw);
-        top: calc(50vh - 6vh);
+        top: calc(50% - 50px);
+        left: calc(50% - 50px);
         -webkit-transition: all .5s linear;
         cursor: pointer;
         &#black{
@@ -40,15 +40,33 @@ main.container{
               background-color: grey;
             }
             &#grey{
-              left: 25vw;
+              left: calc(25% - 50px);
               background-color: black;
             }
             &#silver{
-              left: 65.5vw;
+              left: calc(75% - 50px);
             }
         }
     }
   }
+  span{
+    position: fixed;
+    left: calc(50% - 50px);
+    text-align: center;
+    &#span1{
+      left: calc(25% - 50px);
+    }
+    &#span2{
+      left: calc(50% - 50px);
+    }
+    &#span3{
+      left: calc(75% - 50px);
+    }
+  }
+}
+
+.hidden{
+  display: none;
 }
 
 
@@ -88,21 +106,27 @@ main.container{
 span{
   width: 100px;
   text-align: center;
+  // background-color: pink;
 }
 #span1 {
   position: absolute;
   top: 60vh;
-  left: 25vw;
+  left: 21.5vw;
+  text-align: center;
 }
 #span2 {
   position: absolute;
   top: 60vh;
-  left: calc(50vw - 50px);
+  left: 44vw;
+  text-align: center;
+  // left: calc(25vw - 50px);
 }
 #span3 {
   position: absolute;
   top: 60vh;
-  left: calc(75vw - 100px);
+  left: 66.5vw;
+  text-align: center;
+  // left: calc(65.5vw - 100px);
 }
 
 
