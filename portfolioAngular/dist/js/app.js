@@ -24,8 +24,15 @@ MainCtrl.$inject = ['$rootScope'];
 function MainCtrl($rootScope) {
   var vm = this;
 
+  // vm.onloadFun = function () {
+  //   const beat = document.getElementById('beat');
+  //   startPulse();
+  //   beat.play();
+  // };
+
   vm.onClick = function () {
 
+    stopPulse();
     vm.menuOpen = true;
     // vm.menuOpen = !vm.menuOpen;
 
@@ -40,7 +47,7 @@ function MainCtrl($rootScope) {
     });
   };
 
-  // _____________________________JS ONCE FUNCTION_____________________________
+  // _____________________________JS ONCE FUNCTION_______________________________
 
   function once(fn, context) {
     var result;
@@ -59,16 +66,34 @@ function MainCtrl($rootScope) {
   var removeAttr = once(function () {
     var remove = document.getElementById('wow');
     remove.removeAttribute('href');
-    console.log('remove', remove);
+    // console.log('remove', remove);
   });
-  // _____________________________________________________________________________
 
+  // STOP HEARTBEAT
+  var stopPulse = once(function () {
+    var beat = document.getElementById('beat');
+    beat.pause();
+    var black = document.getElementById('black');
+    black.classList.remove('heart');
+    // console.log('remove', remove);
+  });
+
+  // START HEARTBEAT
+  var startPulse = once(function () {
+    var black = document.getElementById('black');
+    black.classList.add('heart');
+    var beat = document.getElementById('beat');
+    beat.play();
+    // console.log('remove', remove);
+  });
+
+  //  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
   // PUT THE ATTRIBUTE BACK
   function setAttr() {
     var set = document.getElementById('wow');
     set.setAttribute('href', '/home');
-    console.log('set', set);
+    // console.log('set', set);
   }
 
   // _________________________________MOUSE OVER_________________________________
@@ -76,12 +101,17 @@ function MainCtrl($rootScope) {
   vm.hoverIn = function (event) {
     var menuClass = document.getElementById('black');
     var beat = document.getElementById('beat');
+    // console.log(beat);
+    var cursor = document.getElementById('cursor');
     var el = getElement(event);
     if (menuClass.classList.contains('active')) {
       el.addClass('heart');
       beat.play();
-      console.log('hoverIn', el);
+      removeSpanClass();
+      // console.log('hoverIn', el);
     }
+    startPulse();
+    cursor.play();
   };
 
   vm.hoverOut = function (event) {
@@ -89,11 +119,32 @@ function MainCtrl($rootScope) {
     var el = getElement(event);
     el.removeClass('heart');
     beat.pause();
-    console.log('hoverOut', el);
+    addSpanClass();
+    // console.log('hoverOut', el);
   };
 
   function getElement(event) {
     return angular.element(event.srcElement || event.target);
+  }
+
+  // SHOW AND HIDE THE SPAN
+  var span = document.getElementsByTagName('span');
+  var circle = document.getElementsByClassName('circle');
+
+  function removeSpanClass() {
+    for (var i = 0; i < circle.length; i++) {
+      if (circle[i].classList.contains('heart')) {
+        span[i].classList.remove('hidden');
+      }
+    }
+  }
+
+  function addSpanClass() {
+    for (var i = 0; i < circle.length; i++) {
+      if (!circle[i].classList.contains('heart')) {
+        span[i].classList.add('hidden');
+      }
+    }
   }
 
   // _________________________________WATCH STATE_________________________________

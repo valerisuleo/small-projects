@@ -10,17 +10,17 @@ div#container{
   position: fixed;
   top: calc(50% - 100px);
   z-index: 1;
-  background-color: grey;
+  // background-color: red;
     .circleContainer{
-      height: 200px;
-      background-color: pink;
+      height: 180px;
+      // background-color: pink;
       div.circle{
-        width: 100px;
-        height: 100px;
+        width: 80px;
+        height: 80px;
         border-radius: 100px;
         position: fixed;
-        top: calc(50% - 50px);
-        left: calc(50% - 50px);
+        top: calc(50% - 40px);
+        left: calc(50% - 40px);
         -webkit-transition: all .5s linear;
         cursor: pointer;
         &#black{
@@ -40,29 +40,36 @@ div#container{
               background-color: grey;
             }
             &#grey{
-              left: calc(25% - 50px);
+              left: calc(25% - 40px);
               background-color: black;
             }
             &#silver{
-              left: calc(75% - 50px);
+              left: calc(75% - 40px);
             }
         }
     }
   }
   span{
+    width: 80px;
     position: fixed;
-    left: calc(50% - 50px);
+    left: calc(50% - 40px);
     text-align: center;
     &#span1{
-      left: calc(25% - 50px);
+      left: calc(25% - 40px);
     }
     &#span2{
-      left: calc(50% - 50px);
+      left: calc(50% - 40px);
     }
     &#span3{
-      left: calc(75% - 50px);
+      left: calc(75% - 40px);
     }
   }
+}
+
+.spanContainer{
+  width: 100%;
+  height: 100px;
+  // background-color: red;
 }
 
 .hidden{
@@ -96,48 +103,3 @@ div#container{
     transform: scale(1);
   }
 }
-
-
-.hidden {
-  display: none;
-  visibility: hidden;
-}
-
-span{
-  width: 100px;
-  text-align: center;
-  // background-color: pink;
-}
-#span1 {
-  position: absolute;
-  top: 60vh;
-  left: 21.5vw;
-  text-align: center;
-}
-#span2 {
-  position: absolute;
-  top: 60vh;
-  left: 44vw;
-  text-align: center;
-  // left: calc(25vw - 50px);
-}
-#span3 {
-  position: absolute;
-  top: 60vh;
-  left: 66.5vw;
-  text-align: center;
-  // left: calc(65.5vw - 100px);
-}
-
-
-
-
-
-
-// .circle#grey:after {
-// content: 'Portfolio';
-// position: absolute;
-// bottom: -20px;
-// left: 50%;
-// transform: translate(-50%);
-// }

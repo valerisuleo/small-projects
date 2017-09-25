@@ -17,8 +17,9 @@
 
       <div id="container">
         <div class="circleContainer">
+        <!-- <div class="circleContainer" data-ng-init="main.onloadFun()"> -->
         <a id="wow"  ui-sref="home">
-          <div class="circle" ng-mouseover="main.hoverIn($event)" ng-mouseleave="main.hoverOut($event)" ng-click="main.onClick()" ng-class="{'active' : main.menuOpen}" id="black"></div>
+          <div class="circle" ng-mouseover="main.hoverIn($event)" ng-mouseleave="main.hoverOut($event)"  ng-class="{'active' : main.menuOpen}" ng-click="main.onClick()" id="black"></div>
         </a>
 
         <a ui-sref="about">
@@ -31,8 +32,8 @@
       </div>
 
       <div class="spanContainer">
+        <span id="span2" class="hidden">About Me</span>
         <span id="span1" class="hidden">Projects</span>
-        <span id="span2" class="hidden">Who Am I?</span>
         <span id="span3" class="hidden">Contact Me</span>
       </div>
     </div>
