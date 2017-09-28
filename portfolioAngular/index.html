@@ -15,29 +15,29 @@
   <body ng-controller="MainCtrl as main" ng-class="main.pageName">
 
     <main ui-view>
-
       <div id="container">
         <div class="circleContainer">
-        <!-- <div class="circleContainer" data-ng-init="main.onloadFun()"> -->
-        <a id="wow"  ui-sref="home">
-          <div class="circle" ng-mouseover="main.hoverIn($event)" ng-mouseleave="main.hoverOut($event)"  ng-class="{'active' : main.menuOpen}" id="black" ng-click="main.onClick()"></div>
-        </a>
+          <!-- <div class="circleContainer" data-ng-init="main.onloadFun()"> -->
+          <a id="wow"  ui-sref="home">
+            <div class="circle" ng-mouseover="main.hoverIn($event)" ng-mouseleave="main.hoverOut($event)"  ng-class="{'active' : main.menuOpen}" id="black" ng-click="main.onClick()"></div>
+          </a>
 
-        <a ui-sref="about">
-          <div class="circle" ng-mouseover="main.hoverIn($event)" ng-mouseleave="main.hoverOut($event)" ng-class="{'active' : main.menuOpen}" id="grey"></div>
-        </a>
+          <a ui-sref="about">
+            <div class="circle" ng-mouseover="main.hoverIn($event)" ng-mouseleave="main.hoverOut($event)" ng-class="{'active' : main.menuOpen}" id="grey"></div>
+          </a>
 
-        <a ui-sref="contact">
-          <div class="circle" ng-mouseover="main.hoverIn($event)" ng-mouseleave="main.hoverOut($event)" ng-class="{'active' : main.menuOpen}" id="silver"></div>
-        </a>
+          <a ui-sref="contact">
+            <div class="circle" ng-mouseover="main.hoverIn($event)" ng-mouseleave="main.hoverOut($event)" ng-class="{'active' : main.menuOpen}" id="silver"></div>
+          </a>
+        </div>
+
+        <div class="spanContainer">
+          <span id="span2" class="hidden">About Me</span>
+          <span id="span1" class="hidden">Projects</span>
+          <span id="span3" class="hidden">Contact Me</span>
+        </div>
       </div>
 
-      <div class="spanContainer">
-        <span id="span2" class="hidden">About Me</span>
-        <span id="span1" class="hidden">Projects</span>
-        <span id="span3" class="hidden">Contact Me</span>
-      </div>
-    </div>
 
       <audio src="src/sounds/click.wav" id="clickMe"></audio>
       <audio src="src/sounds/cursor.wav" id="cursor"></audio>
