@@ -2,6 +2,8 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: 'Lato', sans-serif;
+  color: rgba(0,0,0,.7);
 }
 
 div#container{
@@ -101,5 +103,254 @@ div#container{
   }
   100% {
     transform: scale(1);
+  }
+}
+
+// ____________________________________ABOUT____________________________________
+
+
+#containerAbout{
+  height: 3600px;
+  // padding: 4%;
+  overflow: auto;
+  background-color: grey;
+  // margin-bottom: 2%;
+  .firstSection{
+    // border: 1px solid red;
+    width: 90%;
+    height: 1600px;
+    padding: 4%;
+    padding-bottom: 0%;
+    overflow: auto;
+    background-color: white;
+    margin: auto;
+    // margin-bottom: 2%;
+    .header{
+      width: 100%;
+      height: 35%;
+      margin-bottom: 3%;
+      border: 1px solid silver;
+      // background-color: pink;
+      // box-shadow: 0 10px 6px -6px #777;
+      div{
+        &:nth-child(1){
+          height: 45%;
+
+          background-image: url('/src/images/about.png');
+          background-repeat: no-repeat;
+          background-size: cover;
+        }
+        &:nth-child(2){
+          width: 160px;
+          height: 160px;
+          border-radius: 100px;
+          background-image: url('/src/images/mee.jpg');
+          background-size: contain;
+          background-repeat: no-repeat;
+          background-position: center;
+          background-color: white;
+          border: 3px solid silver;
+          box-shadow: 0 10px 6px -6px #777;
+          z-index: 2;
+          position: absolute;
+          left: calc(50% - 80px);
+          top: calc(40% - 110px);
+        }
+        &:nth-child(3){
+          height: 55%;
+          // background-color: green;
+          position: relative;
+          p{
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+            line-height: 30px;
+            span{
+              &:nth-child(1){
+                font-size: 24px;
+                color: black;
+              }
+              &:nth-child(3){
+                font-size: 18px;
+                // color: red;
+              }
+              &:nth-child(5){
+                font-size: 16px;
+                // color: white;
+              }
+            }
+            &#funny{
+              border-top: 1px solid silver;
+              width: 95%;
+              top: 78%;
+              // padding-top: 5%;
+              font-size: 16px;
+              line-height: 75px;
+              margin-top: 2%;
+            }
+          }
+        }
+      }
+    }
+    .personalSummary{
+      width: 100%;
+      height: 15%;
+      background-color: silver;
+      position: relative;
+      box-shadow: 0 10px 6px -6px #777;
+      p{
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 100%;
+        line-height: 25px;
+        font-size: 16px;
+        font-style: italic;
+        color: black;
+        padding: 3%;
+      }
+    }
+    .experience{
+      margin-top: 3%;
+      width: 100%;
+      height: 46%;
+      line-height: 25px;
+      border: 1px solid silver;
+      // box-shadow: 0 10px 6px -6px #777;
+      .oldExperience{
+        // height: 33.33%;
+        padding: 1%;
+        &:last-child > :last-child{
+          border-bottom: none;
+        }
+        .left{
+          height: 100%;
+          width: 20%;
+          // background-color: grey;
+          float: left;
+        }
+        .right{
+          height: 100%;
+          width: 80%;
+          float: right;
+          padding: 1%;
+          border-bottom: 1px solid black;
+        }
+      }
+      p{
+        margin-top: 1%;
+      }
+      span{
+        &:nth-child(1){
+          font-size: 18px;
+          font-weight: bold;
+          color: black;
+        }
+        &:nth-child(3){
+          font-size: 18px;
+          // color: red;
+        }
+        &:nth-child(5){
+          font-size: 16px;
+          // color: white;
+        }
+      }
+    }
+  }
+  .education{
+    width: 90%;
+    height: 2000px;
+    padding: 4%;
+    padding-top: 1%;
+    overflow: auto;
+    background-color: white;;
+    margin: auto;
+    margin-bottom: 2%;
+    .experience{
+      background-color: white;
+      width: 100%;
+      height: 31%;
+      line-height: 25px;
+      border: 1px solid silver;
+      // box-shadow: 0 10px 6px -6px #777;
+      .oldExperience{
+        // height: 25%;
+        padding: 1%;
+        &:last-child > :last-child{
+          border-bottom: none;
+        }
+        .left{
+          height: 100%;
+          width: 20%;
+          // background-color: grey;
+          float: left;
+        }
+        .right{
+          height: 100%;
+          width: 80%;
+          float: right;
+          padding: 1%;
+          border-bottom: 1px solid black;
+        }
+      }
+      p{
+        margin-top: 1%;
+      }
+      span{
+        &:nth-child(1){
+          font-size: 18px;
+          font-weight: bold;
+          color: black;
+        }
+        &:nth-child(3){
+          font-size: 18px;
+          // color: red;
+        }
+        &:nth-child(5){
+          font-size: 16px;
+          // color: white;
+        }
+      }
+    }
+    .skills{
+      background-color: pink;
+      width: 100%;
+      height: 60%;
+      line-height: 25px;
+      border: 1px solid silver;
+      .progress-bar {
+        overflow: hidden;
+        position: relative;
+        width: 100%;
+        height: 1.4rem;
+        display: block;
+        margin-top: 2%;
+        background: rgba(0,0,0,0.1);
+        .progress-bar__slide {
+          position: absolute;
+          top: 0;
+          left: 0;
+          bottom: 0;
+          display: block;
+          background: repeating-linear-gradient(to right, rgba(0, 176, 207, 1), rgba(0, 176, 207, 0.2));
+          width: 2px;
+          -webkit-transition: 2s cubic-bezier(.57, .12, .35, 1.2);
+        }
+        .progress-bar__percent {
+          z-index: 500;
+          display: block;
+          padding: 0 10px;
+          font-family: 'verdana';
+          font-size: 12px;
+          text-align: center;
+          line-height: 1.4rem;
+          color: white;
+          position: absolute;
+        }
+      }
+    }
   }
 }

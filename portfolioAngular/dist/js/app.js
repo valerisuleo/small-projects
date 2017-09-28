@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('coddio', ['ui.router']).controller('MainCtrl', MainCtrl)
+angular.module('coddio', ['ui.router']).controller('MainCtrl', MainCtrl).controller('AboutCtrl', AboutCtrl)
 // ___________________________________ROUTER___________________________________
 .config(function ($stateProvider, $urlRouterProvider, $locationProvider) {
   $locationProvider.html5Mode(true);
@@ -11,7 +11,8 @@ angular.module('coddio', ['ui.router']).controller('MainCtrl', MainCtrl)
     templateUrl: '/src/views/home.html'
   }).state('about', {
     url: '/about',
-    templateUrl: '/src/views/about.html'
+    templateUrl: '/src/views/about.html',
+    controller: 'AboutCtrl as about'
   }).state('contact', {
     url: '/contact',
     templateUrl: '/src/views/contact.html'
@@ -19,7 +20,7 @@ angular.module('coddio', ['ui.router']).controller('MainCtrl', MainCtrl)
   $urlRouterProvider.otherwise('/');
 });
 
-// _________________________________CONTROLLER_________________________________
+// __________________________________MAIN CTRL__________________________________
 MainCtrl.$inject = ['$rootScope'];
 function MainCtrl($rootScope) {
   var vm = this;
@@ -155,4 +156,31 @@ function MainCtrl($rootScope) {
     vm.menuOpen = false;
   }
   $rootScope.$on('$stateChangeStart', stateChange);
+  // $state.reload();
+}
+
+// _________________________________ABOUT CTRL_________________________________
+// AboutCtrl.$inject = ['$state', '$stateParams'];
+function AboutCtrl() {
+  var vm = this;
+
+  vm.skillBar = function () {
+    var bars = document.getElementsByClassName('progress-bar');
+    for (var i = 0; i < bars.length; i++) {
+      bars[i].children[0].style.width = bars[i].dataset.percent;
+      // console.log(bars[i].dataset);
+      bars[i].children[1].innerHTML = bars[i].dataset.label;
+    }
+    var test = document.getElementById('test');
+    test.addEventListener('webkitTransitionEnd', function () {
+      for (var i = 0; i < bars.length; i++) {
+        bars[i].children[0].style.width = '';
+        // bars[i].children[1].innerHTML = '';
+      }
+    });
+  };
+
+  // setInterval(function () {
+  //   $(document).on('ready', fire());
+  // }, 3000);
 }

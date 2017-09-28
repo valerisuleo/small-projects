@@ -1,6 +1,7 @@
 angular
 .module('coddio', ['ui.router'])
 .controller('MainCtrl', MainCtrl)
+.controller('AboutCtrl', AboutCtrl)
 // ___________________________________ROUTER___________________________________
 .config(function($stateProvider, $urlRouterProvider, $locationProvider){
   $locationProvider.html5Mode(true);
@@ -13,7 +14,8 @@ angular
   })
   .state('about', {
     url: '/about',
-    templateUrl: '/src/views/about.html'
+    templateUrl: '/src/views/about.html',
+    controller: 'AboutCtrl as about'
   })
   .state('contact', {
     url: '/contact',
@@ -22,7 +24,7 @@ angular
   $urlRouterProvider.otherwise('/');
 });
 
-// _________________________________CONTROLLER_________________________________
+// __________________________________MAIN CTRL__________________________________
 MainCtrl.$inject = ['$rootScope'];
 function MainCtrl($rootScope) {
   const vm = this;
@@ -49,7 +51,6 @@ function MainCtrl($rootScope) {
       setAttr();
     });
   };
-
 
 // _____________________________JS ONCE FUNCTION_______________________________
 
@@ -161,4 +162,34 @@ function MainCtrl($rootScope) {
     vm.menuOpen = false;
   }
   $rootScope.$on('$stateChangeStart', stateChange);
+  // $state.reload();
+}
+
+// _________________________________ABOUT CTRL_________________________________
+// AboutCtrl.$inject = ['$state', '$stateParams'];
+function AboutCtrl() {
+  const vm = this;
+
+  vm.skillBar = function () {
+    var bars = document.getElementsByClassName('progress-bar');
+    for (var i = 0; i < bars.length; i++) {
+      bars[i].children[0].style.width = bars[i].dataset.percent;
+      // console.log(bars[i].dataset);
+      bars[i].children[1].innerHTML = bars[i].dataset.label;
+    }
+    const test = document.getElementById('test');
+    test.addEventListener('webkitTransitionEnd', () => {
+      for (var i = 0; i < bars.length; i++) {
+        bars[i].children[0].style.width = '';
+        // bars[i].children[1].innerHTML = '';
+      }
+    });
+  };
+
+
+
+
+  // setInterval(function () {
+  //   $(document).on('ready', fire());
+  // }, 3000);
 }

@@ -5,6 +5,7 @@
     <base href="/">
     <title></title>
     <link rel="stylesheet" href="dist/css/style.css">
+    <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
     <script src="bower_components/angular/angular.js"></script>
     <script src="bower_components/angular-ui-router/release/angular-ui-router.min.js"></script>
     <!-- <link rel="stylesheet" href="css/style.css"> -->
@@ -19,7 +20,7 @@
         <div class="circleContainer">
         <!-- <div class="circleContainer" data-ng-init="main.onloadFun()"> -->
         <a id="wow"  ui-sref="home">
-          <div class="circle" ng-mouseover="main.hoverIn($event)" ng-mouseleave="main.hoverOut($event)"  ng-class="{'active' : main.menuOpen}" ng-click="main.onClick()" id="black"></div>
+          <div class="circle" ng-mouseover="main.hoverIn($event)" ng-mouseleave="main.hoverOut($event)"  ng-class="{'active' : main.menuOpen}" id="black" ng-click="main.onClick()"></div>
         </a>
 
         <a ui-sref="about">
