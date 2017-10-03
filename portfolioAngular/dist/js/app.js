@@ -160,11 +160,10 @@ function MainCtrl($rootScope) {
 }
 
 // _________________________________ABOUT CTRL_________________________________
-// AboutCtrl.$inject = ['$state', '$stateParams'];
 function AboutCtrl() {
   var vm = this;
 
-  vm.skillBar = function () {
+  function onloadFun() {
     var bars = document.getElementsByClassName('progress-bar');
     for (var i = 0; i < bars.length; i++) {
       bars[i].children[0].style.width = bars[i].dataset.percent;
@@ -178,9 +177,11 @@ function AboutCtrl() {
         // bars[i].children[1].innerHTML = '';
       }
     });
-  };
+  }
 
-  // setInterval(function () {
-  //   $(document).on('ready', fire());
-  // }, 3000);
+  vm.onloadFun = onloadFun;
+
+  setInterval(function () {
+    console.log(onloadFun());
+  }, 3000);
 }

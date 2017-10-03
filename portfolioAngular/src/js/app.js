@@ -166,11 +166,11 @@ function MainCtrl($rootScope) {
 }
 
 // _________________________________ABOUT CTRL_________________________________
-// AboutCtrl.$inject = ['$state', '$stateParams'];
 function AboutCtrl() {
   const vm = this;
 
-  vm.skillBar = function () {
+
+  function onloadFun () {
     var bars = document.getElementsByClassName('progress-bar');
     for (var i = 0; i < bars.length; i++) {
       bars[i].children[0].style.width = bars[i].dataset.percent;
@@ -181,15 +181,14 @@ function AboutCtrl() {
     test.addEventListener('webkitTransitionEnd', () => {
       for (var i = 0; i < bars.length; i++) {
         bars[i].children[0].style.width = '';
-        // bars[i].children[1].innerHTML = '';
+      // bars[i].children[1].innerHTML = '';
       }
     });
-  };
+  }
 
+  vm.onloadFun = onloadFun;
 
-
-
-  // setInterval(function () {
-  //   $(document).on('ready', fire());
-  // }, 3000);
+  setInterval(() => {
+    console.log(onloadFun());
+  }, 3000);
 }
