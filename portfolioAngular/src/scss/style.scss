@@ -27,6 +27,13 @@
   transform: translate(-50%, -50%);
 }
 
+.center-styles{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
 
 .stocazzo-styles{
   background-repeat: no-repeat;
@@ -137,3 +144,4 @@ div#container{
 }
 
 @import "about";
+@import "portfolio";

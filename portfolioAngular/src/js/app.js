@@ -2,15 +2,17 @@ angular
 .module('coddio', ['ui.router'])
 .controller('MainCtrl', MainCtrl)
 .controller('AboutCtrl', AboutCtrl)
+.controller('PortfolioCtrl', PortfolioCtrl)
 // ___________________________________ROUTER___________________________________
 .config(function($stateProvider, $urlRouterProvider, $locationProvider){
   $locationProvider.html5Mode(true);
   $locationProvider.hashPrefix('');
 
   $stateProvider
-  .state('home', {
-    url: '/home',
-    templateUrl: '/src/views/home.html'
+  .state('portfolio', {
+    url: '/portfolio',
+    templateUrl: '/src/views/portfolio.html',
+    controller: 'PortfolioCtrl as portfolio'
   })
   .state('about', {
     url: '/about',
@@ -98,7 +100,7 @@ function MainCtrl($rootScope) {
 // PUT THE ATTRIBUTE BACK
   function setAttr() {
     const set = document.getElementById('wow');
-    set.setAttribute('href', '/home');
+    set.setAttribute('href', '/portfolio');
     // console.log('set', set);
   }
 
@@ -191,4 +193,34 @@ function AboutCtrl() {
   setInterval(() => {
     console.log(onloadFun());
   }, 3000);
+}
+// ____________________________ PORTFOLIO CTRL_________________________________
+function PortfolioCtrl() {
+  const vm = this;
+
+  vm.hoverIn = function(event) {
+    var el = getElement(event).parent();
+    // console.log(el);
+    el.addClass('flipped');
+    const cards = document.getElementById('cards-projects');
+    if (cards.classList.contains('flipped')) {
+      cards.classList.remove('flipped');
+    }
+    console.log('hoverIn', el);
+  };
+
+  vm.hoverOut = function(event) {
+    var el = getElement(event).parent().parent().parent();
+    el.removeClass('flipped');
+    console.log('hoverOut', el);
+    const cards = document.getElementById('cards-projects');
+    if (cards.classList.contains('flipped')) {
+      cards.classList.remove('flipped');
+    }
+  };
+
+  function getElement(event) {
+    return angular.element(event.srcElement || event.target);
+  }
+
 }
