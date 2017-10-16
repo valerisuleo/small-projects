@@ -2,7 +2,7 @@ angular
 .module('coddio', ['ui.router'])
 .controller('MainCtrl', MainCtrl)
 .controller('AboutCtrl', AboutCtrl)
-.controller('PortfolioCtrl', PortfolioCtrl)
+.controller('ContactCtrl', ContactCtrl)
 // ___________________________________ROUTER___________________________________
 .config(function($stateProvider, $urlRouterProvider, $locationProvider){
   $locationProvider.html5Mode(true);
@@ -11,8 +11,7 @@ angular
   $stateProvider
   .state('portfolio', {
     url: '/portfolio',
-    templateUrl: '/src/views/portfolio.html',
-    controller: 'PortfolioCtrl as portfolio'
+    templateUrl: '/src/views/portfolio.html'
   })
   .state('about', {
     url: '/about',
@@ -21,7 +20,8 @@ angular
   })
   .state('contact', {
     url: '/contact',
-    templateUrl: '/src/views/contact.html'
+    templateUrl: '/src/views/contact.html',
+    controller: 'ContactCtrl as contact'
   });
   $urlRouterProvider.otherwise('/');
 });
@@ -194,18 +194,14 @@ function AboutCtrl() {
     console.log(onloadFun());
   }, 3000);
 }
-// ____________________________ PORTFOLIO CTRL_________________________________
-function PortfolioCtrl() {
+// ____________________________ CONTACT CTRL_________________________________
+function ContactCtrl() {
   const vm = this;
 
   vm.hoverIn = function(event) {
     var el = getElement(event).parent();
     // console.log(el);
     el.addClass('flipped');
-    const cards = document.getElementById('cards-projects');
-    if (cards.classList.contains('flipped')) {
-      cards.classList.remove('flipped');
-    }
     console.log('hoverIn', el);
   };
 
@@ -213,10 +209,6 @@ function PortfolioCtrl() {
     var el = getElement(event).parent().parent().parent();
     el.removeClass('flipped');
     console.log('hoverOut', el);
-    const cards = document.getElementById('cards-projects');
-    if (cards.classList.contains('flipped')) {
-      cards.classList.remove('flipped');
-    }
   };
 
   function getElement(event) {

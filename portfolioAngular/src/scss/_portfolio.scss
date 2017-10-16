@@ -1,155 +1,119 @@
-// div#project-container{
-//   height: 2850px;
-//   width: 960px;
-//   margin: auto;
-//   // background-color: purple;
-//   // overflow: auto;
-//   #project-header{
-//     height: 100vh;
-//     margin-bottom: 3%;
-//     div{
-//       &:nth-child(1){
-//         height: 30%;
-//         position: relative;
-//         border-bottom: 30px solid silver;
-//       //   .loading {
-//       //     border-bottom: none;
-//       //     font-size: 72px;
-//       //     @extend .center-styles;
-//       //     > span {
-//       //       @include tf;
-//       //       @for $i from 0 through 10 {
-//       //         &:nth-child(#{$i}) {
-//       //           @include d;
-//       //           animation-delay: $i * 0.0925s;
-//       //         }
-//       //       }
-//       //     }
-//       //   }
-//       //   @keyframes drop {
-//       //     0% {
-//       //       transform: translate3d(0px, -125px, 50px);
-//       //     }
-//       //     75% {
-//       //       opacity: 0;
-//       //     }
-//       //     100% {
-//       //       opacity: 0;
-//       //       transform: rotate(195deg);
-//       //     }
-//       //   }
-//       // }
-//       &:nth-child(2){
-//         height: 70%;
-//         // background-color: green;
-//         background-image: url('/src/images/dios.jpg');
-//         background-repeat: no-repeat;
-//         background-position: bottom;
-//       }
-//     }
-//   }
-//   #cards-projects{
-//       height: 100%;
-//       .container {
-//       height: 16.7%;
-//       position: relative;
-//       perspective: 1800px;
-//       margin-bottom: 3%;
-//       .card{
-//         width: 100%;
-//         height: 100%;
-//         position: absolute;
-//         transition: transform 1.5s;
-//         transform-style: preserve-3d;
-//       }
-//       div.card div.front, div.back {
-//         display: block;
-//         height: 100%;
-//         width: 100%;
-//         color: red;
-//         position: absolute;
-//         backface-visibility: hidden;
-//       }
-//       div.front {
-//         background: pink;
-//         &#itunes{
-//           background-image: url('/src/images/itunes.png');
-//           background-repeat: no-repeat;
-//           background-size: cover;
-//         }
-//         &#gof{
-//           background-image: url('/src/images/dog.png');
-//           background-repeat: no-repeat;
-//           background-size: cover;
-//           background-position: center;
-//         }
-//         &#dog{
-//           background-image: url('/src/images/deck.png');
-//           background-repeat: no-repeat;
-//           background-size: contain;
-//           background-position: center;
-//           background-color: black;
-//         }
-//         &#speak{
-//           background-image: url('/src/images/speak.jpg');
-//           background-repeat: no-repeat;
-//           background-size: cover;
-//           background-position: center;
-//         }
-//       }
-//       div.back {
-//         background-color: white;
-//         transform: rotateY( 180deg );
-//         box-shadow: 0 15px 15px -8px #444;
-//         border: 1px solid #999999;
-//         .back-container{
-//           height: 100%;
-//           width: 100%;
-//           font-size: 14px;
-//           div{
-//             &:first-child{
-//               height: 20%;
-//               font-size: 36px;
-//               color: #999999;
-//               padding: 4%;
-//               // background-color: red;
-//             }&:nth-child(2){
-//               height: 60%;
-//               // background-color: green;
-//               position: relative;
-//             }&:last-child{
-//               height: 20%;
-//               // background-color: blue;
-//               background-color: rgb(0, 176, 207);
-//               background-repeat: no-repeat;
-//               background-position: center;
-//               position: relative;
-//             }
-//           }
-//           ul{
-//             @extend .center-styles;
-//             // background-color: yellow;
-//             width: 80%;
-//             li{
-//               line-height: 25px;
-//               font-size: 16px;
-//               margin-bottom: 2%;
-//               color: #333333;
-//               em{
-//                 color: #333333;
-//               }
-//             }
-//           }
-//           img{
-//             @extend .center-styles;
-//             cursor: pointer;
-//           }
-//         }
-//
-//       }
-//       .card.flipped{
-//         transform: rotateY( 180deg );
-//       }
-//     }
-//   }
-// }
+#porfolioContainer{
+  height: auto;
+  margin: auto;
+  background-color: #232a2f;
+  padding: 3%;
+  .projectContainer{
+    // height: 28%;
+    height: 95vh;
+    padding: 4%;
+    background-color: rgba(53, 63, 70, 0.2);
+    // background-color: pink;
+    .project-left{
+      width: 35%;
+      height: 100%;
+      float: left;
+      padding-right: 10%;
+      div{
+        &:nth-of-type(1){
+          width: 100%;
+          height: 50%;
+          // background-color: blue;
+          p{
+            color: white;
+            &:nth-child(1){
+              font-size: 3.025em;
+              // border-bottom: 1px solid white;
+              margin-bottom: 5%;
+
+            }
+            &:last-child{
+              font-family: 'Lora', serif;
+              font-size: 14px;
+              line-height: 2em;
+              margin-top: 10%;
+              color: silver;
+            }
+          }
+        }
+        &:nth-of-type(2){
+          // background-color: red;
+          height: 25%;
+        }
+        &:nth-of-type(3){
+          a{
+            text-decoration: none;
+          }
+          .myButt{
+            outline:none;
+            border:none;
+            padding:20px;
+            display:block;
+            margin:50px auto;
+            cursor:pointer;
+            font-size:14px;
+            background-color:transparent;
+            position:relative;
+            border: 1px solid #FFF;
+            width: 100%;
+            @include transition(all 0.5s ease);
+          }
+          .one{
+            border-color: #FFF;
+            overflow:hidden;
+            color: #FFF;
+            text-transform: uppercase;
+            text-align: center;
+            letter-spacing: 1px;
+
+            .insider{
+              background-color: #FFF;
+              width:100%;
+              height:20px;
+              position:absolute;
+              left:-198px;
+              @include transform(rotateZ(45deg));
+            }
+
+            &:hover{
+              background-color: $quadro;
+              border-color: #FFF;
+              color: #FFF;
+              .insider {
+                @include transition(all 0.3s ease);
+                left:198px;
+              }
+            }
+          }
+        }
+      }
+    }
+    .project-right{
+      width: 65%;
+      height: 100%;
+      background-color: black;
+      background-image: url('/src/images/deck.jpg');
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: contain;
+      float: right;
+      border-radius: 1%;
+      &#dog{
+        background-image: url('/src/images/dog.jpg');
+        background-size: cover;
+      }
+      &#speak{
+        background-image: url('/src/images/speak.jpg');
+        background-size: cover;
+      }
+      &#dark{
+        background-image: url('/src/images/dark.png');
+        background-size: cover;
+      }
+      &#itunes{
+        background-image: url('/src/images/itunes.jpg');
+        background-size: cover;
+      }
+    }
+  }
+}

@@ -6,6 +6,7 @@
     <title></title>
     <link rel="stylesheet" href="dist/css/style.css">
     <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Lora" rel="stylesheet">
     <script src="bower_components/angular/angular.js"></script>
     <script src="bower_components/angular-ui-router/release/angular-ui-router.min.js"></script>
     <!-- <link rel="stylesheet" href="css/style.css"> -->
@@ -13,6 +14,22 @@
     <!-- <script src="js/app.js" charset="utf-8"></script> -->
   </head>
   <body ng-controller="MainCtrl as main" ng-class="main.pageName">
+
+    <!-- <div class="navbar" ng-show="main.pageName !== about || portfolio || contact">
+      <div>
+        <p>Valerio Risuleo</p>
+      </div>
+      <div>
+        <ul>
+          <a ui-sref="contact"><li></li></a>
+          <a ui-sref="about"><li></li></a>
+          <a ui-sref="portfolio"><li></li></a>
+        </ul>
+      </div>
+    </div> -->
+
+    <div class="hamburger-slim"></div>
+
 
     <main ui-view>
       <div id="container">

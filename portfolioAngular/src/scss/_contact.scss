@@ -1,0 +1,155 @@
+div#contact-container{
+  width: 960px;
+  height: calc(100vh - 80px);
+  // background-color: grey;
+  margin: auto;
+  .container{
+    width: 760px;
+    height: 360px;
+    position: relative;
+    perspective: 1800px;
+    // background-color: pink;
+    margin: auto;
+    top: 20%;
+    .card{
+      width: 100%;
+      height: 360px;
+      position: absolute;
+      transition: transform 1.5s;
+      transform-style: preserve-3d;
+    }
+    div.card div.front, div.back {
+      display: block;
+      height: 360px;
+      width: 100%;
+      color: red;
+      position: absolute;
+      backface-visibility: hidden;
+    }
+    div.front {
+      // background: pink;
+      height: 360px;
+      width: 100%;
+      position: relative;
+      // background-color: grey;
+      background-color: #E6E6E6;
+      div{
+        &:first-child{
+          width: 80px;
+          height: 80px;
+          background-color: #FFF;
+          border-radius: 100px;
+          @extend .center-styles;
+        }
+      }
+    }
+    div.back {
+      // background: pink;
+      transform: rotateY( 180deg );
+      box-shadow: 0 15px 15px -8px #444;
+      #left{
+        width: 60%;
+        height: 100%;
+        float: left;
+        // background-color: green;
+        section{
+          height: 33.33%;
+          // border: 1px solid black;
+          &:nth-child(2){
+            div.contact-cirle-container{
+              width: 25%;
+              height: 100%;
+              float: left;
+              // border: 1px solid black;
+              position: relative;
+              &:first-child{
+                margin-left: 12%;
+              }
+            }
+            .mini-circle{
+              height: 50px;
+              width: 50px;
+              border-radius: 100px;
+              @extend .center-styles;
+              &#black{
+                background-color: black;
+              }
+              &#grey{
+                background-color: grey;
+              }
+              &#silver{
+                background-color: silver;
+              }
+            }
+          }
+        }
+      }
+      #right{
+        width: 40%;
+        height: 100%;
+        float: right;
+        // background-color: blue;
+        section{
+          height: 33.33%;
+          position: relative;
+          // border: 1px solid black;
+          &:nth-child(1){
+            // background-color: red;
+            ul{
+              top: 50%;
+              li{
+                font-size: 14px;
+                &:nth-of-type(1){
+                  font-weight: bold;
+                }
+                &:nth-of-type(2){
+                  font-style: italic;
+                }
+              }
+            }
+          }
+          &:nth-child(2){
+            ul{
+              top: 30%;
+              li{
+                font-size: 14px;
+                margin-bottom: 1%;
+                a{
+                  font-size: 14px;
+                  text-decoration: none;
+                  &:hover{
+                    color: #00A0C6;
+                  }
+                }
+              }
+            }
+          }
+          &:nth-child(3){
+            ul{
+              top: 20%;
+              li{
+                margin-bottom: 1%;
+                a{
+                  font-size: 14px;
+                  text-decoration: none;
+                  &:hover{
+                    color: #00A0C6;
+                  }
+                }
+              }
+            }
+          }
+        }
+        ul{
+          position: absolute;
+          // left: 50%;
+          // transform: translate(-50%, -50%);
+          list-style: none;
+        }
+      }
+    }
+    .card.flipped{
+      transform: rotateY( 180deg );
+    }
+  }
+}

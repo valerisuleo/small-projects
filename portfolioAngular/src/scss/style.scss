@@ -6,7 +6,7 @@
   color: rgba(0,0,0,.7);
 }
 
-
+// ________________________________EXTEND STYLE________________________________
 
 .left-styles{
   height: 100%;
@@ -34,7 +34,6 @@
   transform: translate(-50%, -50%);
 }
 
-
 .stocazzo-styles{
   background-repeat: no-repeat;
   background-size: contain;
@@ -43,6 +42,84 @@
   box-shadow: 0 10px 6px -6px #777;
 }
 
+$quadro:#00A0C6;
+@mixin transition($in) {
+  transition:$in;
+  -webkit-transition:$in;
+  -moz-transition:$in;
+  -o-transition:$in;
+  -ms-transition:$in;
+}
+@mixin transform($in) {
+  transform:$in;
+  -webkit-transform:$in;
+  -moz-transform:$in;
+  -o-transform:$in;
+  -ms-transform:$in;
+}
+@mixin animation($in) {
+  animation:$in;
+  -webkit-animation:$in;
+  -moz-animation:$in;
+  -o-animation:$in;
+  -ms-animation:$in;
+}
+// ___________________________________NAVBAR___________________________________
+
+div.navbar{
+  height: 80px;
+  width: 960px;
+  margin: auto;
+  // background-color: grey;
+  // margin-bottom: 2%;
+  margin-top: 2%;
+  div{
+    &:nth-child(1){
+      width: 20%;
+      height: 100%;
+      // background-color: pink;
+      float: left;
+      p{
+        line-height: 80px;
+        text-align: center;
+        font-size: 16px;
+        letter-spacing: 1px;
+      }
+    }
+    &:nth-child(2){
+      width: 80%;
+      height: 80px;
+      // background-color: brown;
+      float: right;
+      ul{
+        list-style: none;
+        a{
+          cursor: pointer;
+          display: inline-block;
+          float: right;
+          height: 30px;
+          width: 30px;
+          border-radius: 100px;
+          // background-color: grey;
+          margin-right: 3%;
+          margin-top: 3%;
+          &:nth-child(3){
+            background-color: black;
+          }
+          &:nth-child(2){
+            background-color: grey;
+          }
+          &:nth-child(1){
+            background-color: silver;
+            margin-right: 5%;
+          }
+        }
+      }
+    }
+  }
+}
+
+// ____________________________________________________________________________
 div#container{
   height: 300px;
   width: 100%;
@@ -145,3 +222,4 @@ div#container{
 
 @import "about";
 @import "portfolio";
+@import "contact";
