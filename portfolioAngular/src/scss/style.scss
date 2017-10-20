@@ -6,6 +6,10 @@
   color: rgba(0,0,0,.7);
 }
 
+body{
+  // background-color: pink;
+}
+
 // ________________________________EXTEND STYLE________________________________
 
 .left-styles{
@@ -64,58 +68,50 @@ $quadro:#00A0C6;
   -o-animation:$in;
   -ms-animation:$in;
 }
-// ___________________________________NAVBAR___________________________________
+// ___________________________________NAVBAR____________________________________
 
-div.navbar{
-  height: 80px;
-  width: 960px;
-  margin: auto;
-  // background-color: grey;
-  // margin-bottom: 2%;
-  margin-top: 2%;
-  div{
-    &:nth-child(1){
-      width: 20%;
-      height: 100%;
-      // background-color: pink;
-      float: left;
-      p{
-        line-height: 80px;
-        text-align: center;
-        font-size: 16px;
-        letter-spacing: 1px;
-      }
+.burger-menu {
+  background: transparent;
+  margin: 60px auto 40px;
+  position: relative;
+  height: 30px;
+  width: 50px;
+  cursor: pointer;
+
+  &:before,
+  &:after {
+    background: grey;
+    backface-visibility: hidden;
+    content: "";
+    height: 2px;
+    left: 0;
+    transition: 0.75s;
+    width: 50px;
+  }
+  &:before {
+    box-shadow: grey 0 14px 0 0;
+    position: absolute;
+    top: 0;
+  }
+  &:after {
+    position: absolute;
+    top: calc(100% - 2px);
+  }
+  &:hover {
+    &:before {
+      box-shadow: transparent 0 0 0 0;
+      top: 50%;
+      transform: rotate(225deg);
     }
-    &:nth-child(2){
-      width: 80%;
-      height: 80px;
-      // background-color: brown;
-      float: right;
-      ul{
-        list-style: none;
-        a{
-          cursor: pointer;
-          display: inline-block;
-          float: right;
-          height: 30px;
-          width: 30px;
-          border-radius: 100px;
-          // background-color: grey;
-          margin-right: 3%;
-          margin-top: 3%;
-          &:nth-child(3){
-            background-color: black;
-          }
-          &:nth-child(2){
-            background-color: grey;
-          }
-          &:nth-child(1){
-            background-color: silver;
-            margin-right: 5%;
-          }
-        }
-      }
+    &:after {
+      top: 50%;
+      transform: rotate(315deg);
     }
+  }
+}
+@media only screen and (max-width: 640px) {
+  .burger-menu{
+    display: none;
   }
 }
 
@@ -126,7 +122,15 @@ div#container{
   position: fixed;
   top: calc(50% - 100px);
   z-index: 1;
-  // background-color: red;
+  animation: fadein 2s;
+  @keyframes fadein {
+    from {
+      opacity:0;
+    }
+    to {
+      opacity:1;
+    }
+  }
     .circleContainer{
       height: 180px;
       // background-color: pink;
@@ -137,6 +141,12 @@ div#container{
         position: fixed;
         top: calc(50% - 40px);
         left: calc(50% - 40px);
+        @media only screen and (max-width: 640px) {
+          width: 40px;
+          height: 40px;
+          top: calc(50% - 20px);
+          left: calc(50% - 20px);
+        }
         -webkit-transition: all .5s linear;
         cursor: pointer;
         &#black{
@@ -152,16 +162,22 @@ div#container{
           z-index: 2;
         }
         &.active{
-            &#black{
-              background-color: grey;
+          &#black{
+            background-color: grey;
+          }
+          &#grey{
+            left: calc(25% - 40px);
+            background-color: black;
+            @media only screen and (max-width: 640px) {
+              left: calc(25% - 20px);
             }
-            &#grey{
-              left: calc(25% - 40px);
-              background-color: black;
+          }
+          &#silver{
+            left: calc(75% - 40px);
+            @media only screen and (max-width: 640px) {
+              left: calc(75% - 20px);
             }
-            &#silver{
-              left: calc(75% - 40px);
-            }
+          }
         }
     }
   }

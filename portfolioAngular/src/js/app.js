@@ -22,24 +22,26 @@ angular
     url: '/contact',
     templateUrl: '/src/views/contact.html',
     controller: 'ContactCtrl as contact'
+  })
+  .state('index', {
+    url: '/'
   });
   $urlRouterProvider.otherwise('/');
 });
 
-// __________________________________MAIN CTRL__________________________________
+// __________________________________MAIN CTRL________________________________
 MainCtrl.$inject = ['$rootScope'];
 function MainCtrl($rootScope) {
   const vm = this;
 
-  // vm.onloadFun = function () {
-  //   const beat = document.getElementById('beat');
-  //   startPulse();
-  //   beat.play();
-  // };
+// Here we reload the index page everytime we land on it
+  vm.reload = function () {
+    location.reload(true);
+  };
 
+// When we click on the black circle...
   vm.onClick = function() {
 
-    stopPulse();
     vm.menuOpen = true;
     // vm.menuOpen = !vm.menuOpen;
 
@@ -53,6 +55,24 @@ function MainCtrl($rootScope) {
       setAttr();
     });
   };
+
+
+// Here we animate the black circle only when the navbar is closed.
+  function breakbeat() {
+    const black = document.getElementById('black');
+    const beat = document.getElementById('beat');
+    // console.log('breakbeat', black);
+    if (!black.classList.contains('active')) {
+      black.classList.add('heart');
+      beat.play();
+      black.addEventListener('click', () => {
+        black.classList.remove('heart');
+        beat.pause();
+      });
+    }
+  }
+
+
 
 // _____________________________JS ONCE FUNCTION_______________________________
 
@@ -75,25 +95,6 @@ function MainCtrl($rootScope) {
     remove.removeAttribute('href');
     // console.log('remove', remove);
   });
-
-// STOP HEARTBEAT
-  var stopPulse = once(function() {
-    const beat = document.getElementById('beat');
-    beat.pause();
-    const black = document.getElementById('black');
-    black.classList.remove('heart');
-    // console.log('remove', remove);
-  });
-
-// START HEARTBEAT
-  var startPulse = once(function() {
-    const black = document.getElementById('black');
-    black.classList.add('heart');
-    const beat = document.getElementById('beat');
-    beat.play();
-    // console.log('remove', remove);
-  });
-
 
 //  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
@@ -118,8 +119,8 @@ function MainCtrl($rootScope) {
       removeSpanClass();
       // console.log('hoverIn', el);
     }
-    startPulse();
     cursor.play();
+    breakbeat();
   };
 
   vm.hoverOut = function(event) {
@@ -200,9 +201,9 @@ function ContactCtrl() {
 
   vm.hoverIn = function(event) {
     var el = getElement(event).parent();
-    // console.log(el);
+    console.log(el);
     el.addClass('flipped');
-    console.log('hoverIn', el);
+    // console.log('hoverIn', el);
   };
 
   vm.hoverOut = function(event) {

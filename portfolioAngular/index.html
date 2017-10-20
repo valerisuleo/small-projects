@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html ng-app="coddio">
   <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta charset="utf-8">
     <base href="/">
     <title></title>
@@ -15,21 +16,9 @@
   </head>
   <body ng-controller="MainCtrl as main" ng-class="main.pageName">
 
-    <!-- <div class="navbar" ng-show="main.pageName !== about || portfolio || contact">
-      <div>
-        <p>Valerio Risuleo</p>
-      </div>
-      <div>
-        <ul>
-          <a ui-sref="contact"><li></li></a>
-          <a ui-sref="about"><li></li></a>
-          <a ui-sref="portfolio"><li></li></a>
-        </ul>
-      </div>
-    </div> -->
-
-    <div class="hamburger-slim"></div>
-
+    <a href="index" ng-click="main.reload()">
+      <div class="burger-menu" ng-show="main.pageName !== 'index'"></div>
+    </a>
 
     <main ui-view>
       <div id="container">
@@ -50,8 +39,8 @@
 
         <div class="spanContainer">
           <span id="span2" class="hidden">Portfolio</span>
-          <span id="span1" class="hidden">About Me</span>
-          <span id="span3" class="hidden">Contact Me</span>
+          <span id="span1" class="hidden">About</span>
+          <span id="span3" class="hidden">Contact</span>
         </div>
       </div>
 
@@ -61,6 +50,12 @@
       <audio src="src/sounds/beat.mp3" id="beat"></audio>
 
     </main>
+
+    <a href="index" ng-click="main.reload()">
+      <div class="burger-menu" ng-hide="main.pageName === 'contact' || main.pageName === 'index'"></div>
+    </a>
+
+
 
   </body>
 </html>
