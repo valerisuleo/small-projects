@@ -6,9 +6,6 @@
   color: rgba(0,0,0,.7);
 }
 
-body{
-  // background-color: pink;
-}
 
 // ________________________________EXTEND STYLE________________________________
 
@@ -47,6 +44,8 @@ body{
 }
 
 $quadro:#00A0C6;
+$lightGrey:#e6e6e6;
+
 @mixin transition($in) {
   transition:$in;
   -webkit-transition:$in;
@@ -68,11 +67,12 @@ $quadro:#00A0C6;
   -o-animation:$in;
   -ms-animation:$in;
 }
-// ___________________________________NAVBAR____________________________________
+// _________________________________BURGER-MENU_________________________________
 
 .burger-menu {
   background: transparent;
-  margin: 60px auto 40px;
+  margin: auto;
+  margin-top: 30px;
   position: relative;
   height: 30px;
   width: 50px;
@@ -108,14 +108,74 @@ $quadro:#00A0C6;
       transform: rotate(315deg);
     }
   }
-}
-@media only screen and (max-width: 640px) {
-  .burger-menu{
+  @media only screen and (max-width: 640px) {
     display: none;
   }
 }
 
-// ____________________________________________________________________________
+
+// _________________________________MOBILE NAV_________________________________
+header#mobileNav{
+  background: $lightGrey;
+  width: 100%;
+  height: 190px;
+  overflow: hidden; /* Float Clear */
+  transition: .4s; /* CSS3 Transition */
+  margin-top: -8.5em; /* Height in Chrome */
+  display: none;
+  position: fixed;
+  z-index: 2;
+  nav{
+    text-align: center;
+    background: $quadro;
+    ul{
+      li{
+        list-style: none;
+        border-bottom: 1px solid #000;
+        &:last-child{
+          border: none;
+        }
+        a{
+          text-decoration: none;
+          display: block;
+          padding: .75em 0;
+          transition: .1s;
+          color: white;
+          &:active{
+            background: $lightGrey;
+            transition: .1s;
+          }
+        }
+      }
+    }
+  }
+  #child{
+    width: 40px;
+    height: 40px;
+    background-color: silver;
+    background-image: url('/src/images/fingerprint.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    border-radius: 40px;
+    position: absolute;
+    top: 86%;
+    left: 90%;
+    transform: translate(-50%, -50%);
+    // box-shadow: 0 15px 15px -8px #444;
+
+  }
+  @media only screen and (max-width: 640px) {
+    display: block;
+  }
+}
+/* Class we toggle */
+.show {
+  margin-top: 0!important; /* to overide inline style */
+}
+
+
+// _______________________________CIRCLE NAVBAR________________________________
 div#container{
   height: 300px;
   width: 100%;
@@ -235,6 +295,32 @@ div#container{
     transform: scale(1);
   }
 }
+
+// ___________________________________FOOTER___________________________________
+.footContainer{
+  padding-right: 5%;
+  padding-left: 5%;
+  footer{
+    height: 100px;
+    border-top: 1px solid silver;
+    margin-top: 5%;
+    position: relative;
+    p{
+      @extend .center-styles;
+      font-size: 14px;
+      span{
+        color: $quadro;
+      }
+    }
+    @media only screen and (max-width: 640px) {
+      height: 60px;
+      p{
+        font-size: 12px;
+      }
+    }
+  }
+}
+// ____________________________________________________________________________
 
 @import "about";
 @import "portfolio";

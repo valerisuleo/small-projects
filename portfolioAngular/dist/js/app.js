@@ -29,9 +29,9 @@ function MainCtrl($rootScope) {
   var vm = this;
 
   // Here we reload the index page everytime we land on it
-  vm.reload = function () {
-    location.reload(true);
-  };
+  // vm.reload = function () {
+  //   location.reload(true);
+  // };
 
   // When we click on the black circle...
   vm.onClick = function () {
@@ -48,6 +48,11 @@ function MainCtrl($rootScope) {
     black.addEventListener('webkitTransitionEnd', function () {
       setAttr();
     });
+  };
+
+  // Toggle mobile navbar
+  vm.mobileNavBar = function () {
+    vm.mobileOpen = !vm.mobileOpen;
   };
 
   // Here we animate the black circle only when the navbar is closed.
@@ -152,45 +157,77 @@ function MainCtrl($rootScope) {
     vm.pageName = toState.name;
     console.log(vm.pageName);
 
-    vm.menuOpen = false;
+    // vm.menuOpen = false;
+    vm.mobileOpen = false;
   }
   $rootScope.$on('$stateChangeStart', stateChange);
   // $state.reload();
 }
 
 // _________________________________ABOUT CTRL_________________________________
-function AboutCtrl() {
-  var vm = this;
+AboutCtrl.$inject = ['$window'];
+function AboutCtrl($window) {
+  // const vm = this;
 
-  function onloadFun() {
-    var bars = document.getElementsByClassName('progress-bar');
+
+  var bars = document.getElementsByClassName('progress-bar');
+  function barCharts() {
     for (var i = 0; i < bars.length; i++) {
       bars[i].children[0].style.width = bars[i].dataset.percent;
       // console.log(bars[i].dataset);
       bars[i].children[1].innerHTML = bars[i].dataset.label;
     }
-    var test = document.getElementById('test');
-    test.addEventListener('webkitTransitionEnd', function () {
-      for (var i = 0; i < bars.length; i++) {
-        bars[i].children[0].style.width = '';
-        // bars[i].children[1].innerHTML = '';
-      }
-    });
   }
 
-  vm.onloadFun = onloadFun;
+  // function resetBarCharts() {
+  //   const test = document.getElementById('test');
+  //   test.addEventListener('webkitTransitionEnd', () => {
+  //     for (var i = 0; i < bars.length; i++) {
+  //       bars[i].children[0].style.width = '';
+  //     // bars[i].children[1].innerHTML = '';
+  //     }
+  //   });
+  // }
 
-  setInterval(function () {
-    console.log(onloadFun());
-  }, 3000);
+  $window.onscroll = function () {
+    var scrollPos = document.documentElement.scrollTop;
+    // console.log('scrollPos', scrollPos);
+    var mydivpos = document.getElementById('please').offsetTop;
+    // console.log('mydivpos', mydivpos);
+
+    if (scrollPos >= mydivpos) {
+      console.log('not fire');
+      barCharts();
+    }
+  };
+
+  // IPHONE 5
+  var w = angular.element($window);
+  w.bind('resize', function () {
+    console.log(window.innerWidth);
+
+    var width = window.innerWidth;
+    var pirla = document.getElementById('pirla');
+
+    if (width <= 320) {
+      pirla.style.top = '150px';
+    } else {
+      pirla.style.top = 'calc(48% - 110px)';
+    }
+  });
 }
+
 // ____________________________ CONTACT CTRL_________________________________
 function ContactCtrl() {
   var vm = this;
 
+  vm.mobileNavBar = function () {
+    vm.mobileOpen = !vm.mobileOpen;
+  };
+
   vm.hoverIn = function (event) {
     var el = getElement(event).parent();
-    console.log(el);
+    // console.log(el);
     el.addClass('flipped');
     // console.log('hoverIn', el);
   };
@@ -198,10 +235,15 @@ function ContactCtrl() {
   vm.hoverOut = function (event) {
     var el = getElement(event).parent().parent().parent();
     el.removeClass('flipped');
-    console.log('hoverOut', el);
+    // console.log('hoverOut', el);
   };
 
   function getElement(event) {
     return angular.element(event.srcElement || event.target);
   }
+
+  vm.contactClick = function () {
+    var classCard = document.getElementById('classCard');
+    classCard.classList.add('flipped');
+  };
 }

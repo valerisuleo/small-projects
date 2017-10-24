@@ -1,13 +1,27 @@
-<div id="contact-container">
+<!-- <div id="contact-container"> -->
+<div id="contact-container" (window:resize)="contact.onResize($event)">
 
   <div class="container" ng-mouseover="contact.hoverIn($event)" ng-mouseleave="contact.hoverOut($event)" >
-    <div class="card">
+    <div class="card" id="classCard">
 
       <div class="front">
-        <div></div>
+        <div ng-click="contact.contactClick()"></div>
       </div>
 
       <div class="back">
+
+        <header id="mobileNav" ng-class="{'show' : contact.mobileOpen}">
+          <nav>
+            <ul>
+              <li><a ui-sref="about">About</a></li>
+              <li><a ui-sref="portfolio">Portfolio</a></li>
+              <li><a ui-sref="contact">Contact</a></li>
+            </ul>
+          </nav>
+
+          <div id="child" ng-click="contact.mobileNavBar()"></div>
+
+        </header>
 
         <div id="left">
 

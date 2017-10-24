@@ -16,10 +16,26 @@
   </head>
   <body ng-controller="MainCtrl as main" ng-class="main.pageName">
 
-    <a href="index" ng-click="main.reload()">
+<!-- BURGER MENU -->
+    <a href="index" ng-click="main.reload()" id="burger">
       <div class="burger-menu" ng-show="main.pageName !== 'index'"></div>
     </a>
 
+<!-- MOBILE NAVBAR -->
+    <header id="mobileNav" ng-class="{'show' : main.mobileOpen}" ng-hide="main.pageName === 'index' || main.pageName === 'contact'">
+      <nav>
+        <ul>
+          <li><a ui-sref="about">About</a></li>
+          <li><a ui-sref="portfolio">Portfolio</a></li>
+          <li><a ui-sref="contact">Contact</a></li>
+        </ul>
+      </nav>
+
+      <div id="child" ng-click="main.mobileNavBar()"></div>
+
+    </header>
+
+<!-- NAVBAR -->
     <main ui-view>
       <div id="container">
         <div class="circleContainer">
@@ -52,9 +68,14 @@
     </main>
 
     <a href="index" ng-click="main.reload()">
-      <div class="burger-menu" ng-hide="main.pageName === 'contact' || main.pageName === 'index'"></div>
+      <div id="bottom" class="burger-menu" ng-hide="main.pageName === 'contact' || main.pageName === 'index'"></div>
     </a>
 
+    <div class="footContainer" ng-hide="main.pageName === 'contact' || main.pageName === 'index'">
+      <footer>
+      <p>Made With <span>&hearts;</span></p>
+    </footer>
+  </div>
 
 
   </body>
