@@ -3,8 +3,8 @@
 angular.module('coddio', ['ui.router']).controller('MainCtrl', MainCtrl).controller('AboutCtrl', AboutCtrl).controller('ContactCtrl', ContactCtrl)
 // ___________________________________ROUTER___________________________________
 .config(function ($stateProvider, $urlRouterProvider, $locationProvider) {
-  $locationProvider.html5Mode(true);
-  $locationProvider.hashPrefix('');
+  $locationProvider.html5Mode(false);
+  // $locationProvider.hashPrefix('');
 
   $stateProvider.state('portfolio', {
     url: '/portfolio',

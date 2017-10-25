@@ -1,0 +1,120 @@
+// _______________________________CIRCLE NAVBAR________________________________
+div#container{
+  height: 300px;
+  width: 100%;
+  position: fixed;
+  top: calc(50% - 100px);
+  z-index: 1;
+  animation: fadein 2s;
+  @keyframes fadein {
+    from {
+      opacity:0;
+    }
+    to {
+      opacity:1;
+    }
+  }
+    .circleContainer{
+      height: 180px;
+      // background-color: pink;
+      div.circle{
+        width: 80px;
+        height: 80px;
+        border-radius: 100px;
+        position: fixed;
+        top: calc(50% - 40px);
+        left: calc(50% - 40px);
+        @media only screen and (max-width: 640px) {
+          width: 40px;
+          height: 40px;
+          top: calc(50% - 20px);
+          left: calc(50% - 20px);
+        }
+        -webkit-transition: all .5s linear;
+        cursor: pointer;
+        &#black{
+          background-color: black;
+          z-index: 6;
+        }
+        &#grey{
+          background-color: grey;
+          z-index: 4;
+        }
+        &#silver{
+          background-color: silver;
+          z-index: 2;
+        }
+        &.active{
+          &#black{
+            background-color: grey;
+          }
+          &#grey{
+            left: calc(25% - 40px);
+            background-color: black;
+            @media only screen and (max-width: 640px) {
+              left: calc(25% - 20px);
+            }
+          }
+          &#silver{
+            left: calc(75% - 40px);
+            @media only screen and (max-width: 640px) {
+              left: calc(75% - 20px);
+            }
+          }
+        }
+    }
+  }
+  span{
+    width: 80px;
+    position: fixed;
+    left: calc(50% - 40px);
+    text-align: center;
+    &#span1{
+      left: calc(25% - 40px);
+    }
+    &#span2{
+      left: calc(50% - 40px);
+    }
+    &#span3{
+      left: calc(75% - 40px);
+    }
+  }
+}
+
+.spanContainer{
+  width: 100%;
+  height: 100px;
+  // background-color: red;
+}
+
+.hidden{
+  display: none;
+}
+
+
+.heart {
+  animation: HEARTBEAT 1s;
+  animation-iteration-count: 60;
+
+}
+
+@keyframes HEARTBEAT {
+  0% {
+    transform: scale(1);
+  }
+  5% {
+    transform: scale(1.3);
+  }
+  10% {
+    transform: scale(1.1);
+  }
+  15% {
+    transform: scale(1.5);
+  }
+  50% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}

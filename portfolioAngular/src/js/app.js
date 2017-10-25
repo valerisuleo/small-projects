@@ -5,8 +5,8 @@ angular
 .controller('ContactCtrl', ContactCtrl)
 // ___________________________________ROUTER___________________________________
 .config(function($stateProvider, $urlRouterProvider, $locationProvider){
-  $locationProvider.html5Mode(true);
-  $locationProvider.hashPrefix('');
+  $locationProvider.html5Mode(false);
+  // $locationProvider.hashPrefix('');
 
   $stateProvider
   .state('portfolio', {
