@@ -5,11 +5,11 @@
     <div class="card" id="classCard">
 
       <div class="front">
-        <div ng-click="contact.contactClick()"></div>
+        <div id="hiddenback" ng-click="contact.contactClick()"></div>
       </div>
 
       <div class="back">
-
+<!-- MOBILE NAV -->
         <header id="mobileNav" ng-class="{'show' : contact.mobileOpen}">
           <nav>
             <ul>
@@ -18,11 +18,9 @@
               <li><a ui-sref="contact">Contact</a></li>
             </ul>
           </nav>
-
           <div id="child" ng-click="contact.mobileNavBar()"></div>
-
         </header>
-
+<!-- END MOBILE NAV -->
         <div id="left">
 
           <section></section>

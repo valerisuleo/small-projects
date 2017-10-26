@@ -24,10 +24,59 @@ angular.module('coddio', ['ui.router']).controller('MainCtrl', MainCtrl).control
 });
 
 // __________________________________MAIN CTRL________________________________
-MainCtrl.$inject = ['$rootScope'];
-function MainCtrl($rootScope) {
+MainCtrl.$inject = ['$rootScope', '$window'];
+function MainCtrl($rootScope, $window) {
   var vm = this;
 
+  function getwidth() {
+    angular.element($window);
+    var width = window.innerWidth;
+    console.log(width);
+
+    if (width <= 640) {
+      vm.hoverIn = function (event) {
+
+        var el = getElement(event);
+        var menuClass = document.getElementById('black');
+        var span = document.getElementsByTagName('span');
+
+        for (var i = 0; i < span.length; i++) {
+          if (menuClass.classList.contains('active')) {
+            span[i].classList.remove('hidden');
+          }
+        }
+      };
+    } else if (width > 640) {
+      vm.hoverIn = function (event) {
+        var menuClass = document.getElementById('black');
+        var beat = document.getElementById('beat');
+        // console.log(beat);
+        var cursor = document.getElementById('cursor');
+        var el = getElement(event);
+        if (menuClass.classList.contains('active')) {
+          el.addClass('heart');
+          beat.play();
+          removeSpanClass();
+          // console.log('hoverIn', el);
+        }
+        cursor.play();
+        breakbeat();
+      };
+
+      vm.hoverOut = function (event) {
+        var beat = document.getElementById('beat');
+        var el = getElement(event);
+        el.removeClass('heart');
+        beat.pause();
+        addSpanClass();
+        // console.log('hoverOut', el);
+      };
+    }
+  }
+
+  function getElement(event) {
+    return angular.element(event.srcElement || event.target);
+  }
   // Here we reload the index page everytime we land on it
   // vm.reload = function () {
   //   location.reload(true);
@@ -101,37 +150,6 @@ function MainCtrl($rootScope) {
     // console.log('set', set);
   }
 
-  // _________________________________MOUSE OVER_________________________________
-
-  vm.hoverIn = function (event) {
-    var menuClass = document.getElementById('black');
-    var beat = document.getElementById('beat');
-    // console.log(beat);
-    var cursor = document.getElementById('cursor');
-    var el = getElement(event);
-    if (menuClass.classList.contains('active')) {
-      el.addClass('heart');
-      beat.play();
-      removeSpanClass();
-      // console.log('hoverIn', el);
-    }
-    cursor.play();
-    breakbeat();
-  };
-
-  vm.hoverOut = function (event) {
-    var beat = document.getElementById('beat');
-    var el = getElement(event);
-    el.removeClass('heart');
-    beat.pause();
-    addSpanClass();
-    // console.log('hoverOut', el);
-  };
-
-  function getElement(event) {
-    return angular.element(event.srcElement || event.target);
-  }
-
   // SHOW AND HIDE THE SPAN
   var span = document.getElementsByTagName('span');
   var circle = document.getElementsByClassName('circle');
@@ -157,6 +175,7 @@ function MainCtrl($rootScope) {
     vm.pageName = toState.name;
     console.log(vm.pageName);
 
+    getwidth();
     // vm.menuOpen = false;
     vm.mobileOpen = false;
   }
