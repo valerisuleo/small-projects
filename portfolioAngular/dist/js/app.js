@@ -103,6 +103,22 @@ function MainCtrl($rootScope, $window) {
   vm.mobileNavBar = function () {
     vm.mobileOpen = !vm.mobileOpen;
   };
+  // Close mobileNavBar if click outside of the nav.
+  function outside(event) {
+    var child = document.getElementById('child');
+    var header = document.getElementsByTagName('header')[0];
+
+    var childId = child.id;
+
+    var el = getElement(event);
+
+    var elId = el.attr('id');
+
+    if (childId !== elId && header.classList.contains('show')) {
+      vm.mobileOpen = false;
+    }
+  }
+  vm.outside = outside;
 
   // Here we animate the black circle only when the navbar is closed.
   function breakbeat() {

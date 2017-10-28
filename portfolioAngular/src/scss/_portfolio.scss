@@ -80,6 +80,9 @@
                 padding: 2%;
                 margin-top: 2%;
               }
+              @media only screen and (max-width: 320px) {
+              font-size: 12px;
+              }
             }
           }
         }
@@ -111,6 +114,9 @@
             @media only screen and (max-width: 640px) {
               margin-top: 5%;
               padding: 28px;
+            }
+            @media only screen and (max-width: 320px) {
+              padding: 22px;
             }
             @include transition(all 0.5s ease);
           }
