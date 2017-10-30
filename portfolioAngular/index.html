@@ -23,6 +23,7 @@
 
 <!-- MOBILE NAVBAR -->
     <header id="mobileNav" ng-class="{'show' : main.mobileOpen}" ng-hide="main.pageName === 'index' || main.pageName === 'contact'">
+    <!-- <header id="mobileNav" ng-class="{'show' : main.mobileOpen}" ng-hide="(main.pageName === 'index') || (main.pageName === 'contact')"> -->
       <nav>
         <ul>
           <li><a ui-sref="about">About</a></li>
@@ -67,7 +68,7 @@
 
     </main>
 
-    <a href="index" ng-click="main.reload()">
+    <a href="/" ng-click="main.reload()">
       <div id="bottom" class="burger-menu" ng-hide="main.pageName === 'contact' || main.pageName === 'index'"></div>
     </a>
 

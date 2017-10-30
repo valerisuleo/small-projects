@@ -224,32 +224,42 @@ function AboutCtrl($window) {
   //   });
   // }
 
-  $window.onscroll = function () {
-    var scrollPos = document.documentElement.scrollTop;
-    // console.log('scrollPos', scrollPos);
-    var mydivpos = document.getElementById('please').offsetTop;
-    // console.log('mydivpos', mydivpos);
 
-    if (scrollPos >= mydivpos) {
-      console.log('not fire');
-      barCharts();
-    }
-  };
+  angular.element($window);
+  var width = window.innerWidth;
 
-  // IPHONE 5
-  var w = angular.element($window);
-  w.bind('resize', function () {
-    console.log(window.innerWidth);
+  if (width > 640) {
+    $window.onscroll = function () {
+      var scrollPos = document.documentElement.scrollTop;
+      var mydivpos = document.getElementById('please').offsetTop;
+      if (scrollPos >= mydivpos) {
+        barCharts();
+      }
+    };
+  } else if (width <= 640) {
+    $window.onscroll = function () {
+      var scrollPos = document.documentElement.scrollTop;
+      var formazione = document.getElementById('formazione').offsetTop;
+      if (scrollPos >= formazione) {
+        barCharts();
+      }
+    };
+  }
 
-    var width = window.innerWidth;
-    var pirla = document.getElementById('pirla');
-
-    if (width <= 320) {
-      pirla.style.top = '150px';
-    } else {
-      pirla.style.top = 'calc(48% - 110px)';
-    }
-  });
+  // BIND EVENT LISTENER TO WINDOW RESIZE
+  // var w = angular.element($window);
+  // w.bind('resize', function () {
+  //   console.log(window.innerWidth);
+  //
+  //   var width = window.innerWidth;
+  //   const pirla = document.getElementById('pirla');
+  //
+  //   if (width <= 320) {
+  //     pirla.style.top = '150px';
+  //   } else {
+  //     pirla.style.top = 'calc(48% - 110px)';
+  //   }
+  // });
 }
 
 // ____________________________ CONTACT CTRL_________________________________
@@ -260,25 +270,37 @@ function ContactCtrl() {
     vm.mobileOpen = !vm.mobileOpen;
   };
 
-  vm.hoverIn = function (event) {
-    var el = getElement(event).parent();
-    // console.log(el);
-    el.addClass('flipped');
-    // console.log('hoverIn', el);
-  };
-
-  vm.hoverOut = function (event) {
-    var el = getElement(event).parent().parent().parent();
-    el.removeClass('flipped');
-    // console.log('hoverOut', el);
-  };
-
-  function getElement(event) {
-    return angular.element(event.srcElement || event.target);
+  function ngHide() {
+    var header = document.getElementsByTagName('header')[0];
+    var classCard = document.getElementById('classCard');
+    if (classCard.classList.contains('flipped')) {
+      header.classList.remove('ng-hide');
+    } else {
+      header.classList.add('ng-hide');
+    }
   }
 
   vm.contactClick = function () {
-    var classCard = document.getElementById('classCard');
-    classCard.classList.add('flipped');
+    vm.cardFlipped = !vm.cardFlipped;
+    setTimeout(function () {
+      ngHide();
+    }, 1000);
   };
+
+  // vm.hoverIn = function(event) {
+  //   var el = getElement(event).parent();
+  //   // console.log(el);
+  //   el.addClass('flipped');
+  //   // console.log('hoverIn', el);
+  // };
+  //
+  // vm.hoverOut = function(event) {
+  //   var el = getElement(event).parent().parent().parent();
+  //   el.removeClass('flipped');
+  //   // console.log('hoverOut', el);
+  // };
+  //
+  // function getElement(event) {
+  //   return angular.element(event.srcElement || event.target);
+  // }
 }

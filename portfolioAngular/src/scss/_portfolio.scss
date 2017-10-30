@@ -49,7 +49,7 @@
           width: 100%;
           height: 50%;
           // background-color: blue;
-          &#toolong{
+          &.toolong{
             overflow: auto;
           }
           @media only screen and (max-width: 640px) {
@@ -63,6 +63,9 @@
               font-size: 3.025em;
               // border-bottom: 1px solid white;
               margin-bottom: 5%;
+              &#dumbtitle{
+                font-size: 2.6em;
+              }
               @media only screen and (max-width: 640px) {
                 font-size: 2em;
                 text-align: left;
@@ -173,12 +176,20 @@
         background-image: url('/src/images/speak.jpg');
         background-size: cover;
       }
+      &#dumb{
+        background-image: url('/src/images/dumb.jpg');
+        background-size: contain;
+      }
       &#dark{
         background-image: url('/src/images/dark.png');
         background-size: cover;
       }
       &#itunes{
         background-image: url('/src/images/itunes.jpg');
+        background-size: cover;
+      }
+      &#house{
+        background-image: url('/src/images/house.jpg');
         background-size: cover;
       }
     }

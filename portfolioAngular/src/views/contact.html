@@ -1,16 +1,17 @@
 <!-- <div id="contact-container"> -->
 <div id="contact-container" (window:resize)="contact.onResize($event)">
 
-  <div class="container" ng-mouseover="contact.hoverIn($event)" ng-mouseleave="contact.hoverOut($event)" >
-    <div class="card" id="classCard">
+  <div class="container" ng-mouseover="contact.hoverIn($event)" ng-mouseleave="contact.hoverOut($event)" ng-click="contact.contactClick()">
+    <div class="card" id="classCard" ng-class="{'flipped' : contact.cardFlipped}">
 
       <div class="front">
-        <div id="hiddenback" ng-click="contact.contactClick()"></div>
+        <div id="hiddenback"></div>
+        <!-- <div id="hiddenback" ng-click="contact.contactClick()"></div> -->
       </div>
 
       <div class="back">
 <!-- MOBILE NAV -->
-        <header id="mobileNav" ng-class="{'show' : contact.mobileOpen}">
+        <!-- <header id="mobileNav" ng-class="{'show' : contact.mobileOpen}">
           <nav>
             <ul>
               <li><a ui-sref="about">About</a></li>
@@ -19,7 +20,7 @@
             </ul>
           </nav>
           <div id="child" ng-click="contact.mobileNavBar()"></div>
-        </header>
+        </header> -->
 <!-- END MOBILE NAV -->
         <div id="left">
 
@@ -55,7 +56,7 @@
             <ul>
               <li><a href="https://github.com/valeriorisuleo">github/valeriorisuleo</a></li>
               <li><a href="https://www.linkedin.com/in/valerio-risuleo/">linkedin/valerio-risuleo</a></li>
-              <li>www.valeriorisuleowebdeveloper.com</li>
+              <li>www.valeriorisuleowebdesigner.com</li>
             </ul>
           </section>
 
