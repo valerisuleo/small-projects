@@ -1,13 +1,11 @@
 <div id="containerAbout">
 
-  <div class="firstSection">
-
-  <section class="header">
+  <section id="header">
     <div id="diconodime"></div>
 
     <div id="pirla"></div>
 
-    <div>
+    <div id="personal-brand">
       <div class="loading">
         <span>V</span>
         <span>a</span>
@@ -23,16 +21,16 @@
         <span>l</span>
         <span>e</span>
         <span>o</span>
+      </div>
 
-        <div>
-          <p>Full Stack Developer</p>
-          <p>London, United Kingdom</p>
-          <hr>
-          <p id="kinda">“kinda smart , kinda geeky, kinda nerd, hysterically funny Web Developer who you would like to have in your team”</p>
-        </div>
-
+      <div>
+        <p>Full Stack Developer</p>
+        <p>London, United Kingdom</p>
+        <hr>
+        <p id="kinda">“kinda smart , kinda geeky, kinda nerd, hysterically funny Web Developer who you would like to have in your team”</p>
       </div>
     </div>
+
 
   </section>
 
@@ -41,7 +39,7 @@
   </section>
 
 
-<!-- ______________________________EXPERIENCE_______________________________ -->
+  <!-- ______________________________EXPERIENCE_______________________________ -->
   <section class="sectioncontainer">
     <p class="title">Experience</p>
 
@@ -92,172 +90,165 @@
 
         </div>
       </div>
-        <div class="right">
-          <p>
-            <span>Administrative Supervisor</span> <br>
-            <span>STB Consulting s.r.l.</span> <br>
-            <span>Jul 2007 – Jan 2009</span> <br>
-            <span>Rome, Italy</span>
-          </p>
+      <div class="right">
+        <p>
+          <span>Administrative Supervisor</span> <br>
+          <span>STB Consulting s.r.l.</span> <br>
+          <span>Jul 2007 – Jan 2009</span> <br>
+          <span>Rome, Italy</span>
+        </p>
 
-          <p>Responsible for the overall administrative functions of the organization and often oversee the support of executives, as well. Supervising administrative staff, office managers and staff assistants, offering guidance and training while delegating work tasks and running payroll.</p>
-        </div>
+        <p>Responsible for the overall administrative functions of the organization and often oversee the support of executives, as well. Supervising administrative staff, office managers and staff assistants, offering guidance and training while delegating work tasks and running payroll.</p>
+      </div>
     </div>
 
   </section>
 
-</div>
+  <!-- ________________________________SKILLS________________________________ -->
+  <section class="skills" ng-click="about.clickBars()">
+
+    <p id="skillami">Skills</p>
+    <!-- <div id="test" class="progress-bar" data-percent="100%" data-label="HTML" data-ng-init="about.barCharts()"> -->
+    <div id="test" class="progress-bar" data-percent="100%" data-label="HTML">
+      <span class="progress-bar__slide"></span>
+      <span class="progress-bar__percent"></span>
+    </div>
+
+    <div class="progress-bar" data-label="JAVASCRIPT" data-percent="80%">
+      <span class="progress-bar__slide"></span>
+      <span class="progress-bar__percent"></span>
+    </div>
+
+    <div class="progress-bar" data-label="CSS" data-percent="90%">
+      <span class="progress-bar__slide"></span>
+      <span class="progress-bar__percent"></span>
+    </div>
+
+    <div class="progress-bar" data-label="JQUERY" data-percent="70%">
+      <span class="progress-bar__slide"></span>
+      <span class="progress-bar__percent"></span>
+    </div>
+
+    <div class="progress-bar" data-label="EXPRESS JS" data-percent="50%">
+      <span class="progress-bar__slide"></span>
+      <span class="progress-bar__percent"></span>
+    </div>
+
+    <div class="progress-bar" data-label="RAILS" data-percent="20%">
+      <span class="progress-bar__slide"></span>
+      <span class="progress-bar__percent"></span>
+    </div>
+
+    <div class="progress-bar" data-label="MATERIAL DESIGN" data-percent="30%">
+      <span class="progress-bar__slide"></span>
+      <span class="progress-bar__percent"></span>
+    </div>
+
+    <div class="progress-bar" data-label="ANGULAR JS" data-percent="70%">
+      <span class="progress-bar__slide"></span>
+      <span class="progress-bar__percent"></span>
+    </div>
+
+    <div class="progress-bar" data-label="GULP.JS" data-percent="40%">
+      <span class="progress-bar__slide"></span>
+      <span class="progress-bar__percent"></span>
+    </div>
+
+    <div class="progress-bar" data-label="RUBY" data-percent="10%">
+      <span class="progress-bar__slide"></span>
+      <span class="progress-bar__percent"></span>
+    </div>
+
+    <div class="progress-bar" data-label="MONGO DB" data-percent="40%">
+      <span class="progress-bar__slide"></span>
+      <span class="progress-bar__percent"></span>
+    </div>
 
 
-  <section id="formazione">
-<!-- ________________________________SKILLS________________________________ -->
-    <section class="skills">
+  </section>
 
-      <p>Skills</p>
-        <!-- <div id="test" class="progress-bar" data-percent="100%" data-label="HTML" data-ng-init="about.barCharts()"> -->
-        <div id="test" class="progress-bar" data-percent="100%" data-label="HTML">
-          <span class="progress-bar__slide"></span>
-          <span class="progress-bar__percent"></span>
+  <!-- ______________________________EDUCATION_______________________________ -->
+  <section class="sectioncontainer" id="education">
+    <p class="title">Education</p>
+    <div class="subsectioncontainer">
+
+      <div class="left">
+        <div class="logo" id="ux">
+
         </div>
+      </div>
+      <div class="right" id="postit">
+        <p>
+          <span>General Assembly</span> <br>
+          <span>TWO-DAY USER EXPERIENCE DESIGN BOOTCAMP</span> <br>
+          <span>2017</span> <br>
+          <span>London, United Kingdom</span>
+        </p>
 
-        <div class="progress-bar" data-label="JAVASCRIPT" data-percent="80%">
-          <span class="progress-bar__slide"></span>
-          <span class="progress-bar__percent"></span>
-        </div>
-
-        <div class="progress-bar" data-label="CSS" data-percent="90%">
-          <span class="progress-bar__slide"></span>
-          <span class="progress-bar__percent"></span>
-        </div>
-
-        <div class="progress-bar" data-label="JQUERY" data-percent="70%">
-          <span class="progress-bar__slide"></span>
-          <span class="progress-bar__percent"></span>
-        </div>
-
-        <div class="progress-bar" data-label="EXPRESS JS" data-percent="50%">
-          <span class="progress-bar__slide"></span>
-          <span class="progress-bar__percent"></span>
-        </div>
-
-        <div class="progress-bar" data-label="RAILS" data-percent="20%">
-          <span class="progress-bar__slide"></span>
-          <span class="progress-bar__percent"></span>
-        </div>
-
-        <div class="progress-bar" data-label="MATERIAL DESIGN" data-percent="30%">
-          <span class="progress-bar__slide"></span>
-          <span class="progress-bar__percent"></span>
-        </div>
-
-        <div class="progress-bar" data-label="ANGULAR JS" data-percent="70%">
-          <span class="progress-bar__slide"></span>
-          <span class="progress-bar__percent"></span>
-        </div>
-
-        <div class="progress-bar" data-label="GULP.JS" data-percent="40%">
-          <span class="progress-bar__slide"></span>
-          <span class="progress-bar__percent"></span>
-        </div>
-        
-        <div class="progress-bar" data-label="RUBY" data-percent="10%">
-          <span class="progress-bar__slide"></span>
-          <span class="progress-bar__percent"></span>
-        </div>
-
-        <div class="progress-bar" data-label="MONGO DB" data-percent="40%">
-          <span class="progress-bar__slide"></span>
-          <span class="progress-bar__percent"></span>
-        </div>
-
-
-    </section>
-
-<!-- ______________________________EDUCATION_______________________________ -->
-    <section class="sectioncontainer">
-      <p class="title">Education</p>
-      <div class="subsectioncontainer">
-
-        <div class="left">
-          <div class="logo" id="ux">
-
-          </div>
-        </div>
-        <div class="right">
-          <p>
-            <span>General Assembly</span> <br>
-            <span>TWO-DAY USER EXPERIENCE DESIGN BOOTCAMP</span> <br>
-            <span>2017</span> <br>
-            <span>London, United Kingdom</span>
-          </p>
-
-          <p>This class aims to demystify UX by giving a practical and simple introduction to what UX is while also explaining some of its core concepts of usability. This is a field that affects all areas of business — This course has enlighten my perspective on the human-computer interaction experience.</p>
-        </div>
-
+        <p>This class aims to demystify UX by giving a practical and simple introduction to what UX is while also explaining some of its core concepts of usability. This is a field that affects all areas of business — This course has enlighten my perspective on the human-computer interaction experience.</p>
       </div>
 
-      <div class="subsectioncontainer">
+    </div>
 
-        <div class="left">
-          <div class="logo" id="parma">
+    <div class="subsectioncontainer">
 
-          </div>
+      <div class="left">
+        <div class="logo" id="parma">
+
         </div>
-        <div class="right">
-          <p>
-            <span>Università degli Studi di Parma</span> <br>
-            <span>Master's degree</span> <br>
-            <span>Sales, Distribution, and Marketing Operations</span> <br>
-            <span>2010 - 2012</span> <br>
-            <span>Parma, Italy</span>
-          </p>
-        </div>
-
       </div>
-      <div class="subsectioncontainer">
-
-        <div class="left">
-          <div class="logo" id="roma">
-
-          </div>
-        </div>
-        <div class="right" id="tre">
-          <p>
-            <span>Università degli Studi di Roma Tre</span> <br>
-            <span>Bachelor's degree</span> <br>
-            <span>Business Administration and Management</span> <br>
-            <span>2002 - 2007</span> <br>
-            <span>Roma, Italy</span>
-          </p>
-        </div>
-
+      <div class="right" id="parmalat">
+        <p>
+          <span>Università degli Studi di Parma</span> <br>
+          <span>Master's degree</span> <br>
+          <span>Sales, Distribution, and Marketing Operations</span> <br>
+          <span>2010 - 2012</span> <br>
+          <span>Parma, Italy</span>
+        </p>
       </div>
 
-    </section>
+    </div>
+    <div class="subsectioncontainer">
 
+      <div class="left">
+        <div class="logo" id="roma">
 
-<!-- _______________________________LANGUAGES_______________________________ -->
-    <section class="sectioncontainer" id="languages">
-      <p class="title">Languages</p>
-      <div class="subsectioncontainer">
-
-        <div class="left">
-          <div class="logo" id="tongue">
-
-          </div>
         </div>
-        <div class="right" id="ln">
-          <p>
-            English - French - Italian
-          </p>
+      </div>
+      <div class="right" id="tre">
+        <p>
+          <span>Università degli Studi di Roma Tre</span> <br>
+          <span>Bachelor's degree</span> <br>
+          <span>Business Administration and Management</span> <br>
+          <span>2002 - 2007</span> <br>
+          <span>Roma, Italy</span>
+        </p>
+      </div>
 
-          <p>Certificate general English at the Upper Intermediate level at <em>Rose of York    Language School</em> <br>
+    </div>
+
+  </section>
+
+
+  <!-- _______________________________LANGUAGES_______________________________ -->
+  <section class="sectioncontainer" id="languages">
+    <p class="title">Languages</p>
+    <div class="subsectioncontainer" id="lingua">
+
+      <div class="left">
+        <div class="logo" id="tongue"></div>
+      </div>
+
+      <div class="right" id="ln">
+        <p>
+          English - French - Italian
+        </p>
+
+        <p>Certificate general English at the Upper Intermediate level at <em>Rose of York    Language School</em> <br>
           London, UK</p>
         </div>
 
       </div>
 
     </section>
-
-  </section>
-</div>
+  </div>

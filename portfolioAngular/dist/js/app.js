@@ -202,8 +202,7 @@ function MainCtrl($rootScope, $window) {
 // _________________________________ABOUT CTRL_________________________________
 AboutCtrl.$inject = ['$window'];
 function AboutCtrl($window) {
-  // const vm = this;
-
+  var vm = this;
 
   var bars = document.getElementsByClassName('progress-bar');
   function barCharts() {
@@ -214,6 +213,7 @@ function AboutCtrl($window) {
     }
   }
 
+  // RESET BARS...
   // function resetBarCharts() {
   //   const test = document.getElementById('test');
   //   test.addEventListener('webkitTransitionEnd', () => {
@@ -225,25 +225,41 @@ function AboutCtrl($window) {
   // }
 
 
+  // SAFARI, IOS SAFARI AND CHROME MOBILE CAN'T READ THE OFFSET PROPERTY
+  function clickBars() {
+    barCharts();
+  }
+  vm.clickBars = clickBars;
+
   angular.element($window);
+  console.log(window);
   var width = window.innerWidth;
+  var skillami = document.getElementById('skillami');
 
   if (width > 640) {
-    $window.onscroll = function () {
-      var scrollPos = document.documentElement.scrollTop;
-      var mydivpos = document.getElementById('please').offsetTop;
-      if (scrollPos >= mydivpos) {
-        barCharts();
-      }
-    };
+    // Detect the browser...
+    var isSafari = /constructor/i.test(window.HTMLElement) || function (p) {
+      return p.toString() === '[object SafariRemoteNotification]';
+    }(!window['safari'] || typeof safari !== 'undefined' && safari.pushNotification);
+    // console.log(isSafari);
+    if (isSafari === true) {
+      skillami.innerHTML = 'Click On The Bars...';
+      clickBars;
+    } else {
+      $window.onscroll = function () {
+        var scrollPos = document.documentElement.scrollTop;
+        // console.log(scrollPos);
+        var mydivpos = document.getElementById('please').offsetTop;
+        // console.log(mydivpos);
+        if (scrollPos >= mydivpos) {
+          // console.log('fire!');
+          barCharts();
+        }
+      };
+    }
   } else if (width <= 640) {
-    $window.onscroll = function () {
-      var scrollPos = document.documentElement.scrollTop;
-      var formazione = document.getElementById('formazione').offsetTop;
-      if (scrollPos >= formazione) {
-        barCharts();
-      }
-    };
+    skillami.innerHTML = 'Click on the Bars...';
+    clickBars;
   }
 
   // BIND EVENT LISTENER TO WINDOW RESIZE
@@ -287,20 +303,20 @@ function ContactCtrl() {
     }, 1000);
   };
 
-  // vm.hoverIn = function(event) {
-  //   var el = getElement(event).parent();
-  //   // console.log(el);
-  //   el.addClass('flipped');
-  //   // console.log('hoverIn', el);
-  // };
-  //
-  // vm.hoverOut = function(event) {
-  //   var el = getElement(event).parent().parent().parent();
-  //   el.removeClass('flipped');
-  //   // console.log('hoverOut', el);
-  // };
-  //
-  // function getElement(event) {
-  //   return angular.element(event.srcElement || event.target);
-  // }
+  vm.hoverIn = function (event) {
+    var el = getElement(event).parent();
+    // console.log(el);
+    el.addClass('flipped');
+    // console.log('hoverIn', el);
+  };
+
+  vm.hoverOut = function (event) {
+    var el = getElement(event).parent().parent().parent();
+    el.removeClass('flipped');
+    // console.log('hoverOut', el);
+  };
+
+  function getElement(event) {
+    return angular.element(event.srcElement || event.target);
+  }
 }
