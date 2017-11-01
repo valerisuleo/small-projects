@@ -11,35 +11,19 @@
   height: auto;
   margin: auto;
   padding: 3%;
-  // @media only screen and (max-width: 960px){
-  //   padding: 1%;
-  // }
   .projectContainer{
     // height: 28%;
     height: 95vh;
     padding: 4%;
-    // @media only screen and (max-width: 960px){
-    //   height: 50vh;
-    //   padding: 2%;
-    //   margin-bottom: 20%;
-    //   &#firstproject{
-    //     margin-top: 12%;
-    //   }
-    // }
     .project-left{
       width: 35%;
       height: 100%;
       float: left;
       padding-right: 10%;
-      // background-color: grey;
-      // @media only screen and (max-width: 960px){
-      //   padding-right: 5%;
-      // }
       div{
         &:nth-of-type(1){
           width: 100%;
           height: 50%;
-          // background-color: blue;
           &.toolong{
             overflow: auto;
           }
@@ -47,14 +31,10 @@
             color: #232a2f;
             &:nth-child(1){
               font-size: 3.025em;
-              // border-bottom: 1px solid white;
               margin-bottom: 5%;
               &#dumbtitle{
                 font-size: 2.6em;
               }
-              // @media only screen and (max-width: 960px){
-              //   font-size: 2.05em;
-              // }
             }
             &:last-child{
               font-family: 'Lora', serif;
@@ -62,9 +42,6 @@
               line-height: 2em;
               margin-top: 10%;
               color: black;
-              // @media only screen and (max-width: 320px) {
-              // font-size: 12px;
-              // }
             }
           }
         }
@@ -88,9 +65,6 @@
             position: relative;
             border: 1px solid #000000;
             width: 100%;
-            // @media only screen and (max-width: 320px) {
-            //   padding: 22px;
-            // }
             @include transition(all 0.5s ease);
           }
           .one{
@@ -160,10 +134,47 @@
   }
 }
 
-// MEDIA QUERY 640PX
+// _________________________________MEDIA QUERY_________________________________
+
+// 960PX
+@media only screen and (max-width: 960px) {
+  #porfolioContainer{
+    padding: 1%;
+    .projectContainer{
+      height: 50vh;
+      padding: 2%;
+      margin-bottom: 20%;
+      &#firstproject{
+        margin-top: 12%;
+      }
+      .project-left{
+        padding-right: 5%;
+        div:nth-of-type(1){
+          p:nth-child(1){
+            font-size: 2.05em;
+            &#dumbtitle{
+              font-size: 1.6em;
+            }
+          }
+        }
+        div:nth-of-type(3){
+          .myButt{
+            padding: 22px;
+            margin-top: 30px;
+          }
+        }
+      }
+    }
+  }
+}
+
+
+// 640PX
 @media only screen and (max-width: 640px) {
   #porfolioContainer{
+    padding: 3%;
     .projectContainer{
+      height: 95vh;
       display: flex;
       flex-flow: column;
       padding: 0;
@@ -213,6 +224,33 @@
       .project-right{
         width: 100%;
         height: 40%;
+      }
+    }
+  }
+}
+
+// 320PX
+@media only screen and (max-width: 320px) {
+  #porfolioContainer{
+    .projectContainer{
+      .project-left{
+        div{
+          &:nth-of-type(1){
+            p{
+              &:last-child{
+                font-size: 12px;
+              }
+            }
+          }
+          &:nth-of-type(2){
+            display: none;
+          }
+          &:nth-of-type(3){
+            .myButt{
+              padding: 22px;
+            }
+          }
+        }
       }
     }
   }
