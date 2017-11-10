@@ -20,7 +20,7 @@ function createRoute(req, res) {
   Vinyl
   .create(req.body)
 .then(() => {
-  res.redirect('/vinyls');
+  res.redirect('/');
 })
 .catch((err) => {
   res.status(500).end(err);

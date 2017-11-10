@@ -46,7 +46,7 @@ $(() =>{
   var intervalID = setInterval(() =>{
     // console.log('fire');
     $(document).on('ready', random());
-  }, 3000);
+  }, 2000);
 
 
 /////////////////////////////// RANDOM BACK-IMG ////////////////////////////////
@@ -83,7 +83,7 @@ $(() =>{
       },'slow');
     }
   }).on('mouseout', (e) =>{
-    intervalID = setInterval(random, 3000); // restart flipping cards
+    intervalID = setInterval(random, 2000); // restart flipping cards
     $(e.target).parent().parent().css('z-index', '1');
     $(e.target).animate({
       width: '100%',

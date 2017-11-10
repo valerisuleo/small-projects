@@ -1,46 +1,53 @@
 // 1 require pkg
 const express = require('express');
 const mysql = require('mysql');
-const hyena = require('hyena');
+
 
 // 4 create connection
-const databaseSQL = mysql.createConnection({
+const db = mysql.createConnection({
   host: 'localhost',
-  user: 'codetest',
-  password: 'f10rediluna',
+  user: 'root',
+  password: 'f10rediloto',
+  // 7 comment out for now the db => and check the result in chrome...
   database: 'nodemysql'
 });
 
-// 6 connect hyena to databaseSQL
-hyena.connect('mysql://user:password@localhost/database');
 
-// 5 check connection
-databaseSQL.connect((err) =>{
+// 5 connect
+db.connect((err) =>{
   if(err){
     throw err;
   }
-  console.log('Hey! mysql is connect!');
-  // here I get back an error because the databaseSQL does not exist yet...
+  console.log('mysql connected');
+  // here I get back an error because the db does not exist yet...
 });
 
 // 2 create app express
 const app = express();
 
+// 6 ...let's create our db! To do that I have to create a route, I can do that in express with the get method
+app.get('/createdb', (req, res) => {
+  const sql = 'CREATE DATABASE nodemysql';
+  // to run it..
+  db.query(sql, (err, result) => {
+    if(err) throw err;
+    console.log(result);
+    res.send('Database created...');
+  });
+  // it's not actually running because we specified the database above
+});
+
+// 8 CREATE TABLE
+app.get('/createpostable', (req, res) => {
+  const sql = 'CREATE TABLE book(id int AUTO_INCREMENT, title VARCHAR(255), author_id int, genre VARCHAR(20), PRIMARY KEY (id))';
+  db.query(sql, (err, result) => {
+    if(err) throw err;
+    console.log(result);
+    res.send('Post table created...');
+  });
+});
 
 // 3 set the port where is listening
 app.listen('4000', () => {
   console.log('server listen on port 4000');
-});
-
-// 7 --> user.js
-// 8
-const User = require('./models/user');
-
-User.create({
-  firsName: 'emily',
-  lastName: 'isacky',
-  email: 'emily@ga.com'
-}, (err, user) => {
-  if(err) return console.log(err);
-  console.log(user);
 });

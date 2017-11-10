@@ -188,18 +188,6 @@ User
         image: 'https://e.snmc.io/lk/l/l/1d6bdcae2f501c6dd81447d0c349c788/2526333.jpg',
         genre: 'Classic Metal',
         createdBy: users[0]
-      },{
-        artist: 'Iron Maiden',
-        album: 'Fear of the dark',
-        image: 'http://assets.teamrock.com/image/06204744-aa80-4019-9f4b-d3adf2dd90ff?w=800',
-        genre: 'Classic Metal',
-        createdBy: users[0]
-      },{
-        artist: 'Iron Maiden',
-        album: 'Brave new world',
-        image: 'http://assets.teamrock.com/image/d82059f3-6320-4f7b-9491-06920471b577?w=800',
-        genre: 'Classic Metal',
-        createdBy: users[0]
       }]);
   })
   .then((vinyls) => console.log(`${vinyls.length} vinyls created`))

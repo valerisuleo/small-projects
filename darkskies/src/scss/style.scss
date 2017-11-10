@@ -2,27 +2,111 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+  color: white;
+  text-shadow: 1px 1px 5px #000;
 }
 
 
-li{
-  display: inline;
+div.container{
+  max-width: 350px;
+  height: 600px;
+  background-color: green;
+  background-image: url('https://cdn6.f-cdn.com/contestentries/329593/14489232/569add2d8d3cb_thumb900.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  margin: auto;
+  padding: 1%;
+  .One{
+    // background-color: red;
+    &.row{
+      height: 40%;
+    }
+    div{
+      height: 25%;
+      // background-color: yellow;
+      // border: 1px solid black;
+      &#middle{
+        height: 50%;
+        position: relative;
+        div{
+          top: 25%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          position: absolute;
+          // background-color: pink;
+          p{
+            text-align: center;
+            &#large{
+              font-size: 40px;
+            }
+            &#small{
+              font-size: 15px;
+            }
+            &#larger{
+              font-size: 70px;
+            }
+          }
+        }
+      }
+      div#getoday{
+        margin-top: 23%;
+        p{
+          &:last-child{
+            font-weight: 600;
+          }
+        }
+      }
+    }
+  }
+  .Two{
+    // background-color: green;
+    position: relative;
+    form{
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      position: absolute;
+      input{
+          width: 100%;
+          padding: 6px 10px;
+          // margin: 18px 0;
+          display: inline-block;
+          border: 1px solid #00CCFF;
+          border-radius: 4px;
+          background-color: rgba(0, 0, 0, 0.1);
+          color: #00CCFF;
+          text-shadow: none;
+      }
+      button{
+          width: 100%;
+          background-color: #00CCFF;
+          color: white;
+          padding: 6px 10px;
+          margin-top: 4%;
+          border: none;
+          border-radius: 4px;
+          text-shadow: none;
+      }
+    }
+    &.row{
+      height: 15%;
+    }
+  }
+  .Three{
+    // background-color: blue;
+    li{
+      list-style: none;
+      font-size: 16px;
+      line-height: 2;
+      span{
+        float: right;
+      }
+    }
+    &.row{
+      height: 45%;
+    }
+  }
 }
-
-main{
-  max-width: 960px;
-  margin: 0 auto;
-  background-color: grey;
-}
-
-
-
-
-
-
-
-
-
 
 
 
@@ -33,5 +117,5 @@ main{
 //   height: 300px;
 //   width: 300px;
 //   display: inline-block;
-//   background-color: yellow;
+  // background-color: yellow;
 // }

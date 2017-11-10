@@ -7,7 +7,7 @@ function DarkService($http) {
 
   this.getForecastService = function getForecast(lat, lng) {
     return $http
-    .get('/api/forecasts', { params: { lat, lng }})
+    .get('/api/forecasts?exclude=[daily,hourly,minutely,alerts]', { params: { lat, lng }})
     .then((response) => {
 
       const sky = response.data;
@@ -48,17 +48,22 @@ function DarkService($http) {
             value: apparentTemperatureHigh[index]
           });
         });
-        console.log('dailySky', dailySky);
-        return dailySky;
+        // console.log('dailySky', dailySky);
+        sky.whatever = dailySky;
+        // return dailySky;
       };
+
+      sky.daysOfTheWeek();
 
 
 // ____________________________temperatureConverted_____________________________
       sky.temperature = function () {
         const temperatureConverted = 5 / 9 * (this.currently.temperature - 32);
-        return Math.round(temperatureConverted) + '°C';
+        return Math.round(temperatureConverted) + '°';
       };
       // console.log(sky.temperature());
+
+
 
 // ________________________________timeConverter________________________________
       sky.time = function() {

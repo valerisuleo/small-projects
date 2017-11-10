@@ -5,6 +5,7 @@
     <meta charset="utf-8">
     <title>Dark Skies Api</title>
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBLmvIYuuszPZ6pNwmHh4o4YQi79H_g9K8&libraries=places,geometry"></script>
+    <link href="https://fonts.googleapis.com/css?family=Merriweather" rel="stylesheet">
     <!-- <script src="/bower_components/ngmap/build/scripts/ng-map.min.js"></script> -->
     <!-- inject:js -->
     <!-- endinject -->
@@ -13,57 +14,64 @@
   </head>
   <body ng-controller="DarkCtrl as darks">
 
-<main>
+    <div class="container">
 
-  <section id="first">
-    <form>
-      <input type="text" g-places-autocomplete ng-model="darks.newPlace" id="autocomplete">
-      <!-- ng-model is binding the value of the input field to the value of the object 'vm.newPlace' in our controller -->
-      <button ng-click="darks.meteo()">Get new location</button>
-    </form>
+      <div class="row One">
 
-    <div>
-      <span class="title">Place:</span> {{ darks.sky.place().city }}
-    </div>
+        <!-- <div></div> -->
 
-    <div>
-      <span class="title">Summary:</span> {{ darks.sky.daily.summary }}
-    </div>
+        <div id="middle">
+          <div>
+            <p id="large">{{ darks.sky.place().city }}</p>
+            <p id="small">{{ darks.sky.currently.summary }}</p>
+            <p id="larger">{{ darks.sky.temperature() }}</p>
+          </div>
+        </div>
 
-    <div>
-      <span class="title">temp:</span> {{ darks.sky.temperature() }}
-    </div>
+        <div>
+          <div id="getoday">
+            <p>{{ darks.sky.time() | date: 'HH:mm' }}</p>
+            <p>{{ darks.sky.getToDay() }}</p>
+          </div>
+        </div>
 
-    <div>
-      <span class="title">Today:</span> {{ darks.sky.getToDay() }}
-    </div>
-
-    <div>
-      <span class="title">Time:</span> {{ darks.sky.time() | date: 'HH:mm:ss' }}
-    </div>
-  </section>
-
-  <hr>
-
-  <div>
-   {{ darks.sky.daysOfTheWeek().weekday[0][0] }}
-    </div>
+      </div>
+<hr>
 
 
+      <div class="row Two">
+        <form>
+          <input type="text" g-places-autocomplete ng-model="darks.newPlace" id="autocomplete">
+          <button ng-click="darks.meteo()">Get Weather</button>
+        </form>
+      </div>
 
-    <!-- <section id="second">
-      <li ng-repeat="days in darks.sky.daily.data">
-        {{ (days.temperatureHigh - 32) * 5/9 | number: 0 }} &#8451
-      </li>
-    </section>
+<hr>
+
+      <div class="row Three">
+        <li ng-repeat="day in darks.sky.whatever">
+         {{ day.weekday }} <span>{{ (day.value -32) * 5/9 | number: 0 }} &#8451</span>
+        </li>
+      </div>
+
+<hr>
+
+
+
+  <!-- <hr>
+
+    <li ng-repeat="day in darks.sky.whatever">
+     {{ day.weekday }} {{ (day.value -32) * 5/9 | number: 0 }} &#8451
+    </li>
 
     <section id="third">
       <li ng-repeat="days in darks.sky.daily.data">
         {{days.precipProbability * 100 | limitTo: 1}}%
       </li>
-    </section> -->
-
-  </main>
+    </section>
+<hr> -->
+    <!-- ng-model is binding the value of the input field to the value of the object 'vm.newPlace' in our controller -->
+</div>
 
 <!-- _________________________________MAPPA_________________________________ -->
     <!-- <ng-map center="[{{darks.sky.latitude}}, {{darks.sky.longitude}}]" id="map" scrollwheel="false" zoom="12">

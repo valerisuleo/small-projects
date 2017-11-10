@@ -10,9 +10,6 @@
   margin: auto;
   margin-top: 2%;
   animation: fadein 2s;
-  @media only screen and (max-width: 640px) {
-    margin-top: 0;
-  }
   @media only screen and (max-width: 960px){
     margin-top: 0;
   }
@@ -35,36 +32,17 @@
   background-image: url('/src/images/mori.jpg');
   background-position: bottom;
   background-size: cover;
-  @media only screen and (max-width: 640px) {
-    height: 47%;
-    background-image: url('/src/images/about.jpg');
-  }
 }
-#pirla{
-  border-radius: 100%;
-  border: 2px solid silver;
-  background-image: url('/src/images/mee.png');
-  background-position: center;
-  background-size: contain;
-  background-repeat: no-repeat;
-  background-color: white;
-  display: none;
-  @media only screen and (max-width: 640px) {
-    display: block;
-    position: absolute;
-    width: 115px;
-    height: 115px;
-    left: calc(56% - 80px);
-    top: calc(50% - 110px);
-    z-index: 1;
-  }
-  @media only screen and (max-width: 320px) {
-    top: 150px;
-    top: calc(67% - 72px);
-    width: 110px;
-    height: 110px;
-  }
-}
+// #pirla{
+//   border-radius: 100%;
+//   border: 2px solid silver;
+//   background-image: url('/src/images/mee.png');
+//   background-position: center;
+//   background-size: contain;
+//   background-repeat: no-repeat;
+//   background-color: white;
+//   display: none;
+// }
 #personal-brand{
   height: 50%;
   position: relative;
@@ -95,14 +73,6 @@
         transform: rotate(195deg);
       }
     }
-    @media only screen and (max-width: 640px) {
-      font-size: 20px;
-      top: 35%;
-      left: 48%;
-    }
-    @media only screen and (max-width: 320px) {
-      font-size: 18px;
-    }
   }
   div{
     &:last-child{
@@ -118,41 +88,24 @@
         &:nth-child(1){
           font-size: 18px;
           margin-top: 1%;
-          @media only screen and (max-width: 640px) {
-            font-size: 14px;
-            margin-top: 4%;
-          }
         }
         &:nth-child(2){
           font-size: 16px;
           margin-bottom: 3%;
-          @media only screen and (max-width: 640px) {
-            font-size: 14px;
-          }
         }
         &#kinda{
           font-size: 16px;
           font-style: italic;
           margin-top: 3%;
-          @media only screen and (max-width: 640px) {
-            font-size: 12px;
-          }
         }
-      }
-      @media only screen and (max-width: 640px) {
-        top: 70%;
       }
     }
   }
 }
-
 .personalSummary{
   height: 200px;
   background-color: #E6E6E6;
   position: relative;
-  @media only screen and (max-width: 640px) {
-    height: 260px;
-  }
   p{
     position: absolute;
     top: 50%;
@@ -164,12 +117,6 @@
     font-style: italic;
     color: black;
     padding: 3%;
-  }
-  @media only screen and (max-width: 640px) {
-    p{
-      font-size: 12px;
-      line-height: 20px;
-    }
   }
 }
 
@@ -189,9 +136,6 @@ section.sectioncontainer{
   &#languages{
     height: 230px;
   }
-  @media only screen and (max-width: 640px) {
-    padding: 3%;
-  }
   @media only screen and (max-width: 960px){
     padding: 3%;
   }
@@ -205,11 +149,7 @@ section.sectioncontainer{
     }
     .left{
       width: 20%;
-      // background-color: pink;
       height: 100%;
-      @media only screen and (max-width: 640px) {
-        display: none;
-      }
       @extend .left-styles;
       .logo{
         @extend .logo-styles;
@@ -251,21 +191,6 @@ section.sectioncontainer{
       float: right;
       padding: 1%;
       border-bottom: 1px solid black;
-      @media only screen and (max-width: 640px) {
-        width: 100%;
-        height: 360px;
-        font-size: 15px;
-        &#parmalat{
-          height: 200px;
-        }
-        &#tre{
-          height: 200px;
-          border-bottom: 1px solid black;
-        }
-        &#ln{
-          height: 250px;
-        }
-      }
       @media only screen and (max-width: 960px){
         &#postit{
           height: 250px;
@@ -273,18 +198,12 @@ section.sectioncontainer{
       }
       p{
         margin-top: 1%;
-        @media only screen and (max-width: 640px) {
-          margin-top: 3%;
-        }
       }
       span{
         &:nth-child(1){
           font-size: 18px;
           font-weight: bold;
           color: black;
-          @media only screen and (max-width: 640px) {
-            font-size: 18px;
-          }
         }
         &:nth-child(3){
           font-size: 18px;
@@ -342,6 +261,142 @@ section.sectioncontainer{
       line-height: 1.4rem;
       color: white;
       position: absolute;
+    }
+  }
+}
+
+// ____________________________MEDIA QUERY_____________________________________
+
+// 640PX
+@media only screen and (max-width: 640px) {
+  #containerAbout{
+    margin-top: 0;
+  }
+  #diconodime{
+    height: 55%;
+    background-color: #FFF;
+    background-image: url('/src/images/pirlapiccolo.jpg');
+    background-position: center;
+    background-size: cover;
+    border-bottom: none;
+  }
+  // #pirla{
+  //   display: block;
+  //   position: absolute;
+  //   width: 115px;
+  //   height: 115px;
+  //   left: calc(56% - 80px);
+  //   top: calc(50% - 110px);
+  //   z-index: 1;
+  // }
+  #personal-brand{
+    height: 45%;
+    .loading{
+      font-size: 20px;
+      top: 20%;
+      left: 48%;
+    }
+    div{
+      &:last-child{
+        top: 55%;
+        P{
+          &:nth-child(1){
+            font-size: 14px;
+            margin-top: 4%;
+          }
+          &:nth-child(2){
+            font-size: 14px;
+          }
+          &#kinda{
+            font-size: 12px;
+          }
+        }
+      }
+    }
+  }
+  .personalSummary{
+    height: 260px;
+    p{
+      font-size: 12px;
+      line-height: 20px;
+    }
+  }
+  section.sectioncontainer{
+    padding: 3%;
+    .subsectioncontainer{
+      height: 41%;
+      .left{
+        display: none;
+      }
+      .right{
+        width: 100%;
+        font-size: 15px;
+        &#postit{
+          height: 360px;
+        }
+        &#parmalat{
+          height: 200px;
+        }
+        &#tre{
+          height: 200px;
+          border-bottom: 1px solid black;
+        }
+        &#ln{
+          height: 250px;
+        }
+        p{
+          margin-top: 3%;
+        }
+        span{
+          &:nth-child(1){
+            font-size: 18px;
+          }
+        }
+      }
+    }
+  }
+}
+
+// 320px
+@media only screen and (max-width: 320px) {
+  #pirla{
+    top: 150px;
+    top: calc(64% - 72px);
+    width: 110px;
+    height: 110px;
+  }
+  #personal-brand{
+    .loading{
+      font-size: 18px;
+      div{
+        &:last-child{
+          top: 70%;
+          P{
+            &:nth-child(1){
+              font-size: 14px;
+              margin-top: 4%;
+            }
+            &:nth-child(2){
+              font-size: 14px;
+            }
+            &#kinda{
+              font-size: 12px;
+            }
+          }
+        }
+      }
+    }
+  }
+  .personalSummary{
+    height: 260px;
+    p{
+      font-size: 12px;
+      line-height: 20px;
+    }
+  }
+  section.sectioncontainer{
+    .subsectioncontainer{
+      height: 42%;
     }
   }
 }
