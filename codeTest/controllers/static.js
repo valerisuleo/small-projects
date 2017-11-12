@@ -1,10 +1,10 @@
 const User = require('../models/user');
-
 function indexRoute(req, res) {
   User
-    .find()
-    .exec()
-    .then((users) => res.render('index', { users }));
+    .all()
+    .then(users => {
+      res.status(200).render('index', { users });
+    });
 }
 
 module.exports = {

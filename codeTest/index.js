@@ -3,7 +3,7 @@ const morgan = require('morgan');
 const bodyParser = require('body-parser');
 const cookieParser = require('cookie-parser');
 const session = require('express-session');
-
+const expressEjsLayouts = require('express-ejs-layouts');
 const app = express();
 const routes = require('./config/routes');
 
@@ -11,6 +11,7 @@ const routes = require('./config/routes');
 
 app.set('view engine', 'ejs');
 app.set('views', `${__dirname}/views`);
+app.use(expressEjsLayouts);
 
 app.use(morgan('dev'));
 
@@ -38,6 +39,10 @@ app.use((req, res, next) => {
 });
 
 app.use(routes);
+
+app.use(function (req, res) {
+  res.status(404).send('Sorry cant find that!');
+});
 
 app.listen('3000', () => console.log('Express started on port 3000'));
 
