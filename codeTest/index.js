@@ -40,10 +40,6 @@ app.use((req, res, next) => {
 
 app.use(routes);
 
-app.use(function (req, res) {
-  res.status(404).send('Sorry cant find that!');
-});
-
 app.listen('3000', () => console.log('Express started on port 3000'));
 
 

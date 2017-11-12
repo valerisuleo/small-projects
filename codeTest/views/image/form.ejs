@@ -1,10 +1,38 @@
 <form method="POST" action="/image-upload" enctype="multipart/form-data">
 
   <label for="caption">Caption</label>
-  <input type="text" name="caption">
+  <input required type="text" name="caption">
 
   <label for="image">upload image</label>
-  <input type="file" id="image" name="image">
+
+  <input required class="dropzone" id="dropzone image"
+    style="width: 450px;
+    height: 150px;
+    background-color: papayawhip;" type="file"name="image">
 
   <button>Upload</button>
 </form>
+
+<script>
+  $(()=>{
+    const $dropzone = $('#dropzone');
+
+    $dropzone.on('dragover', (e)=>{
+      e.preventDefault();
+      e.stopPropagation();
+    });
+
+    $dropzone.on("dragleave", function(e) {
+      e.preventDefault();
+      e.stopPropagation();
+    });
+
+    $dropzone.on("drop", (e)=> {
+    e.preventDefault();
+    e.stopPropagation();
+    console.log(e);
+    e.dataTransfer.getData('URL');
+    alert("Dropped!");
+    });
+  });
+</script>
