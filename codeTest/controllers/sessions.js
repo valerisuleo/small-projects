@@ -1,4 +1,4 @@
-const User = require('../models/user');
+const { User } = require('../models/user');
 
 function sessionsNew(req, res) {
   res.render('sessions/new');
@@ -13,7 +13,10 @@ function sessionsCreate(req, res, next) {
 
     if (!user || !user.validPassword(password, user.password)) return res.redirect('/login');
 
+    req.session.userId = user.id;
+    req.session.isAuthenticated = true;
     req.session.user = user.dataValues;
+
     return res.redirect('/');
   })
   .catch(next);

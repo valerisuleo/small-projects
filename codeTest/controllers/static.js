@@ -1,4 +1,5 @@
-const User = require('../models/user');
+const { User } = require('../models/user');
+
 function indexRoute(req, res) {
   User
     .all()
@@ -6,6 +7,8 @@ function indexRoute(req, res) {
       res.status(200).render('index', { users });
     });
 }
+
+
 
 module.exports = {
   index: indexRoute

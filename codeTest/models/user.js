@@ -51,7 +51,12 @@ const Image = sequelize.define('image', {
   image: {
     type: Sequelize.STRING,
     unique: true,
-    allowNull: false
+    allowNull: false,
+    get() {
+      const image = this.getDataValue('image');
+     // 'this' allows you to access attributes of the instance
+      return `https://s3-eu-west-1.amazonaws.com/${process.env.AWS_BUCKET_NAME}/${image}`;
+    }
   },
   userId: {
     type: Sequelize.INTEGER,
@@ -62,9 +67,9 @@ const Image = sequelize.define('image', {
 Image.belongsTo(User, { foreignKey: 'userId' });
 
 // create all the defined tables in the specified database.
-sequelize.sync({ force: true })
+sequelize.sync()
     .then(() => console.log('users and users table has been successfully created, if one doesn\'t exist'))
     .catch(error => console.log('This error occured', error));
 //
 // export User model for use in other files.
-module.exports = User;
+module.exports = {Image, User };
