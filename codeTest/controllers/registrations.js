@@ -1,7 +1,8 @@
 const { User } = require('../models/user');
+const oauth = require('../config/oauth');
 
 function newRoute(req, res) {
-  res.render('registrations/new');
+  res.render('registrations/new', { oauth });
 }
 
 

@@ -17,12 +17,7 @@
   $(()=>{
     const $dropzone = $('#dropzone');
 
-    $dropzone.on('dragover', (e)=>{
-      e.preventDefault();
-      e.stopPropagation();
-    });
-
-    $dropzone.on("dragleave", function(e) {
+    $dropzone.on('dragover dragleave', (e)=>{
       e.preventDefault();
       e.stopPropagation();
     });
@@ -30,9 +25,7 @@
     $dropzone.on("drop", (e)=> {
     e.preventDefault();
     e.stopPropagation();
-    console.log(e);
     e.dataTransfer.getData('URL');
-    alert("Dropped!");
     });
   });
 </script>
