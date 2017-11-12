@@ -1,49 +1,50 @@
 const User = require('../models/user');
 
-function newRoute(req, res) {
+function sessionsNew(req, res) {
   res.render('sessions/new');
 }
 
-function createRoute(req, res) {
-
-  var username = req.body.username,
+function sessionsCreate(req, res, next) {
+  var email = req.body.email,
     password = req.body.password;
 
   User
-  .findOne({ where: { username: username } })
+  .findOne({ where: { email: email } })
   .then((user) => {
     if (!user) {
       res.redirect('/login');
+      console.log('nada');
     } else if (!user.validPassword(password)) {
       res.redirect('/login');
+      console.log('nada2');
+    } else {
+      req.session.user = user.dataValues;
+      res.redirect('/');
+      console.log('daje');
     }
-  });
+  })
+     .catch(next);
 }
 
-
-
-// .post((req, res) => {
-//
-//
-//
-//
-//   var username = req.body.username,
-//   password = req.body.password;
-//
+// function sessionsCreate(req, res, next) {
 //   User
-//   .findOne({ where: { username: username } })
-//   .then((user) => {
-//     if (!user) {
-//       res.redirect('/login');
-//     } else if (!user.validPassword(password)) {
-//       res.redirect('/login');
-//     }
-//   });
+//      .findOne({ email: req.body.email })
+//      .then((user) => {
+//        if(!user || !user.validatePassword(req.body.password)) {
+//          console.log('nada');
+//          return res.redirect('/login');
+//        }
+//        req.session.userId = user.id;
+//        req.session.isAuthenticated = true;
 //
-//
-// });
+//        res.redirect('/');
+//      })
+//      .catch(next);
+// }
+
 
 module.exports = {
-  new: newRoute,
-  create: createRoute
+  new: sessionsNew,
+  create: sessionsCreate
+  // delete: sessionsDelete
 };
