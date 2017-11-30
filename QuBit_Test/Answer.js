@@ -45,8 +45,7 @@
 // _________________________________REFACTORING_________________________________
 
 var $ = function (selector) {
-  const all = document.getElementsByTagName('*');
-
+  var all = document.body.getElementsByTagName('*');
   var mySelector = selector;
   var elements = [];
   // I have 3 for loops inside here so ideally I make it more modular and make a function that takes some arguments and executes the loop for me.
@@ -75,15 +74,17 @@ var $ = function (selector) {
 
   console.log('wow', isCorrect(all, lardhouse));
 
-
   function sortElementsTocorrectCategory(all, selectorObject) {
     console.log(all); // see what it is in here
-    all.forEach(function(element){
-      if(isCorrect(selectorObject, element)) { // returns true if it matches the correct elements
-        elements.push(all);
+    for (var i = 0; i < all.length; i++) {
+      if (isCorrect(selectorObject, all[i])) {
+        elements.push(all[i]);
       }
-    });
+    }
   }
+
+
+
 
   if (mySelector.indexOf('.') > -1 && mySelector.indexOf('img') > -1) {
     // console.log('wow', isCorrect(all, lardhouse));
@@ -96,4 +97,4 @@ var $ = function (selector) {
   return elements;
 };
 
-$('');
+$('DIV');
