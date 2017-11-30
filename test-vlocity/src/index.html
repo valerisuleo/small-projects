@@ -15,7 +15,8 @@
 
     <main>
       <div id="left">
-        <li  ng-repeat="contact in main.all | filter: main.q">
+        <li  ng-repeat="contact in main.filtered">
+        <!-- <li  ng-repeat="contact in main.all | filter: {name: main.q}"> -->
           {{ contact.name | uppercase }}
         </li>
       </div>
