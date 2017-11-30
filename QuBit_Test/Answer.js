@@ -45,7 +45,7 @@
 // _________________________________REFACTORING_________________________________
 
 var $ = function (selector) {
-  var all = document.body.getElementsByTagName('*');
+  const all = document.getElementsByTagName('*');
   var mySelector = selector;
   var elements = [];
   // I have 3 for loops inside here so ideally I make it more modular and make a function that takes some arguments and executes the loop for me.
@@ -74,15 +74,14 @@ var $ = function (selector) {
 
   console.log('wow', isCorrect(all, lardhouse));
 
-  function sortElementsTocorrectCategory(all, selectorObject) {
-    console.log(all); // see what it is in here
-    for (var i = 0; i < all.length; i++) {
-      if (isCorrect(selectorObject, all[i])) {
-        elements.push(all[i]);
-      }
-    }
-  }
 
+  function sortElementsTocorrectCategory(all, selectorObject) {
+    Object.keys(all).forEach(function(element){
+      if (isCorrect(selectorObject, all[element])) {
+        elements.push(all[element]);
+      }
+    });
+  }
 
 
 
