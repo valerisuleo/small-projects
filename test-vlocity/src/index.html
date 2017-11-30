@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html ng-app="vlocityTest">
+  <head>
+    <meta charset="utf-8">
+    <title>vlocity-code-challenge</title>
+    <!-- inject:js -->
+    <!-- endinject -->
+    <!-- inject:css -->
+    <!-- endinject -->
+  </head>
+  <body ng-controller="MainCtrl as main">
+    <nav>
+
+    </nav>
+
+    <main>
+      <div id="left">
+        <li  ng-repeat="contact in main.all">
+          {{ contact.name }}
+        </li>
+      </div>
+      <div id="right">
+        <div class="top">
+        </div>
+        <div class="bottom"></div>
+      </div>
+    </main>
+  </body>
+</html>
