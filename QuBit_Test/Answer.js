@@ -59,34 +59,37 @@ var $ = function (selector) {
     tagName: 'DIV'
   };
 
-  if (true) {
-    // we pass 2 arguments: the selectorObject and element
-    function isCorrect(selectorObject, element) {
-      // console.log('element', element); // element return {tagName: "DIV"}
-      // console.log('const all and selectorObject are the same!', selectorObject);
-      var filters = Object.keys(lardhouse);
-      // console.log('filters', filters); // this return ["tagName"]
-      return filters.every(function(filter){ // returns true if all cases returns true in the array loop
-        // console.log('filter', filter); //tagName
-        // console.log(element[filter]); // this returns DIV
-        // console.log(element[filter] === selectorObject[filter]);
-        return element[filter] === selectorObject[filter];
-      });
-    }
-
-    console.log('wow', isCorrect(all, lardhouse));
-
-    function sortElementsTocorrectCategory(all, selectorObject) {
-      console.log(all); // see what it is in here
-      all.forEach(function(element){
-        if(isCorrect(selectorObject, element)) { // returns true if it matches the correct elements
-          elements.push(all);
-        }
-      });
-    }
-    console.log(sortElementsTocorrectCategory(all, lardhouse));
+  // we pass 2 arguments: the selectorObject and element
+  function isCorrect(selectorObject, element) {
+    // console.log('element', element); // element return {tagName: "DIV"}
+    // console.log('const all and selectorObject are the same!', selectorObject);
+    var filters = Object.keys(lardhouse);
+    // console.log('filters', filters); // this return ["tagName"]
+    return filters.every(function(filter){ // returns true if all cases returns true in the array loop
+      // console.log('filter', filter); //tagName
+      // console.log(element[filter]); // this returns DIV
+      // console.log(element[filter] === selectorObject[filter]);
+      return element[filter] === selectorObject[filter];
+    });
   }
 
+  console.log('wow', isCorrect(all, lardhouse));
+
+
+  function sortElementsTocorrectCategory(all, selectorObject) {
+    console.log(all); // see what it is in here
+    all.forEach(function(element){
+      if(isCorrect(selectorObject, element)) { // returns true if it matches the correct elements
+        elements.push(all);
+      }
+    });
+  }
+
+  if (mySelector.indexOf('.') > -1 && mySelector.indexOf('img') > -1) {
+    // console.log('wow', isCorrect(all, lardhouse));
+    console.log('mama', sortElementsTocorrectCategory(all[0], lardhouse));
+
+  }
 
 
   console.log('elements', elements);
