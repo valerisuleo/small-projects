@@ -9,4 +9,9 @@ function MainCtrl(ContactFact) {
 
 // here we simulate a $http request to a server using the factories.
   vm.all = ContactFact.query();
+
+
+  // function displaySelectedUser() {
+  //
+  // }
 }

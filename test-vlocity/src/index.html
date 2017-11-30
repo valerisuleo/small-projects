@@ -10,13 +10,13 @@
   </head>
   <body ng-controller="MainCtrl as main">
     <nav>
-
+      <input type="text" class="search" ng-model="main.q" placeholder="Search...">
     </nav>
 
     <main>
       <div id="left">
-        <li  ng-repeat="contact in main.all">
-          {{ contact.name }}
+        <li  ng-repeat="contact in main.all | filter: main.q">
+          {{ contact.name | uppercase }}
         </li>
       </div>
       <div id="right">
