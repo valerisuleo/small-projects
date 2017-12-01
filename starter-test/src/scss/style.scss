@@ -1,0 +1,130 @@
+*{
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+// ________________________________EXTEND STYLE________________________________
+
+.center-styles{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+#container{
+  padding: 5%
+}
+nav{
+  height: 70px;
+  background-color: aqua;
+  div{
+    &:nth-child(1){
+      width: 30%;
+      height: 100%;
+      background-color: red;
+      float: left;
+      position: relative;
+      input{
+        @extend .center-styles;
+        width: 90%;
+        height: 60%;
+        border-radius: 100px;
+        text-align: center;
+      }
+    }
+    &:nth-child(2){
+      width: 70%;
+      height: 100%;
+      background-color: green;
+      float: right;
+      position: relative;
+      h4{
+        position: absolute;
+        top: 50%;
+        left: 85%;
+        transform: translate(0%, -50%);
+      }
+    }
+  }
+}
+main{
+  height: 70vh;
+  background-color: silver;
+  #left{
+    width: 25%;
+    height: 100%;
+    background-color: grey;
+    float: left;
+    border: 2px solid black;
+    ul{
+      height: 100%;
+      li{
+        list-style: none;
+        position: relative;
+        height: 16.6%;
+        border-bottom: 1px solid black;
+        &:last-child{
+          border-bottom: none;
+        }
+        p{
+          @extend .center-styles;
+        }
+      }
+    }
+  }
+  #right{
+    width: 75%;
+    height: 100%;
+    background-color: pink;
+    float: right;
+    .top{
+      height: 50%;
+      background-color: brown;
+      #one{
+        height: 70%;
+        background-color: yellow;
+        .iconPic{
+          height: 100px;
+          width: 100px;
+          border-radius: 15px;
+          background-size: cover;
+          background-position: center;
+          background-repeat: no-repeat;
+          // margin-top: 3%;
+          // margin-left: 3%;
+        }
+        p{
+          border-left: 3px solid black;
+          font-size: 18px;
+        }
+      }
+      #two{
+        height: 30%;
+        background-color: blue;
+      }
+    }
+    .bottom{
+      height: 50%;
+      background-color: purple;
+      p{
+        border-bottom: 1px solid grey;
+        font-size: 16px;
+        line-height: 40px;
+      }
+      .likes{
+        width: 60%;
+        height: 100%;
+        float: left;
+        background-color: red;
+      }
+      .dislikes{
+        width: 40%;
+        height: 100%;
+        float: right;
+        background-color: green;
+      }
+    }
+  }
+}

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html ng-app="contactApp">
+<head>
+  <meta charset="utf-8">
+  <title>Angular Stack Setup</title>
+  <!-- inject:js -->
+  <!-- endinject -->
+  <!-- inject:css -->
+  <!-- endinject -->
+</head>
+<body ng-controller="MainCtrl as main">
+
+  <div id="container">
+    <nav>
+      <div>
+        <input type="text" class="search" ng-model="main.q" placeholder="Search...">
+      </div>
+
+      <div>
+        <h4> {{ main.selectedContact.name }}</h4>
+      </div>
+    </nav>
+
+    <main>
+
+      <div id="left">
+        <ul>
+          <li ng-repeat="singleContact in main.filtered" ng-click="main.selectContact($index)">
+            <p>{{ singleContact.name }}</p>
+          </li>
+        </ul>
+      </div>
+
+      <div id="right">
+
+        <div class="top">
+
+          <div id="one">
+            <div class="iconPic" style="background-image: url({{ main.selectedContact.image }})"></div>
+            <p>{{ main.selectedContact.mostLikelyTo}}</p>
+          </div>
+
+          <div id="two"></div>
+
+        </div>
+
+        <div class="bottom">
+          <div class="likes">
+            <h3>Likes:</h3>
+            <p>{{ main.selectedContact.likes.sport }}</p>
+            <p>{{main.selectedContact.likes.celebrities}}</p>
+            <p>{{main.selectedContact.likes.tvseries}}</p>
+            <p>{{ main.selectedContact.likes.pet }}</p>
+          </div>
+
+          <div class="dislikes">
+            <h3>Dislikes:</h3>
+            <p>{{main.selectedContact.dislikes.sport }}</p>
+            <p>{{ main.selectedContact.dislikes.celebrities }}</p>
+            <p>{{ main.selectedContact.dislikes.tvseries }}</p>
+            <p>{{ main.selectedContact.dislikes.pet}}</p>
+          </div>
+
+        </div>
+
+
+      </div>
+    </main>
+  </div>
+
+</body>
+</html>
