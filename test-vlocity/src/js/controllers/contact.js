@@ -1,14 +1,14 @@
 angular
-.module('vlocityTest')
+.module('contactApp')
 .controller('MainCtrl', MainCtrl);
 
 
-MainCtrl.$inject = ['ContactFact', 'filterFilter', '$scope'];
-function MainCtrl(ContactFact, filterFilter, $scope) {
+MainCtrl.$inject = ['ContactFact', '$scope', 'filterFilter'];
+function MainCtrl(ContactFact, $scope, filterFilter) {
   const vm = this;
 
-// here we simulate a $http request to a server using the factories.
   vm.all = ContactFact.query();
+  console.log(vm.all);
 
   function filterContact() {
     vm.filtered = filterFilter(vm.all, vm.q); // add this instead of main.all
@@ -19,4 +19,10 @@ function MainCtrl(ContactFact, filterFilter, $scope) {
 
   $scope.$watch(() => vm.q, filterContact);
   // $scope.$watch('q', filterContact);
+
+  vm.selectedContact = vm.all[0];
+
+  vm.selectContact = function (index) {
+    vm.selectedContact = vm.all[index];
+  };
 }

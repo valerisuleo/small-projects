@@ -1,39 +1,99 @@
 angular
-.module('vlocityTest')
+.module('contactApp')
 .factory('ContactFact', ContactFact);
 
 ContactFact.$inject = [];
 function ContactFact() {
   const allContacts = [{
-    id: '110866',
     name: 'Adrian Welch',
     image: '/images/adrian.jpg',
-    likes: ['swim suits', 'digital cameras', 'game of thrones', 'dogs' ]
+    likes: {
+      sport: 'bowling',
+      celebrities: 'Johnny Walker',
+      tvseries: 'Game of Thrones',
+      pet: 'Drogon'
+    },
+    dislikes: {
+      sport: 'swimming',
+      celebrities: 'Prime Minister May',
+      tvseries: 'Stranger Things 2',
+      pet: 'Doraemon'
+    }
   }, {
-    id: '111047',
     name: 'Alice Marshall',
     image: '/images/alice.jpg',
-    likes: ['tennis', 'the queen', 'the crown', 'cats' ]
+    likes: {
+      sport: 'tennis',
+      celebrities: 'the queen',
+      tvseries: 'the crown',
+      pet: 'Dire Wolf'
+    },
+    dislikes: {
+      sport: 'hicking',
+      celebrities: 'Silvio Berlusconi',
+      tvseries: 'The Flash',
+      pet: 'cats'
+    }
   }, {
-    id: '274233',
     name: 'Ben Currie',
     image: '/images/ben.jpg',
-    likes: ['rock chairs', 'MacBook', 'HIMYM', 'Lions' ]
+    likes: {
+      sport: 'box',
+      celebrities: 'Madonna',
+      tvseries: 'Vikings',
+      pet: 'horses'
+    },
+    dislikes: {
+      sport: 'swording',
+      celebrities: 'Donald Trump',
+      tvseries: 'The Walking Dead',
+      pet: 'zombies'
+    }
   }, {
-    id: '329441',
     name: 'Conor Heena',
     image: '/images/conor.jpg',
-    likes: ['basket', 'road bikes', 'vikings', 'ninja turtles' ]
+    likes: {
+      sport: 'cycling',
+      celebrities: 'Sasha Grey',
+      tvseries: 'Breaking Bad',
+      pet: 'batman'
+    },
+    dislikes: {
+      sport: 'running',
+      celebrities: 'Justin Bieber',
+      tvseries: 'Attack On Titan',
+      pet: 'Pegasus'
+    }
   }, {
-    id: '111054',
     name: 'Fabricio Ferreria',
     image: '/images/fab.jpg',
-    likes: ['tennis table', 'php', 'x-factor', 't-rex' ]
+    likes: {
+      sport: 'golf',
+      celebrities: 'Jennifer Lawrence',
+      tvseries: 'Better Call Soul',
+      pet: 'sharks'
+    },
+    dislikes: {
+      sport: 'free climbing',
+      celebrities: 'Adele',
+      tvseries: 'Friends',
+      pet: 'Nick Carter'
+    }
   }, {
-    id: '329458',
     name: 'Giacomo Brunetti',
     image: '/images/jack.jpg',
-    likes: ['suits', 'linux', 'friends', 'horses' ]
+    likes: {
+      sport: 'Snowboard',
+      celebrities: 'Tom Ford',
+      tvseries: 'Mr. Pickels',
+      pet: 'dog'
+    },
+    dislikes: {
+      sport: 'Mortal Kombat',
+      celebrities: 'Britney Spears',
+      tvseries: 'Vampires Diary',
+      pet: 'Scrybs Spirit'
+    }
   }];
   return {
     query() {

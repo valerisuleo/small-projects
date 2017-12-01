@@ -1,30 +1,50 @@
 <!DOCTYPE html>
-<html ng-app="vlocityTest">
-  <head>
-    <meta charset="utf-8">
-    <title>vlocity-code-challenge</title>
-    <!-- inject:js -->
-    <!-- endinject -->
-    <!-- inject:css -->
-    <!-- endinject -->
-  </head>
-  <body ng-controller="MainCtrl as main">
-    <nav>
+<html ng-app="contactApp">
+<head>
+  <meta charset="utf-8">
+  <title>Angular Stack Setup</title>
+  <!-- inject:js -->
+  <!-- endinject -->
+  <!-- inject:css -->
+  <!-- endinject -->
+</head>
+<body ng-controller="MainCtrl as main">
+  <nav>
       <input type="text" class="search" ng-model="main.q" placeholder="Search...">
     </nav>
+  <div class="container">
 
-    <main>
-      <div id="left">
-        <li  ng-repeat="contact in main.filtered">
-        <!-- <li  ng-repeat="contact in main.all | filter: {name: main.q}"> -->
-          {{ contact.name | uppercase }}
+    <div class="row">
+      <ul class="list-group">
+        <li class="list-group-item" ng-repeat="singleContact in main.filtered" ng-click="main.selectContact($index)">
+          {{ singleContact.name }}
         </li>
-      </div>
-      <div id="right">
-        <div class="top">
+      </ul>
+    </div>
+
+<!-- DETAILS  -->
+    <div class="row">
+      <div class="media">
+        <div class="media-left">
+          <a href="#">
+            <img ng-src="{{ main.all[0].image }}">
+          </a>
         </div>
-        <div class="bottom"></div>
+        <div class="media-body">
+          <h4 class="media-heading"> {{ main.selectedContact.name }}</h4>
+          <div>
+            <h6>Likes:</h6>
+            <p>{{main.selectedContact.likes.sport +", "+ main.selectedContact.likes.celebrities +", "+ main.selectedContact.likes.tvseries +", "+ main.selectedContact.likes.pet | uppercase }}</p>
+          </div>
+          <div>
+            <h6>Dislikes:</h6>
+            <p>{{main.selectedContact.dislikes.sport +", "+ main.selectedContact.dislikes.celebrities +", "+ main.selectedContact.dislikes.tvseries +", "+ main.selectedContact.dislikes.pet | uppercase}}</p>
+          </div>
+        </div>
       </div>
-    </main>
-  </body>
+    </div>
+
+  </div>
+
+</body>
 </html>
