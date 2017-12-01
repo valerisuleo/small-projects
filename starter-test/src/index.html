@@ -3,6 +3,8 @@
 <head>
   <meta charset="utf-8">
   <title>Angular Stack Setup</title>
+  <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+
   <!-- inject:js -->
   <!-- endinject -->
   <!-- inject:css -->
@@ -19,13 +21,15 @@
       <div>
         <h4> {{ main.selectedContact.name }}</h4>
       </div>
+
+      <div></div>
     </nav>
 
     <main>
 
       <div id="left">
         <ul>
-          <li ng-repeat="singleContact in main.filtered" ng-click="main.selectContact($index)">
+          <li ng-repeat="singleContact in main.filtered" ng-click="main.selectContact($index)" ng-class="($even ? 'even' : 'odd')">
             <p>{{ singleContact.name }}</p>
           </li>
         </ul>
@@ -37,6 +41,7 @@
 
           <div id="one">
             <div class="iconPic" style="background-image: url({{ main.selectedContact.image }})"></div>
+            <p>Most Likely To:</p>
             <p>{{ main.selectedContact.mostLikelyTo}}</p>
           </div>
 
@@ -46,7 +51,7 @@
 
         <div class="bottom">
           <div class="likes">
-            <h3>Likes:</h3>
+            <p>Likes:</p>
             <p>{{ main.selectedContact.likes.sport }}</p>
             <p>{{main.selectedContact.likes.celebrities}}</p>
             <p>{{main.selectedContact.likes.tvseries}}</p>
@@ -54,7 +59,7 @@
           </div>
 
           <div class="dislikes">
-            <h3>Dislikes:</h3>
+            <p>Dislikes:</p>
             <p>{{main.selectedContact.dislikes.sport }}</p>
             <p>{{ main.selectedContact.dislikes.celebrities }}</p>
             <p>{{ main.selectedContact.dislikes.tvseries }}</p>

@@ -2,6 +2,7 @@
   box-sizing: border-box;
   padding: 0;
   margin: 0;
+  font-family: 'Lato', sans-serif;
 }
 
 // ________________________________EXTEND STYLE________________________________
@@ -14,62 +15,74 @@
 }
 
 #container{
-  padding: 5%
+  padding: 7%;
 }
 nav{
   height: 70px;
-  background-color: aqua;
+  // background-color: aqua;
   div{
     &:nth-child(1){
       width: 30%;
       height: 100%;
-      background-color: red;
+      // background-color: red;
       float: left;
       position: relative;
       input{
         @extend .center-styles;
-        width: 90%;
-        height: 60%;
+        width: 100%;
+        height: 70%;
         border-radius: 100px;
         text-align: center;
       }
     }
     &:nth-child(2){
-      width: 70%;
+      width: 60%;
       height: 100%;
-      background-color: green;
-      float: right;
+      // background-color: green;
+      float: left;
       position: relative;
       h4{
         position: absolute;
         top: 50%;
-        left: 85%;
+        left: 80%;
         transform: translate(0%, -50%);
+        color: #0099CC
       }
+    }
+    &:nth-child(3){
+      width: 10%;
+      height: 100%;
+      background-image: url('https://cdn2.iconfinder.com/data/icons/ios-7-icons/50/user_male2-512.png');
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: contain;
+      float: right;
     }
   }
 }
 main{
   height: 70vh;
-  background-color: silver;
+  // background-color: silver;
   #left{
     width: 25%;
-    height: 100%;
-    background-color: grey;
+    height: 96%;
+    margin-top: 2%;
+    // background-color: grey;
     float: left;
-    border: 2px solid black;
+    border: 2px solid #999999;
     ul{
       height: 100%;
       li{
         list-style: none;
         position: relative;
-        height: 16.6%;
-        border-bottom: 1px solid black;
+        height: 16.8%;
+        border-bottom: 1px solid #999999;
         &:last-child{
           border-bottom: none;
         }
         p{
           @extend .center-styles;
+          font-weight: bold;
         }
       }
     }
@@ -77,54 +90,78 @@ main{
   #right{
     width: 75%;
     height: 100%;
-    background-color: pink;
+    // background-color: pink;
     float: right;
     .top{
-      height: 50%;
-      background-color: brown;
+      height: 60%;
+      // background-color: brown;
       #one{
-        height: 70%;
-        background-color: yellow;
+        height: 75%;
+        // background-color: yellow;
+        padding: 3%;
         .iconPic{
-          height: 100px;
-          width: 100px;
+          height: 120px;
+          width: 120px;
           border-radius: 15px;
           background-size: cover;
           background-position: center;
           background-repeat: no-repeat;
-          // margin-top: 3%;
-          // margin-left: 3%;
         }
         p{
-          border-left: 3px solid black;
-          font-size: 18px;
+          border-left: 4px solid #0099CC;
+          font-size: 22px;
+          margin-top: 5%;
+          padding-left: 1%;
+          &:last-child{
+            border-left: none;
+            margin-top: 3%;
+            font-style: italic;
+          }
         }
       }
       #two{
-        height: 30%;
-        background-color: blue;
+        height: 25%;
+        // background-color: blue;
       }
     }
     .bottom{
-      height: 50%;
-      background-color: purple;
+      height: 40%;
+      // background-color: purple;
+      border: 1px solid #999999;
+      width: 95%;
+      margin: auto;
       p{
         border-bottom: 1px solid grey;
         font-size: 16px;
-        line-height: 40px;
+        height: 20%;
+        padding-left: 2%;
+        &:first-child{
+          font-weight: bold;
+          font-size: larger;
+          color: #0099CC
+        }
       }
       .likes{
         width: 60%;
         height: 100%;
         float: left;
-        background-color: red;
+        border-right: 1px solid silver;
+        // background-color: red;
       }
       .dislikes{
         width: 40%;
         height: 100%;
         float: right;
-        background-color: green;
+        // background-color: green;
       }
     }
+  }
+  /* Odd/Even */
+  .even {
+    background: #f4f4f4;
+  }
+
+  .odd {
+    background: #cccccc;
   }
 }
