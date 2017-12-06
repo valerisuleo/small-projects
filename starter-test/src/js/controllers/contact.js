@@ -24,5 +24,6 @@ function MainCtrl(ContactFact, $scope, filterFilter) {
 
   vm.selectContact = function (index) {
     vm.selectedContact = vm.all[index];
+    console.log(vm.selectedContact);
   };
 }

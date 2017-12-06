@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html ng-app="officeApp">
+  <head>
+    <meta charset="utf-8">
+    <title>officeApp</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.min.js"></script>
+    <script src="js/app.js" charset="utf-8"></script>
+  </head>
+  <body ng-controller="StateCtrl as state">
+    <header>
+      <img id="logo" src="http://app.edited.com/static/img/logo.svg" />
+    </header>
+    <section id="office">
+
+      <div class="rowSize rowOne">
+
+        <div class="widget" id="fridge">
+          <div class="shadow">
+            <div class="title">
+              <p>Fridge</p>
+            </div>
+            <div class="content">
+              <h1>{{state.state.fridge }}</h1>
+            </div>
+          </div>
+        </div>
+
+        <div class="widget" id="coffee">
+          <div class="shadow">
+            <div class="title">
+              <p>Coffee</p>
+            </div>
+            <div class="content">
+              <h1>{{state.state.coffee}}</h1>
+            </div>
+          </div>
+        </div>
+
+        <div class="widget" id="temp">
+          <div class="shadow">
+            <div class="title">
+              <p>Temperature</p>
+            </div>
+            <div class="content">
+              <h1>{{state.state.temperature}}</h1>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="widget rowSize rowTwo" id="mood">
+        <div id="second-rowrpapper">
+          <div class="title">
+            <p>Office mood</p>
+          </div>
+          <div class="content">
+              &#9788;
+            <!--
+            = other possible moods =
+            &#9730; (umbrella)
+            &#9748; (umbrella with rain)
+            &#9729; (cloud)
+            &#9889; (lightning)
+          -->
+        </div>
+      </div>
+    </div>
+    <div class="rowSize rowThree"></div>
+  </section>
+  </body>
+</html>
