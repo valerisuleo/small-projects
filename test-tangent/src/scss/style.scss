@@ -2,6 +2,7 @@
   box-sizing: border-box;
   padding: 0;
   margin: 0;
+  font-family: 'Lato', sans-serif;
 }
 
 .center-styles{
@@ -84,12 +85,13 @@ main{
       &:nth-child(1){
         position: relative;
         height: 50%;
-        // background-color: red;
         h3{
           @extend .center-styles;
           text-transform: uppercase;
-          border-top: 1px solid green;
+          border-top: 1px solid teal;
           padding-top: 1%;
+          letter-spacing: 1px;
+          margin-bottom: 5%;
         }
       }
       &:nth-child(2){
@@ -102,6 +104,70 @@ main{
           transform: translate(-50%, -50%);
           text-align: center;
           width: 60%;
+        }
+      }
+    }
+  }
+  section#approach{
+    height: 600px;
+    background-image: url('/images/bg-first-section.jpg');
+    background-position: center;
+    background-size: cover;
+    div{
+      &:nth-child(1){
+        width: 35%;
+        height: 100%;
+        // background-color: grey;
+        float: left;
+        position: relative;
+        .wrapper{
+          @extend .center-styles;
+          width: 90%;
+          margin-left: 5%;
+          // background-color: red;
+          h3{
+            color: #FFF;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-top: 25%;
+            margin-bottom: 10%;
+          }
+          h3:after{
+           content:'';
+           position: absolute;
+           // bottom: 0;
+           height: 1px;
+           width: 8.5em;
+           background-color: teal;
+           right: 0;
+           left: 0;
+           top: 12%;
+         }
+          p{
+            color: #FFF;
+            font-size: 14px;
+            margin-bottom: 5%;
+            line-height: 25px;
+          }
+        }
+      }
+      &:nth-child(2){
+        width: 65%;
+        height: 100%;
+        float: right;
+        position: relative;
+        div.overlay{
+          width: 85%;
+          height: 70%;
+          background-image: url('/images/screenshot.jpg');
+          background-position: top;
+          background-size: cover;
+          background-repeat: no-repeat;
+          box-shadow: 0 15px 15px -8px #444;
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
         }
       }
     }
