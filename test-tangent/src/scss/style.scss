@@ -19,11 +19,9 @@ $btnColor: #FF3399;
 main{
   header{
     height: 100vh;
-    // background-color: silver;
     div{
       &#nails-header{
         height: 60%;
-        background-color: red;
         background-image: url('/images/nails-header.jpg');
         background-size: cover;
         background-position: center;
@@ -37,7 +35,6 @@ main{
             position: relative;
             p{
               text-align: center;
-              // line-height: 25px;
               @extend .center-styles;
             }
           }
@@ -57,7 +54,6 @@ main{
             float: right;
             height: 100%;
             width: 14.2%;
-            // border: 1px solid black;
             &:nth-child(2){
               position: relative;
             }
@@ -120,14 +116,12 @@ main{
       &:nth-child(1){
         width: 35%;
         height: 100%;
-        // background-color: grey;
         float: left;
         position: relative;
         .wrapper{
           @extend .center-styles;
           width: 90%;
           margin-left: 5%;
-          // background-color: red;
           h3{
             color: #FFF;
             text-transform: uppercase;
@@ -296,12 +290,10 @@ main{
     div#first{
       height: 40%;
       width: 100%;
-      // background-color: #FFF;
       div{
         &:nth-child(1){
           width: 100%;
           height: 15%; // split height
-          // background-color: grey;
           position: relative;
           h2{
             @extend .center-styles;
@@ -310,7 +302,6 @@ main{
           h2:after{
             content:'';
             position: absolute;
-            // bottom: 0;
             height: 2px;
             width: 4em;
             background-color: teal;
@@ -322,14 +313,11 @@ main{
         &#numbers{
           width: 100%;
           height: 45%; // split height
-          // background-color: brown;
           div{
             width: 20%;
             height: 100%;
             float: right;
             padding: 2%;
-            // border: 1px solid black;
-            // background-color: yellow;
             img{
               width: 100%;
               height: 100%
@@ -353,11 +341,9 @@ main{
     div#two{
       height: 60%;
       width: 100%;
-      // background-color: rgba(0, 0, 0, 0.5);
       .first{
         height: 50%;
         width: 100%;
-        // background-color: pink;
         position: relative;
         #screenshot{
           width: 60%;
@@ -406,6 +392,151 @@ main{
         p{
           @extend .center-styles;
           font-size: 18px;
+        }
+      }
+    }
+  }
+}
+
+
+// MEDIA QUERY
+
+@media only screen and (max-width: 640px) {
+  main{
+    header{
+      height: 80vh;
+      div{
+        &#nails-header{
+          height: 50%;
+          background-image: url('/images/mobile.jpg');
+          background-position: bottom;
+          background-size: cover;
+          background-repeat: no-repeat;
+          background-color: red;
+        }
+        &#info{
+          div{
+            &:first-child{
+              height: 50%;
+              position: relative;
+              p{
+                text-align: center;
+                position: absolute;
+                top: 130%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                width: 90%;
+              }
+            }
+          }
+          div#icons{
+            display: none;
+          }
+        }
+      }
+    }
+    section#brief{
+      height: 350px;
+      div{
+        &:nth-child(1){
+          h3{
+            top: 20%;
+          }
+        }
+      }
+    }
+    section.pink-black{
+      background-image: url('/images/black.png');
+      height: 620px;
+      &#mobile-pink{
+        background-image: url('/images/pink.png');
+        p, h3{
+          color: #000;
+        }
+        h3:after{
+          background-color: #FFF;
+        }
+      }
+      div{
+        &:nth-child(1){
+          width: 100%;
+          float: none;
+          .wrapper{
+            width: 85%;
+            margin-left: 0;
+            h3{
+              text-align: center;
+              margin-top: 18%;
+            }
+            h3:after{
+              top: 6%;
+              margin: auto;
+            }
+          }
+        }
+        &:nth-child(2){
+          display: none;
+        }
+      }
+    }
+    section#result{
+      height: 1024px;
+      background-image: none;
+      div#first{
+        height: 40%;
+        font-size: 12px;
+        margin-bottom: 20%;
+        div{
+          &#numbers{
+            height: 25%;
+            margin-top: 10%;
+            div{
+              width: 26.66%;
+              &:first-child{
+                width: 10%;
+              }
+              &:last-child{
+                width: 10%;
+              }
+            }
+          }
+          &:nth-child(3){
+            width: 60%;
+            #p-wrapper{
+              top: 20%;
+            }
+          }
+        }
+      }
+      div#two{
+        background-image: url('/images/final.jpg');
+        background-repeat: no-repeat;
+        background-size: cover;
+        .first{
+          display: none;
+        }
+        .second{
+          .wrapper-info{
+            bottom: 25px;;
+            top: none;
+            p{
+              &:nth-child(1){
+                display: none;
+              }
+              &:nth-child(2){
+                font-size: 14px;
+              }
+            }
+          }
+        }
+        .third{
+          height: 10%;
+          bottom: -45%;
+          p{
+            width: 80%;
+            font-size: 16px;
+            text-align: center;
+          }
         }
       }
     }
