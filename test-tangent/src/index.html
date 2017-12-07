@@ -79,6 +79,21 @@
 
       </section>
 
+
+      <section id="most-loved">
+<!-- We get $index from the Angular's ng-repeat directive. This is the "iterator offset of the repeated element", i.e the index of that element in the array that we are looping over. The Bootstrap carousel requires the index attribute to be set, as it needs this to determine which slide to make "active". It is directly linked to the vm.active -->
+        <div uib-carousel active="main.active" interval="main.myInterval" no-wrap="main.noWrapSlides">
+          <div uib-slide ng-repeat="slide in main.all" index="$index">
+            <img ng-src="{{slide.image}}" style="margin:auto;">
+            <div class="carousel-caption">
+              <p>{{slide.text}}</p>
+            </div>
+          </div>
+        </div>
+
+
+      </section>
+
     </main>
 
   </body>

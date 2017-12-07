@@ -1,2 +1,2 @@
 angular
-.module('tangent-test', []);
+.module('tangent-test', ['ui.bootstrap', 'ngAnimate']);
