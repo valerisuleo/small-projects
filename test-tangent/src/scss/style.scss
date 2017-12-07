@@ -13,6 +13,9 @@
 }
 
 
+$btnColor: #FF00FF;
+
+
 main{
   header{
     height: 100vh;
@@ -133,16 +136,16 @@ main{
             margin-bottom: 10%;
           }
           h3:after{
-           content:'';
-           position: absolute;
-           // bottom: 0;
-           height: 1px;
-           width: 8.5em;
-           background-color: teal;
-           right: 0;
-           left: 0;
-           top: 12%;
-         }
+            content:'';
+            position: absolute;
+            // bottom: 0;
+            height: 1px;
+            width: 8.5em;
+            background-color: teal;
+            right: 0;
+            left: 0;
+            top: 12%;
+          }
           p{
             color: #FFF;
             font-size: 14px;
@@ -173,10 +176,56 @@ main{
     }
   }
   section#most-loved{
-    height: 400px;
-    background-color: silver;
+    height: 600px;
+    padding: 5%;
+    #silver{
+      border: 2px solid silver;
+      padding: 3%;
+      padding-top: 0;
+      h2{
+        text-align: center;
+        border-bottom: 1px solid silver;
+        padding-bottom: 1%;
+        margin-bottom: 3%;
+      }
+    }
     img{
-      height: 280px;
+      height: 330px;
+      width: 240px;
+    }
+    #make-info{
+      width: 250px;
+      margin: auto;
+      margin-bottom: 2%;
+    }
+    li.ng-scope{
+      display: none;
+    }
+    .wrapper {
+      width: 300px;
+      margin: 0 auto;
+      padding: 100px 0 0;
+    }
+
+    .button {
+      border-radius: 5px;
+      margin: auto;
+      width: 135px;
+      height: 40px;
+      background: linear-gradient(to right, darken($btnColor, 10%) 50%, $btnColor 50%) repeat scroll right bottom / 200% 100% rgba(0, 0, 0, 0);
+      text-align: center;
+      transition: background 350ms ease-in-out;
+      &:hover {
+        background-position: left bottom;
+      }
+      a {
+        display: block;
+        font-family: 'Pacifico', sans-serif;
+        color: #FFFFFF;
+        font-size: 1em;
+        padding: 1em;
+        text-decoration: none;
+      }
     }
   }
 }

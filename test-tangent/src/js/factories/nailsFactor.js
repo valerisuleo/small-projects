@@ -10,7 +10,7 @@ function NailsFactory() {
     price: 8,
     image: '/images/makeupOne.png'
   }, {
-    name: 'INC.redible',
+    name: 'INC.redible666',
     description: 'Jelly Shot Lip Quencher Watch Me Go',
     price: 8,
     image: '/images/makeupTwo.png'

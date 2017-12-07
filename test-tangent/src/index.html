@@ -1,24 +1,25 @@
 <!DOCTYPE html>
 <html ng-app="tangent-test">
-  <head>
-    <meta charset="utf-8">
-    <title>Angular Stack Setup</title>
-    <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
-    <!-- inject:js -->
-    <!-- endinject -->
-    <!-- inject:css -->
-    <!-- endinject -->
-  </head>
-  <body ng-controller="MainCtrl as main">
+<head>
+  <meta charset="utf-8">
+  <title>Angular Stack Setup</title>
+  <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Pacifico" rel="stylesheet" type="text/css">
+  <!-- inject:js -->
+  <!-- endinject -->
+  <!-- inject:css -->
+  <!-- endinject -->
+</head>
+<body ng-controller="MainCtrl as main">
 
-    <main>
-      <header>
-        <div id="nails-header"></div>
+  <main>
+    <header>
+      <div id="nails-header"></div>
 
-        <div id="info">
+      <div id="info">
 
-          <div>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt. <br><br>
+        <div>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt. <br><br>
             Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
           </div>
 
@@ -63,13 +64,13 @@
           <div class="wrapper">
             <h3>Our Approach</h3>
 
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+            <!-- <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
 
             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
 
             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
 
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p> -->
           </div>
         </div>
 
@@ -81,20 +82,32 @@
 
 
       <section id="most-loved">
-<!-- We get $index from the Angular's ng-repeat directive. This is the "iterator offset of the repeated element", i.e the index of that element in the array that we are looping over. The Bootstrap carousel requires the index attribute to be set, as it needs this to determine which slide to make "active". It is directly linked to the vm.active -->
-        <div uib-carousel active="main.active" interval="main.myInterval" no-wrap="main.noWrapSlides">
-          <div uib-slide ng-repeat="slide in main.all" index="$index">
-            <img ng-src="{{slide.image}}" style="margin:auto;">
-            <div class="carousel-caption">
-              <p>{{slide.text}}</p>
+        <!-- We get $index from the Angular's ng-repeat directive. This is the "iterator offset of the repeated element", i.e the index of that element in the array that we are looping over. The Bootstrap carousel requires the index attribute to be set, as it needs this to determine which slide to make "active". It is directly linked to the vm.active -->
+
+        <div id="silver">
+          <h2>Most loved</h2>
+          <div uib-carousel active="main.active" interval="main.myInterval" no-wrap="main.noWrapSlides">
+            <div uib-slide ng-repeat="slide in main.all" index="$index">
+              <img ng-src="{{slide.image}}" style="margin:auto;">
+              <!-- <div class="carousel-caption"></div> -->
+              <div id="make-info">
+                <h4>{{slide.name}}</h4>
+                <p><em>{{slide.description}}</em></p>
+              </div>
+
+              <p style="font-size:16px;"><strong>£</strong> {{slide.price}},00</p>
+
+              <div class="button">
+                <a href="#">Add To Bag</a>
+              </div>
+
             </div>
           </div>
         </div>
-
 
       </section>
 
     </main>
 
   </body>
-</html>
+  </html>

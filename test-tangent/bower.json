@@ -18,6 +18,7 @@
     "angular": "^1.5.8",
     "angular-bootstrap": "^2.5.0",
     "bootstrap-css-only": "^3.3.7",
-    "angular-animate": "^1.6.7"
+    "angular-animate": "^1.6.7",
+    "angular-carousel": "^1.1.0"
   }
 }
