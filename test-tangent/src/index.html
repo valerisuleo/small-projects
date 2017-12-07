@@ -58,24 +58,24 @@
 
       </section>
 
-      <section id="approach">
+      <section class="pink-black">
 
         <div>
           <div class="wrapper">
             <h3>Our Approach</h3>
 
-            <!-- <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
 
             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
 
             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
 
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p> -->
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>
           </div>
         </div>
 
         <div>
-          <div class="overlay"></div>
+          <div class="overlay" id="approach"></div>
         </div>
 
       </section>
@@ -83,13 +83,13 @@
 
       <section id="most-loved">
         <!-- We get $index from the Angular's ng-repeat directive. This is the "iterator offset of the repeated element", i.e the index of that element in the array that we are looping over. The Bootstrap carousel requires the index attribute to be set, as it needs this to determine which slide to make "active". It is directly linked to the vm.active -->
-
         <div id="silver">
           <h2>Most loved</h2>
+
           <div uib-carousel active="main.active" interval="main.myInterval" no-wrap="main.noWrapSlides">
             <div uib-slide ng-repeat="slide in main.all" index="$index">
               <img ng-src="{{slide.image}}" style="margin:auto;">
-              <!-- <div class="carousel-caption"></div> -->
+
               <div id="make-info">
                 <h4>{{slide.name}}</h4>
                 <p><em>{{slide.description}}</em></p>
@@ -101,6 +101,43 @@
                 <a href="#">Add To Bag</a>
               </div>
 
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="pink-black">
+
+        <div>
+          <div class="wrapper">
+            <h3 id="vip">Shop. Just Arrived. Vip</h3>
+
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+          </div>
+        </div>
+
+        <div>
+          <div class="overlay" id="just-arrived">
+            <div>
+              <div class="left">
+                <h1>Nails Inc VIP Scheme</h1>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. <strong>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</strong></p>
+                <ul>
+                  <li>Lorem ipsum dolor sit amet, consectetur adipisicing</li>
+                  <li>Ut enim ad minim veniam, quis nostrud exercitation. </li>
+                  <li>Duis aute irure dolor in reprehenderit in voluptate. </li>
+                  <li>Excepteur sint occaecat cupidatat non proident, sunt.</li>
+                </ul>
+              </div>
+              <div class="right">
+                <img ng-src="/images/polish.jpg">
+              </div>
+            </div>
+            <div>
+              <h2>How it works</h2>
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elite</p>
             </div>
           </div>
         </div>
