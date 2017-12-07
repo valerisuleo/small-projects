@@ -13,7 +13,7 @@
 }
 
 
-$btnColor: #FF00FF;
+$btnColor: #FF3399;
 
 
 main{
@@ -287,10 +287,16 @@ main{
     }
   }
   section#result{
-    div#white{
-      height: 1400px;
+    height: 1724px;
+    width: 100%;
+    background-image: url('/images/final.jpg');
+    background-size: contain;
+    background-position: bottom;
+    background-repeat: no-repeat;
+    div#first{
+      height: 40%;
       width: 100%;
-      // background-color: pink;
+      // background-color: #FFF;
       div{
         &:nth-child(1){
           width: 100%;
@@ -315,12 +321,13 @@ main{
         }
         &#numbers{
           width: 100%;
-          height: 20%; // split height
+          height: 45%; // split height
           // background-color: brown;
           div{
             width: 20%;
             height: 100%;
             float: right;
+            padding: 2%;
             // border: 1px solid black;
             // background-color: yellow;
             img{
@@ -330,16 +337,75 @@ main{
           }
         }
         &:nth-child(3){
-          height: 20%; // height split
-          width: 100%;
-          // background-color: purple;
+          height: 15%; // height split
+          width: 50%;
           position: relative;
+          margin: auto;
           #p-wrapper{
+            margin-top: 5%;
             @extend .center-styles;
             top: 30%;
-            width: 50%;
             text-align: center;
           }
+        }
+      }
+    }
+    div#two{
+      height: 60%;
+      width: 100%;
+      // background-color: rgba(0, 0, 0, 0.5);
+      .first{
+        height: 50%;
+        width: 100%;
+        // background-color: pink;
+        position: relative;
+        #screenshot{
+          width: 60%;
+          height: 100%;
+          background-color: #FFF;
+          background-image: url('/images/screenshot.jpg');
+          background-repeat: no-repeat;
+          background-size: contain;
+          @extend .center-styles;
+          box-shadow: 0 15px 15px -8px #444;
+        }
+      }
+      .second{
+        height: 40%;
+        width: 100%;
+        color: #000;
+        position: relative;
+        .wrapper-info{
+          @extend .center-styles;
+          text-align: center;
+          width: 60%;
+          top: 40%;
+          p{
+            &:nth-child(1){
+              font-size: 72px;
+              font-style: italic;
+              color: #FF3399;
+              margin-bottom: 0;
+            }
+            &:nth-child(2){
+              font-size: 16px;
+              font-style: italic;
+              line-height: 25px;
+              margin-bottom: 3%;
+            }
+            &:nth-child(3){
+              color: #FF3399;
+            }
+          }
+        }
+      }
+      .third{
+        width: 100%;
+        height: 7%;
+        position: relative;
+        p{
+          @extend .center-styles;
+          font-size: 18px;
         }
       }
     }

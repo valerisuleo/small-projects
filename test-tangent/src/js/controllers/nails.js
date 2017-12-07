@@ -9,7 +9,7 @@ function MainCtrl(NailsFactory) {
   vm.all = NailsFactory.query();
   console.log('all', vm.all);
 
-  vm.myInterval = 5000; // The time delay between each slide
+  vm.myInterval = 2000; // The time delay between each slide
   vm.noWrapSlides = false; // This will decide whether or not the carousel is 'infinite' or not, i.e whether you can keep going round in a loop with the arrow buttons
   vm.active = 0; // This decides which slide is shown first (based on it's index in the array of slides)
 
