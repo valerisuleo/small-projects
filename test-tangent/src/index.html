@@ -14,7 +14,23 @@
 <body ng-controller="MainCtrl as main">
 
   <main>
+
+    <!-- MOBILE NAVBAR -->
+    <div id="mobileNav" ng-class="{'show' : main.mobileOpen}">
+      <nav>
+        <ul>
+          <li><a ui-sref="#">Home</a></li>
+          <li><a ui-sref="#">Nails</a></li>
+          <li><a ui-sref="#">Contact</a></li>
+        </ul>
+      </nav>
+
+      <div id="child" ng-click="main.mobileNavBar($event)"></div>
+
+    </div>
+
     <header>
+
       <div id="nails-header"></div>
 
       <div id="info">

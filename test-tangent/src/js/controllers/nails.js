@@ -16,5 +16,10 @@ function MainCtrl(NailsFactory) {
 // If we update vm.active = 0 to be vm.active = 3, this will change which bird the carousel starts on when the page loads.
 // If we update vm.myInterval = 5000 to be vm.myInterval = 2000 the delay between the slides will be 2 seconds rather than 5.
 // If we update vm.noWrapSlides = false to be vm.noWrapSlides = true, once we hit the last slide we can't loop back to the first.
+// Toggle mobile navbar
+
+  vm.mobileNavBar = function () {
+    vm.mobileOpen = !vm.mobileOpen;
+  };
 
 }
