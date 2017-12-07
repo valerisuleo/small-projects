@@ -286,4 +286,62 @@ main{
       }
     }
   }
+  section#result{
+    div#white{
+      height: 1400px;
+      width: 100%;
+      // background-color: pink;
+      div{
+        &:nth-child(1){
+          width: 100%;
+          height: 15%; // split height
+          // background-color: grey;
+          position: relative;
+          h2{
+            @extend .center-styles;
+            text-transform: uppercase;
+          }
+          h2:after{
+            content:'';
+            position: absolute;
+            // bottom: 0;
+            height: 2px;
+            width: 4em;
+            background-color: teal;
+            right: 0;
+            left: -8px;
+            top: -15%;
+          }
+        }
+        &#numbers{
+          width: 100%;
+          height: 20%; // split height
+          // background-color: brown;
+          div{
+            width: 20%;
+            height: 100%;
+            float: right;
+            // border: 1px solid black;
+            // background-color: yellow;
+            img{
+              width: 100%;
+              height: 100%
+            }
+          }
+        }
+        &:nth-child(3){
+          height: 20%; // height split
+          width: 100%;
+          // background-color: purple;
+          position: relative;
+          #p-wrapper{
+            @extend .center-styles;
+            top: 30%;
+            width: 50%;
+            text-align: center;
+          }
+        }
+      }
+    }
+  }
 }
