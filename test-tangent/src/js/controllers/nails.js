@@ -14,6 +14,8 @@ function MainCtrl(NailsFactory, $window) {
   vm.active = 0; // This decides which slide is shown first (based on it's index in the array of slides)
 
 
+
+// Toggle desktop navbar class on window scroll...
   angular.element($window);
   console.log(window);
 
