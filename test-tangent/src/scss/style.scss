@@ -524,6 +524,9 @@ main{
 @media only screen and (max-width: 640px) {
   main{
     header{
+      #dollar-header{
+        display: none;
+      }
       height: 88vh;
       div{
         &#nails-header{
