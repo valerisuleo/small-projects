@@ -76,10 +76,68 @@ div#mobileNav{
 .show {
   margin-top: 0!important; /* to overide inline style */
 }
+// _____________________________________________________________________________
 
 main{
   header{
     height: 100vh;
+    #dollar-header{
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 2;
+      height: 40px;
+
+      background-color: rgba(20, 20, 20, 0);
+      // background-color: rgba(20, 20, 20, 0);
+      transition: background-color 0.2s ease;
+      &.opaque {
+        background-color: rgba(20, 20, 20, 0.6);
+      }
+
+      nav {
+        ul {
+          list-style: none;
+          padding: 0;
+          margin: 0;
+        }
+        li{
+          display: inline-block;
+          float: left;
+          margin-left: 20px;
+          line-height: 40px;
+          &:last-of-type {
+            margin-right: 0;
+          }
+          a{
+            color: #fac2d1;
+            text-decoration: none;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            font-weight: bold;
+            position: relative;
+            cursor: pointer;
+            &:after {
+              content: "";
+              height: 2px;
+              width: 100%;
+              background-color: white;
+              position: absolute;
+              bottom: -4px;
+              left: 0;
+              opacity: 0;
+              transition: opacity 0.2s ease;
+            }
+            &:hover {
+              &:after {
+                opacity: 1;
+              }
+            }
+          }
+        }
+      }
+    }
     div{
       &#nails-header{
         height: 60%;
