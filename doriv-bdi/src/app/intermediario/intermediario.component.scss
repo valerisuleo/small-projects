@@ -39,7 +39,8 @@ td.btn-container{
     width: 30px;
     border-radius: 30px;
     background-color: $blue;
-    @extend .centered-styles;
+    top: calc(50% - 15px);
+    left: calc(50% - 15px);
     &#red{
       background-color: red;
     }
