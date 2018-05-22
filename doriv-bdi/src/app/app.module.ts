@@ -14,6 +14,7 @@ import { ProgressTrackerComponent } from './progress-tracker/progress-tracker.co
 import { LandingPageComponent } from './landing-page/landing-page.component';
 import { OpzioniComponent } from './opzioni/opzioni.component';
 import { IntermediarioComponent } from './intermediario/intermediario.component';
+import { CapogruppoComponent } from './capogruppo/capogruppo.component';
 // import { JumboComponent } from './jumbo/jumbo.component';
 
 
@@ -27,6 +28,7 @@ import { IntermediarioComponent } from './intermediario/intermediario.component'
     LandingPageComponent,
     OpzioniComponent,
     IntermediarioComponent,
+    CapogruppoComponent,
     // JumboComponent
   ],
   imports: [

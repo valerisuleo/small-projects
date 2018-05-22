@@ -5,8 +5,10 @@ import { ProgressTrackerComponent } from './progress-tracker/progress-tracker.co
 import { OpzioniComponent } from './opzioni/opzioni.component';
 import { LandingPageComponent } from './landing-page/landing-page.component';
 import { IntermediarioComponent } from './intermediario/intermediario.component';
+import { CapogruppoComponent } from './capogruppo/capogruppo.component';
 
 const appRoutes: Routes = [
+  { path: 'capogruppo', component: CapogruppoComponent },
   { path: 'intermediario', component: IntermediarioComponent },
   { path: 'progress', component: ProgressTrackerComponent },
   { path: 'opzioni', component: OpzioniComponent },
