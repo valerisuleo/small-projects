@@ -7,6 +7,7 @@ import { LandingPageComponent } from './landing-page/landing-page.component';
 import { IntermediarioComponent } from './intermediario/intermediario.component';
 
 const appRoutes: Routes = [
+  { path: 'intermediario', component: IntermediarioComponent },
   { path: 'progress', component: ProgressTrackerComponent },
   { path: 'opzioni', component: OpzioniComponent },
   { path: 'home', component: LandingPageComponent },
