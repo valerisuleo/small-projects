@@ -4,6 +4,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { ProgressTrackerComponent } from './progress-tracker/progress-tracker.component';
 import { OpzioniComponent } from './opzioni/opzioni.component';
 import { LandingPageComponent } from './landing-page/landing-page.component';
+import { IntermediarioComponent } from './intermediario/intermediario.component';
 
 const appRoutes: Routes = [
   { path: 'progress', component: ProgressTrackerComponent },
