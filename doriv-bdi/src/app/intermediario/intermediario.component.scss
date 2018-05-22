@@ -26,26 +26,16 @@
 
 
 
+.table{
+  tbody{
+    tr{
+      height: 50px;
+    }
+  }
+}
 
 th{
   &:last-child{
     text-align: center;
-  }
-}
-
-
-td.btn-container{
-  position: relative;
-  div.btn-select{
-    height: 30px;
-    width: 30px;
-    border-radius: 30px;
-    background-color: $blue;
-    position: absolute;
-    top: calc(50% - 15px);
-    left: calc(50% - 15px);
-    &#red{
-      background-color: red;
-    }
   }
 }
