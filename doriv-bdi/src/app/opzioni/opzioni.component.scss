@@ -1,0 +1,30 @@
+@import "~corpo_aside.scss";
+@import "~variables.scss";
+
+// .jumbotron {
+//   color: #fff;
+//   background-color: $blue;
+//   margin-top: 5%;
+// }
+
+#right-section-booty{
+  // background-color: grey;
+  position: relative;
+  height: 100vh;
+}
+
+.main-content{
+  @extend .centered-styles;
+  height: 61vh;
+  // background-color: pink;
+  width: 100%;
+  .row{
+    @extend .centered-styles;
+    width: 100%;
+    div{
+      &:nth-child(2){
+        cursor: pointer;
+      }
+    }
+  }
+}

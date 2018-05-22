@@ -4,10 +4,16 @@ import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 
 
 
+import { routing } from './app.routes';
+
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { AsideComponent } from './aside/aside.component';
 import { CorpoComponent } from './corpo/corpo.component';
+import { ProgressTrackerComponent } from './progress-tracker/progress-tracker.component';
+import { LandingPageComponent } from './landing-page/landing-page.component';
+import { OpzioniComponent } from './opzioni/opzioni.component';
+import { IntermediarioComponent } from './intermediario/intermediario.component';
 // import { JumboComponent } from './jumbo/jumbo.component';
 
 
@@ -17,11 +23,16 @@ import { CorpoComponent } from './corpo/corpo.component';
     NavbarComponent,
     AsideComponent,
     CorpoComponent,
+    ProgressTrackerComponent,
+    LandingPageComponent,
+    OpzioniComponent,
+    IntermediarioComponent,
     // JumboComponent
   ],
   imports: [
     BrowserModule,
-    NgbModule.forRoot()
+    NgbModule.forRoot(),
+    routing
   ],
   providers: [],
   bootstrap: [AppComponent]

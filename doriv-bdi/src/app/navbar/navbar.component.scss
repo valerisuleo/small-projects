@@ -5,6 +5,17 @@
   width: 30VW;
 }
 
+
+.navbar-brand{
+  // background-color: red;
+  width: 10vh;
+  position: relative;
+  img{
+    padding: 15%;
+    max-width: 100%;
+    @extend .centered-styles;
+  }
+}
 // CHANGE COLOR LINK ON HOVER
 .navbar-default{
   .navbar-nav{
