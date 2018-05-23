@@ -15,6 +15,7 @@ import { LandingPageComponent } from './landing-page/landing-page.component';
 import { OpzioniComponent } from './opzioni/opzioni.component';
 import { IntermediarioComponent } from './intermediario/intermediario.component';
 import { CapogruppoComponent } from './capogruppo/capogruppo.component';
+import { TeamembersComponent } from './teamembers/teamembers.component';
 // import { JumboComponent } from './jumbo/jumbo.component';
 
 
@@ -29,6 +30,7 @@ import { CapogruppoComponent } from './capogruppo/capogruppo.component';
     OpzioniComponent,
     IntermediarioComponent,
     CapogruppoComponent,
+    TeamembersComponent,
     // JumboComponent
   ],
   imports: [
