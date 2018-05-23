@@ -1,6 +1,14 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+
+import { NgDatepickerModule } from '../ng-datepicker/module/ng-datepicker.module';
+
+
+// import { DlDateTimePickerDateModule } from 'angular-bootstrap-datetimepicker';
+// import { BsDatepickerModule } from 'ngx-bootstrap';
+
 
 
 
@@ -16,7 +24,9 @@ import { OpzioniComponent } from './opzioni/opzioni.component';
 import { IntermediarioComponent } from './intermediario/intermediario.component';
 import { CapogruppoComponent } from './capogruppo/capogruppo.component';
 import { TeamembersComponent } from './teamembers/teamembers.component';
-// import { JumboComponent } from './jumbo/jumbo.component';
+import { CdispezioneComponent } from './cdispezione/cdispezione.component';
+
+
 
 
 @NgModule({
@@ -31,14 +41,20 @@ import { TeamembersComponent } from './teamembers/teamembers.component';
     IntermediarioComponent,
     CapogruppoComponent,
     TeamembersComponent,
+    CdispezioneComponent,
     // JumboComponent
   ],
   imports: [
     BrowserModule,
     NgbModule.forRoot(),
-    routing
+    routing,
+    // BsDatepickerModule.forRoot(),
+    FormsModule,
+    // DlDateTimePickerDateModule,
+    NgDatepickerModule
+
   ],
-  providers: [],
+  providers: [FormsModule],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -7,8 +7,10 @@ import { LandingPageComponent } from './landing-page/landing-page.component';
 import { IntermediarioComponent } from './intermediario/intermediario.component';
 import { CapogruppoComponent } from './capogruppo/capogruppo.component';
 import { TeamembersComponent } from './teamembers/teamembers.component';
+import { CdispezioneComponent } from './cdispezione/cdispezione.component';
 
 const appRoutes: Routes = [
+  { path: 'cdispezione', component: CdispezioneComponent },
   { path: 'team', component: TeamembersComponent },
   { path: 'capogruppo', component: CapogruppoComponent },
   { path: 'intermediario', component: IntermediarioComponent },
