@@ -86,3 +86,16 @@ td{
     }
   }
 }
+
+
+tr{
+  th{
+    text-align: center;
+    &:nth-child(1){
+      text-align: left;
+    }
+    &:nth-child(3){
+      text-align: left;
+    }
+  }
+}
