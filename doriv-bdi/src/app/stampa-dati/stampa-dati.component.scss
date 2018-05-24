@@ -6,6 +6,23 @@
   padding: 0 5% 0 5%;
 }
 
+h1{
+  display: inline-block;
+  @media only screen and (max-width: 1240px) {
+    font-size: 40px !important
+  }
+}
+
+.fa-check-circle{
+  color: #fff;
+  font-size: 50px;
+  padding-right: 3%;
+
+  @media only screen and (max-width: 960px) {
+    font-size: 30px !important
+  }
+}
+
 .print-container{
   height: 100%;
 }
@@ -37,11 +54,6 @@
   left: 50%;
   transform: translate(-50%, -50%);
 }
-
-.print-rows div.center-the-div p{
-  display: inline-block;
-}
-
 
 .print-rows:nth-child(3) div.center-results{
 float: left;
