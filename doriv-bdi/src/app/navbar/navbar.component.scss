@@ -8,10 +8,15 @@
 
 .navbar-brand{
   // background-color: red;
-  width: 10vh;
+  // height: 10vh;
+  width: 3vw;
   position: relative;
+  &.navbar-right{
+    margin-left: 5%;
+    margin-right: 3%;
+  }
   img{
-    padding: 15%;
+    // padding: 15%;
     max-width: 100%;
     @extend .centered-styles;
   }
