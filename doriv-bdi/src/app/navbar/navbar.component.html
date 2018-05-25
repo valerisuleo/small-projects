@@ -1,4 +1,4 @@
-<nav class="navbar navbar-default navbar-fixed-top">
+<nav class="navbar navbar-default navbar-fixed-top navbar-custom">
   <div class="container-fluid">
     <!-- Brand and toggle get grouped for better mobile display -->
     <div class="navbar-header">
@@ -25,51 +25,75 @@
         <li class="dropdown">
           <!-- <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
           <ul class="dropdown-menu">
-            <li><a href="#">Action</a></li>
-            <li><a href="#">Another action</a></li>
-            <li><a href="#">Something else here</a></li>
-            <li role="separator" class="divider"></li>
-            <li><a href="#">Separated link</a></li>
-            <li role="separator" class="divider"></li>
-            <li><a href="#">One more separated link</a></li>
-          </ul> -->
-        </li>
+          <li><a href="#">Action</a></li>
+          <li><a href="#">Another action</a></li>
+          <li><a href="#">Something else here</a></li>
+          <li role="separator" class="divider"></li>
+          <li><a href="#">Separated link</a></li>
+          <li role="separator" class="divider"></li>
+          <li><a href="#">One more separated link</a></li>
+        </ul> -->
+      </li>
 
-      </ul>
+    </ul>
 
+    <ul class="nav navbar-nav navbar-right" (click)="openUser()">
 
-
-
-      <a class="navbar-brand navbar-right dropdown">
-        <!-- QUI LOGO BDI -->
-        <!-- <img src="./assets/brand.png"> -->
+      <li class="navbar-brand">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M224 256c70.7 0 128-57.3 128-128S294.7 0 224 0 96 57.3 96 128s57.3 128 128 128zm95.8 32.6L272 480l-32-136 32-56h-96l32 56-32 136-47.8-191.4C56.9 292 0 350.3 0 422.4V464c0 26.5 21.5 48 48 48h352c26.5 0 48-21.5 48-48v-41.6c0-72.1-56.9-130.4-128.2-133.8z"/></svg>
-      </a>
+      </li>
 
-      <form class="navbar-form navbar-right">
-        <div class="form-group">
-          <input type="text" class="form-control" placeholder="Search">
-        </div>
-        <button type="submit" class="btn btn-default">Submit</button>
-      </form>
+      <li [class.open]="isOpen" class="dropdown" id="avatar">
+        <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"></a>
+        <ul class="dropdown-menu">
+          <li>
+            <div class="navbar-content">
+              <div class="row">
+                <div class="col-md-5">
+                  <img src="http://placehold.it/120x120"
+                  alt="Alternate Text" class="img-responsive" />
+                  <p class="text-center small">
+                    <a>Carica Photo</a></p>
+                  </div>
+                  <div class="col-md-7">
+                    <span>Manuel Fantoni</span>
+                    <p class="text-muted small">
+                      maanuel@gmail.com</p>
+                      <div class="divider">
+                      </div>
+                      <a class="btn btn-primary btn-sm active"> Vai al Profilo</a>
+                    </div>
+                  </div>
+                </div>
+                <div class="navbar-footer">
+                  <div class="navbar-footer-content">
+                    <div class="row">
+                      <div class="col-md-6">
+                        <a class="btn btn-default btn-sm">Cambia Passowrd</a>
+                      </div>
+                      <div class="col-md-6">
+                        <a href="http://www.jquery2dotnet.com" class="btn btn-default btn-sm pull-right">Esci</a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </li>
+            </ul>
+          </li>
+        </ul>
+
+
+        <form class="navbar-form navbar-right">
+          <div class="form-group">
+            <input type="text" class="form-control" placeholder="Search">
+          </div>
+          <button type="submit" class="btn btn-default">Submit</button>
+        </form>
 
 
 
 
-      <!-- <ul class="nav navbar-nav navbar-right">
-        <li><a href="#">Link</a></li>
-        <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
-          <ul class="dropdown-menu">
-            <li><a href="#">Action</a></li>
-            <li><a href="#">Another action</a></li>
-            <li><a href="#">Something else here</a></li>
-            <li role="separator" class="divider"></li>
-            <li><a href="#">Separated link</a></li>
-          </ul>
-        </li>
-      </ul> -->
-    </div><!-- /.navbar-collapse -->
+      </div><!-- /.navbar-collapse -->
 
-  </div><!-- /.container-fluid -->
-</nav>
+    </div><!-- /.container-fluid -->
+  </nav>

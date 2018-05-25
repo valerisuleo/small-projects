@@ -5,10 +5,7 @@
   width: 30VW;
 }
 
-
 .navbar-brand{
-  // background-color: red;
-  // height: 10vh;
   width: 3vw;
   position: relative;
   &.navbar-right{
@@ -16,11 +13,12 @@
     margin-right: 3%;
   }
   img{
-    // padding: 15%;
     max-width: 100%;
     @extend .centered-styles;
   }
 }
+
+
 // CHANGE COLOR LINK ON HOVER
 .navbar-default{
   .navbar-nav{
@@ -31,6 +29,50 @@
           color: #FFF;
         }
       }
+    }
+  }
+}
+
+// INFO WINDOW USER
+.collapse{
+  ul{
+    &:nth-child(2){
+      margin: 0% 2% 0% 3%;
+      li{
+        a.dropdown-toggle{
+          &:hover{
+            background-color: $grey;
+          }
+        }
+        ul.dropdown-menu{
+          width: 20vw;
+          height: 20vh;
+          padding: 50%;
+          margin-top: 50%;
+        }
+      }
+    }
+  }
+}
+
+
+ul{
+  li{
+    svg{
+      height: 25px;
+      cursor: pointer;
+    }
+  }
+}
+
+#avatar{
+  a{
+    &:hover{
+      background-color: #f9f9f9;
+      cursor: default;
+    }
+    &.dropdown-toggle{
+      background-color: #f9f9f9;
     }
   }
 }

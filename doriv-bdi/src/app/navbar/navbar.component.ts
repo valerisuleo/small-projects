@@ -9,6 +9,13 @@ export class NavbarComponent implements OnInit {
 
   constructor() { }
 
+  isOpen = false;
+
+  openUser() {
+    console.log('uhhhh you clicked me!');
+    this.isOpen = !this.isOpen;
+  }
+
 
   ngOnInit() {
   }
