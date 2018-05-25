@@ -26,6 +26,8 @@ import { CapogruppoComponent } from './capogruppo/capogruppo.component';
 import { TeamembersComponent } from './teamembers/teamembers.component';
 import { CdispezioneComponent } from './cdispezione/cdispezione.component';
 import { StampaDatiComponent } from './stampa-dati/stampa-dati.component';
+import { InformazioniComponent } from './informazioni/informazioni.component';
+import { TabsetBasicComponent } from './tabset-basic/tabset-basic.component';
 
 
 
@@ -44,6 +46,8 @@ import { StampaDatiComponent } from './stampa-dati/stampa-dati.component';
     TeamembersComponent,
     CdispezioneComponent,
     StampaDatiComponent,
+    InformazioniComponent,
+    TabsetBasicComponent,
     // JumboComponent
   ],
   imports: [
