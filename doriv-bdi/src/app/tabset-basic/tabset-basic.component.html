@@ -1,9 +1,55 @@
 
-<ngb-tabset>
+<ngb-tabset class="nav nav-tabs">
 
   <ngb-tab title="Informazioni">
     <ng-template ngbTabContent>
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+
+      <div class="row">
+
+        <section class="col-md-8">
+          <div class="row">
+            <div class="col-md-6">
+              <ul>
+                <li>Intermediario</li>
+                <li>Intesa San Paolo</li>
+                <li>Filiale Piazza Dante</li>
+                <li>Piazza Dante 54, 10120</li>
+                <li>02.2010345</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-md-6">
+              <ul>
+                <li>Ispezione</li>
+                <li>Dal 01/04/2017 - In corso</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-md-6">
+              <ul>
+                <li>Gruppo Ispettivo</li>
+                <li><span>Capo Gruppo</span>: Giuseppe Occhio</li>
+                <li><span>Ispettori</span>: Manuel Fantoni, Cristina D'avena, <br> Mark Landers</li>
+              </ul>
+            </div>
+          </div>
+
+
+
+
+        </section>
+
+        <aside class="col-md-4">
+          <h3>Subscribe to our newsletter</h3>
+        </aside>
+
+
+
+      </div>
     </ng-template>
   </ngb-tab>
 
@@ -36,6 +82,8 @@
   <ngb-tab title="Log Accessi" [disabled]="true">
     <ng-template ngbTabContent></ng-template>
   </ngb-tab>
+
+
 
 
 </ngb-tabset>
