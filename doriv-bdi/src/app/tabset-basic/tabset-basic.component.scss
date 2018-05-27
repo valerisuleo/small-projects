@@ -2,38 +2,41 @@
 @import "~corpo_aside.scss";
 @import "~landing_stampa.scss";
 
-
-
-section.col-md-8{
-  padding-left: 3%;
+section.col-md-12{
   .row{
-    .col-md-6{
-      background-color: pink;
+    padding-top: 2%;
+    .info{
+      height: 100%;
+      width: 80%;
+      // background-color: silver;
+      float: left;
       ul{
         list-style: none;
-        padding: 0;
-        margin: 0;
         li{
-          font-size: 16px;
-          margin-bottom: 2%;
-          padding-left: 5%;
           color: $blue;
+          font-size: 16px;
+          padding-left: 3%;
           span{
             font-weight: bold;
           }
           &:first-child{
-            padding: 10% 0 0 0;
-            font-size: 18px;
             font-weight: bold;
             color: $darkBlue;
+            padding: 0;
           }
         }
       }
     }
+    .edit-form{
+      height: 100%;
+      width: 20%;
+      // background-color: pink;
+      float: right;
+      .fas{
+        font-size: 30px;
+        color: $darkBlue;
+        cursor: pointer;
+      }
+    }
   }
-}
-
-aside.col-md-4{
-  background-color: grey;
-  height: 200px;
 }
