@@ -2,9 +2,6 @@
 @import "~corpo_aside.scss";
 @import "~landing_stampa.scss";
 
-.main-content{
-  padding: 0 5% 0 5%;
-}
 
 h1{
   display: inline-block;
@@ -27,124 +24,56 @@ h1{
   }
 }
 
-.print-container{
-  height: 100%;
+.main-content{
+  padding: 0 0 5% 5%;
+  .print-rows{
+    height: 25%;
+    .wrappers{
+      width: 33.33%;
+      height: 100%;
+      float: right;
+      position: relative;
+      div{
+        &.wanda{
+          @extend .centered-styles;
+          width: 100%
+        }
+        &.lastone{
+          height: 100%;
+          div{
+            height: 50%;
+            &:first-child{
+              position: relative;
+              label{
+                @extend .centered-styles;
+                top: 70%;
+                width: 100%;
+              }
+            }
+            &:last-child{
+              overflow: auto;
+              @extend .centered-styles;
+              width: 100%;
+              top: 70%;
+              ul{
+                list-style: none;
+              }
+            }
+          }
+        }
+        label{
+          color: $darkBlue;
+        }
+        p{
+          color: $blue;
+        }
+      }
+    }
+  }
 }
 
-.print-rows{
-  height: 10%;
-  position: relative;
-}
-
-.print-rows:nth-child(4){
-  height: 40%;
-}
-
-.print-rows h4{
-  color: #0067AD;
-}
-
-.print-rows p{
-  color: rgb(0, 49, 103);
-}
-
-
-.print-rows div{
-  width: 100%;
-}
-.print-rows div.center-the-div{
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-}
-
-.print-rows:nth-child(3) div.center-results{
-float: left;
-height: 100%;
-width: 33.33%;
-position: relative;
-}
-
-.print-rows:nth-child(3) div.center-results div{
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-}
-
-
-
-
-.print-rows:nth-child(4) div.center-results div{
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-}
-
-.print-rows:nth-child(4) div.center-results{
-  float: left;
-  height: 100%;
-  width: 33.33%;
-  position: relative;
-}
-
-#print{
-  height: 100%;
-}
-
-#print h4{
-  height: 50%;
-  /* background-color: grey; */
-}
-
-#print ul{
-  height: 50%;
-  overflow: auto;
-  /* background-color: pink; */
-}
-
-#print ul li{
-  list-style-type: none;
-}
-
-
-#print h4{
-  position: relative;
-}
-
-#print h4 p{
-  position: absolute;
-  top: 91%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 100%;
-  color: #0067AD;
-}
-
-
-
-.print-rows .wanda{
-  width: 50%;
-  height: 100%;
-  /* background-color: red; */
-  float: left;
-  position: relative;
-}
-
-.print-rows .wanda .button-review{
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 180px;
-  height: 60px;
-}
-
-.print-rows .wanda .button-review .starter-button p{
-  line-height: 60px;
-  text-align: center;
-  color: #fff;
-  text-transform: uppercase;
+.starter-button{
+  p{
+    color: #fff !important;
+  }
 }

@@ -1,3 +1,5 @@
+@import "~variables.scss";
+
 .jumbotron {
   color: #fff;
   background-color: $blue;
@@ -8,7 +10,16 @@
 .main-content{
   position: relative;
   height: 61vh;
-  // background-color: pink;
+  width: 77vw;
+  margin: auto;
+  // background-  color: pink;
+    @media only screen and (max-width: 1024px) {
+      width: 80vw;
+    }
+
+    @media only screen and (max-width: 960px) {
+      width: auto;
+    }
   #no-dossier{
     font-size: 16px;
     padding-top: 3%;
@@ -22,10 +33,7 @@
     background-color: #3498db;
     width: 180px;
     height: 60px;
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    transform: translateX(-50%) translateY(-50%);
+    @extend .centered-styles;
     border-radius: 3px;
     &::after{
       content: "";
