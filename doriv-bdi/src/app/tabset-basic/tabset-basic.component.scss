@@ -16,8 +16,10 @@ section.col-md-12{
           color: $blue;
           font-size: 16px;
           padding-left: 3%;
+          margin-bottom: 0.5%;
           span{
             font-weight: bold;
+            padding-right: 1%;
           }
           &:first-child{
             font-weight: bold;
