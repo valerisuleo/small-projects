@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Cps</title>
+
+    <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
+    <script src="js/app.js" charset="utf-8"></script>
+
+	<!--     Fonts and icons     -->
+	<link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:400,700|Material+Icons" />
+	<link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,600,600i,700" rel="stylesheet">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css" />
+    
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    
+    <link rel="stylesheet" href="css/style.css">
+    <link href="css/animate.css" rel="stylesheet" />
+
+  </head>
+  <body>
+
+      <div class="symbol-header"></div>
+      <div id="page-top-outer">    
+
+        <!-- Start: page-top -->
+        <div id="page-top">
+        
+          <!-- start logo -->
+          <div id="logo">
+            <img src="img/logocps.png" alt="CPS (Comunicazione Prezzi e Servizi)" title="CPS (Comunicazione Prezzi e Servizi)">
+          </div>
+          <!-- end logo -->
+          
+           <div class="clear"></div>
+        
+        </div>
+        <!-- End: page-top -->
+        
+        </div>
+
+        <div class="nav-outer-repeat"> 
+          <!--  start nav-outer -->
+          <div class="nav-outer"> 
+            <div id="nav-left">
+            </div>
+              <div class="clear">&nbsp;</div>
+              <!-- start nav-right -->
+              <div id="nav-right">
+                 <div class="showhide-account-nomenu">
+                    <div class="nav-divider">&nbsp;</div>				
+                    <a href="void(0)" onclick="return false;" id="datipersonali" style="margin-top: 10px;">
+
+                        <i class="material-icons">
+                            account_box
+                        </i>
+                        <span class="menuDx">Benvenuto</span>
+
+                    </a>			
+                  </div>
+                  <div class="showhide-logout-nomenu">
+                    <div class="nav-divider">&nbsp;</div>				
+                    <a href="logout.do" id="logout">
+                        <i class="material-icons">
+                          forward
+                        </i>
+                        <span class="menuDx">Log out</span>
+                    </a>			
+                  </div>			
+          
+                
+                <div class="clear">&nbsp;</div>
+              </div>
+              <!-- end nav-right -->
+          <script type="text/javascript">
+         
+          </script>
+          <!-- fine menu dropdown -->
+          </div>
+          <div class="clear"></div>
+          <!--  start nav-outer -->
+        </div>
+
+        <div id="content-outer">
+            <!-- start content -->
+          <!-- CONTENT BODY -->
+
+          <div class="row">
+              <div class="col-md-3"></div>
+              <div class="col-md-6">
+                <div class="box">
+                  <h3 class="box-title">Gentile operatore, benvenuto nella sezione relativa alla Comunicazione Prezzi e Servizi.</h3>
+                  <hr>
+                  <form role="form" method="post" action="/cps/gestione.do" id="menu">
+                    <div class="form-group">
+                        <p>Da qui potrai creare una <b>nuova</b> dichiarazione su Prezzi e Servizi
+                          o gestire una dichiarazione <b>già inserita:</b></p>
+                        <button onclick="go('gestione.do');return false" class="btn btn-color">Gestione dichiarazioni</button>
+                        <hr>
+                        <p>Da qui potrai consultare le dichiarazioni su Prezzi e Servizi della tua struttura
+                        inserite, inviate e protocollate in passato:</p>
+                        <button onclick="go('archivio.do');return false" class="btn btn-color">Archivio dichiarazioni</button>
+                    </div>
+                  </form>
+                </div>
+              </div>
+              <div class="col-md-3"></div>
+            </div>
+
+        </div>
+
+
+      
+
+  </body>
+</html>

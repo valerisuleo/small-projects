@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Cps</title>
+
+  <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
+  <script src="js/app.js" charset="utf-8"></script>
+
+  <!-- Latest compiled and minified CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+  <!-- Optional theme -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+  <!-- Latest compiled and minified JavaScript -->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+  <!--     Fonts and icons     -->
+  <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700%7CRoboto+Slab:400,700%7CMaterial+Icons"/>
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,600,600i,700" rel="stylesheet">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css"/>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+
+<body>
+
+<!-- HEADER -->
+
+<div class="symbol-header"></div>
+<div id="page-top-outer">
+
+  <!-- Start: page-top -->
+  <div id="page-top">
+
+    <!-- start logo -->
+    <div id="logo">
+      <img src="img/logocps.png" alt="CPS (Comunicazione Prezzi e Servizi)" title="CPS (Comunicazione Prezzi e Servizi)">
+    </div>
+    <!-- end logo -->
+
+     <div class="clear"></div>
+
+  </div>
+  <!-- End: page-top -->
+
+  </div>
+
+  <div class="nav-outer-repeat">
+    <!--  start nav-outer -->
+    <div class="nav-outer">
+      <div id="nav-left">
+      </div>
+        <div class="clear">&nbsp;</div>
+        <!-- start nav-right -->
+        <div id="nav-right">
+           <div class="showhide-account-nomenu">
+              <div class="nav-divider">&nbsp;</div>
+              <a href="void(0)" onclick="return false;" id="datipersonali" style="margin-top: 10px;">
+
+                  <i class="material-icons">
+                      account_box
+                  </i>
+                  <span class="menuDx">Benvenuto</span>
+
+              </a>
+            </div>
+            <div class="showhide-logout-nomenu">
+              <div class="nav-divider">&nbsp;</div>
+              <a href="logout.do" id="logout">
+                  <i class="material-icons">
+                    forward
+                  </i>
+                  <span class="menuDx">Log out</span>
+              </a>
+            </div>
+
+
+          <div class="clear">&nbsp;</div>
+        </div>
+        <!-- end nav-right -->
+    <script type="text/javascript">
+
+    </script>
+    <!-- fine menu dropdown -->
+    </div>
+    <div class="clear"></div>
+    <!--  start nav-outer -->
+  </div>
+
+<!-- _____________________________CONTENT BODY_____________________________ -->
+
+  <div id="content-outer">
+    <h1>Gestione dichiarazione prezzi dei servizi</h1>
+    <div class="row">
+      <div class="col-md-3"></div>
+      <div class="col-md-6">
+        <div class="box box-warning">
+          <div class="box-header with-border">
+          </div>
+          <!-- /.box-header -->
+          <div class="box-body">
+            <form role="form">
+
+              <!-- select -->
+              <div class="form-group">
+                <label>Anno Dichiarazione</label>
+                <select class="form-control">
+                  <option>2019</option>
+                  <option value="" selected>2018</option>
+                  <option>2017</option>
+                  <option>2016</option>
+                  <option>2015</option>
+                </select>
+              </div>
+          </div>
+          <!-- /.box-body -->
+        </div>
+      </div>
+      <div class="col-md-3"></div>
+    </div>
+
+
+    <div class="row">
+      <div class="col-md-3"></div>
+      <div class="col-md-6">
+        <div class="box box-warning">
+          <div class="box-header with-border">
+            <h3 class="box-title">Ultima dichiarazione nell'anno Selezionato</h3>
+          </div>
+          <!-- /.box-header -->
+          <div class="box-body">
+            <div class="row">
+              <div class="col-md-6">
+                <p><strong>Stato:</strong> attesa validazione</p>
+                <p><strong>Tipo dichiarazione:</strong> Annuale dell'anno 2018</p>
+                <div class="form-group">
+                  <label>Tabella Prezzi</label>
+                  <select class="form-control">
+                    <option value="" selected>Italiano</option>
+                    <option>Inglese</option>
+                  </select>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="row">
+                  <div class="col-md-6"></div>
+                  <div class="col-md-6">
+                    <button class="btn-xs btn-primary">Mostra PDF dichiarazione</button>
+                    <button class="btn-xs btn-default" disabled="">Visualizza Tabella Prezzi</button>
+                    </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- /.box-body -->
+        </div>
+      </div>
+      <div class="col-md-3"></div>
+    </div>
+
+
+    <div class="row">
+      <div class="col-md-3"></div>
+      <div class="col-md-6">
+        <div class="box box-warning">
+          <div class="box-header with-border">
+            <h3 class="box-title">Nuova Dichiarazione nell'anno Selezionato</h3>
+          </div>
+          <!-- /.box-header -->
+          <div class="box-body">
+
+              <!-- radio -->
+              <div class="form-group">
+                <div class="radio">
+                  <label>
+                    <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1" checked="">
+                     Dichiarazione annuale
+                  </label>
+                </div>
+                <div class="radio">
+                  <label>
+                    <input type="radio" name="optionsRadios" id="optionsRadios2" value="option2">
+                    Dichiarazione dal 01/01 al 31/05
+                  </label>
+                </div>
+                <div class="radio">
+                  <label>
+                    <input type="radio" name="optionsRadios" id="optionsRadios3" value="option3">
+                    Dichiarazione dal 01/06 al 31/12
+                  </label>
+                </div>
+                <div class="radio">
+                  <label>
+                    <input type="radio" name="optionsRadios" id="optionsRadios4" value="option4" disabled="">
+                    Varazione motivazione <input type="text" name="" value="">
+                  </label>
+                </div>
+
+              </div>
+            </div>
+            <!-- /.box-body -->
+          </div>
+        </div>
+        <div class="col-md-3"></div>
+      </div>
+
+
+
+    <div class="row">
+      <div class="col-md-3"></div>
+      <div class="col-md-6">
+        <div class="box box-warning setheight">
+          <div class="box-header with-border">
+            <h3 class="box-title"> Dichiarazione in bozza nell'anno Selezionato</h3>
+          </div>
+          <div class="box-body">
+
+            <div class="col-md-6">Dichiarazione in bozza con l'anno Selezionato</div>
+            <div class="col-md-6">
+              <button class="btn btn-default" disabled="">Modifica/Conferma</button>
+              <button class="btn btn-default" disabled="">Elimina</button>
+            </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-3"></div>
+      </div>
+
+
+
+
+
+      <!-- <div class="row">
+        <div class="col-md-3"></div>
+        <div class="col-md-6">
+          <div class="col-md-6">Dichiarazione in bozza con l'anno Selezionato</div>
+          <div class="col-md-6">
+            <button class="btn btn-default" disabled="">Modifica/Conferma</button>
+            <button class="btn btn-default" disabled="">Elimina</button>
+          </div>
+        </div>
+        <div class="col-md-3"></div>
+      </div> -->
+
+
+      <div class="row">
+        <div class="col-md-3"></div>
+        <div class="col-md-6">
+          <div class="box-footer">
+            <button type="submit" class="btn btn-default">Annulla</button>
+            <button type="submit" class="btn btn-info pull-right">Compila</button>
+          </div>
+        </div>
+        <div class="col-md-3"></div>
+      </div>
+
+    </form>
+
+  </div>
+
+</body>
+</html>
