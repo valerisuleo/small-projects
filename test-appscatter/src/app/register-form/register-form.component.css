@@ -1,0 +1,26 @@
+.card1{
+  border-top-right-radius: 0px;
+  border-bottom-right-radius: 0px;
+  border-right-style: 0px;
+}
+
+.card2{
+  border-top-left-radius: 0px;
+  border-bottom-left-radius: 0px;
+  background: #282835;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to bottom, #D3CCE3, #282835);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to bottom, #D3CCE3, #282835); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+.field-icon {
+  float: right;
+  margin-left: -25px;
+  margin-top: -25px;
+  position: relative;
+  z-index: 2;
+  right: 10px;
+}
+
+.btn{
+  cursor: pointer;
+}

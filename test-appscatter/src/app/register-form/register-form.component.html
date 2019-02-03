@@ -1,0 +1,116 @@
+<div class="container mt-5 mb-5">
+  <div class="card-group ">
+    <div class="card card1 text-center" >
+      <img class="card-img" src="http://www.v-quadro.it/Screenshot.png" alt="Card image">
+      <div class="card-img-overlay">
+      </div>
+    </div>
+
+    <!--   second card -->
+    <div  class="card card2 " >
+      <div class="card-body mt-5">
+        <form #f="ngForm" (ngSubmit)="submit(f)">
+          <h2 class="text-center font-up font-bold py-4 white-text">Sign up</h2>
+          <!-- ___________________________firstname___________________________ -->
+          <div class="form-group">
+            <label for="firstname">First Name</label>
+            <input type="text" required minlength="3"
+            ngModel name="firstname" #passname="ngModel"
+            id="firstname" class="form-control">
+
+            <!-- validations error -->
+            <div class="alert alert-danger" *ngIf="passname.touched && !passname.valid">
+              <div *ngIf="passname.errors.required">firstname is required</div>
+              <div *ngIf="passname.errors.minlength">firstname min {{ passname.errors.minlength.requiredLength }} characters</div>
+            </div>
+          </div>
+          <!-- ___________________________lastname___________________________ -->
+          <div class="form-group">
+            <label for="lastname">Last Name</label>
+            <input type="text" required minlength="3"
+            ngModel name="lastname" #passlastname="ngModel"
+            id="lastname" class="form-control">
+
+            <!-- validations error -->
+            <div class="alert alert-danger" *ngIf="passlastname.touched && !passlastname.valid">
+              <div *ngIf="passlastname.errors.required">last name is required</div>
+              <div *ngIf="passlastname.errors.minlength">last name min {{ passlastname.errors.minlength.requiredLength }} characters</div>
+            </div>
+          </div>
+
+
+          <!-- ____________________________password ____________________________-->
+          <div class="form-group">
+            <label for="password">Password</label>
+            <div class="eye-container">
+              <input [type]=currentType required minlength="3"
+               [(ngModel)]="account.password" name="password" #passpassword="ngModel" (change)="passwordFunction(passpassword)"
+              id="password" class="form-control">
+              <span
+              (click)="toggleEye()"
+              class="fa fa-fw field-icon"
+              [ngClass]="{
+                'fa-eye': isOpen,
+                'fa-eye-slash': !isOpen
+              }">
+            </span>
+          </div>
+
+          <!-- Strength -->
+          <ng2-password-strength-bar
+            [passwordToCheck]="account.password"
+            [barLabel]="barLabel"
+            [barColors]="myColors"
+            [strengthLabels]="strengthLabels"
+            (onStrengthChanged)="strengthChanged($event)">
+          </ng2-password-strength-bar>
+
+
+            <!-- validations error -->
+            <div class="alert alert-danger" *ngIf="passpassword.touched && !passpassword.valid">
+              <div *ngIf="passpassword.errors.required">password is required</div>
+              <div *ngIf="passpassword.errors.minlength">password min {{ passpassword.errors.minlength.requiredLength }} characters</div>
+            </div>
+          </div>
+
+
+          <!-- ________________________confirm password ________________________-->
+          <div class="form-group">
+            <label for="confirmpassword">Confirm Password</label>
+            <input type="password" required minlength="3" [pattern]=isSamePassword
+            ngModel name="confirmpassword" #passconfirmpassword="ngModel"
+            id="confirmpassword" class="form-control">
+
+
+            <!-- validations error -->
+            <div class="alert alert-danger" *ngIf="passconfirmpassword.touched && !passconfirmpassword.valid">
+              <div *ngIf="passconfirmpassword.errors.required">Please, confirm your password</div>
+              <div *ngIf="passconfirmpassword.errors.pattern">Password does not match</div>
+            </div>
+          </div>
+
+            <!-- ________________________toggle ________________________-->
+              <div class="form-group">
+                <div class="row">
+                  <div class="col-lg-8">
+                    <label for="confirmpassword">Do you own any application?</label>
+                  </div>
+                  <div class="col-lg-4">
+                    <mat-slide-toggle>Slide me!</mat-slide-toggle>
+                  </div>
+                </div>
+              </div>
+      <!-- ________________________ agree contract ________________________-->
+              <div class="form-group">
+                <input type="checkbox" name="" value="">
+                <label for="terms">I agree to the <a href="{{ linkUrl }}">Terms and Conditions</a></label>
+              </div>
+
+          <button class="btn btn-primary" [disabled]="!f.valid">submit</button>
+
+        </form>
+      </div>
+    </div>
+
+  </div>
+</div>
