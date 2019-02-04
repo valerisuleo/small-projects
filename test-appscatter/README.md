@@ -149,7 +149,7 @@ firstname is required
 <button class="btn btn-primary" [disabled]="!f.valid">submit</button>
 ```
 
-##Cool Stuff
+## Cool Stuff
 
 I had a couple of light bulb moments:
 
