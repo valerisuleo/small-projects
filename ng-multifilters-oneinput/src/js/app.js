@@ -1,6 +1,6 @@
 angular
-.module('asso', [])
-.controller('PhoneCtrl', PhoneCtrl);
+  .module('asso', [])
+  .controller('PhoneCtrl', PhoneCtrl);
 
 
 PhoneCtrl.$inject = ['$scope'];
