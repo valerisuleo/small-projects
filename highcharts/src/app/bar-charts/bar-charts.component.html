@@ -1,0 +1,28 @@
+<div class="container">
+    <ul *ngFor="let bar of downloadAll">
+
+        <li class="border download">
+            <p class="percent-background" [style.height.%]="bar.download">
+                <span>{{ bar.download }}</span>
+            </p>
+        </li>
+        <li class="border prev-download">
+            <p class="percent-background prev" [style.height.%]="bar.downloadPrev">
+                <span>{{ bar.downloadPrev }}</span>
+            </p>
+        </li>
+
+
+        <li class="border revenue">
+            <p class="percent-background" [style.height.%]="bar.revenue">
+                <span>{{ bar.revenue }}</span>
+            </p>
+        </li>
+        <li class="border prev-revenue">
+            <p class="percent-background prev" [style.height.%]="bar.revenuePrev">
+                <span>{{ bar.revenuePrev }}</span>
+            </p>
+        </li>
+
+    </ul>
+</div>

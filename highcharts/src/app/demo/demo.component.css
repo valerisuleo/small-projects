@@ -1,0 +1,53 @@
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+.demo-container {
+    height: 100vh;
+    /* background-color: silver; */
+}
+
+section {
+    height: 50%;
+    /* border-bottom: 1px solid silver; */
+}
+
+section:first-child {
+    padding: 5%;
+
+}
+
+section:last-child {
+    padding: 1%;
+}
+
+.left {
+    width: 50%;
+    height: 100%;
+    float: left;
+}
+
+.right {
+    width: 50%;
+    height: 100%;
+    float: right;
+}
+
+.line {
+    height: 1px;
+    background-color: silver;
+    width: 90vw;
+    margin: auto;
+}
+
+@media only screen and (max-width: 640px) {
+
+    .left,
+    .right {
+        width: 100%;
+        height: 50%;
+        float: none;
+    }
+}

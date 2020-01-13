@@ -1,0 +1,33 @@
+.warning-msg {
+    /* position: relative; */
+    width: 50%;
+    height: 10vh;
+    margin: auto;
+    border-radius: 5px;
+    color: #9F6000;
+    background-color: #FEEFB3;
+}
+
+.top {
+    height: 50%;
+    position: relative;
+}
+
+.fa-exclamation-triangle{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.bottom {
+    height: 50%;
+}
+
+p {
+    padding: 0;
+    margin: 0;
+    line-height: 5vh;
+    text-align: center;
+    background-color: #FEEFB3;
+}

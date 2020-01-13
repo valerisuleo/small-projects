@@ -1,0 +1,61 @@
+.container {
+    width: 70vw;
+    height: 40vh;
+    margin: auto;
+    margin-top: 5%;
+    /* border: 1px solid silver; */
+    /* border-left: none; */
+}
+
+ul {
+    width: 15%;
+    /* width: 25%; */
+    float: left;
+    list-style: none;
+    height: 100%;
+    transform: rotate(180deg) scaleX(-1);
+    margin-right: 5%;
+    overflow-x: auto;
+}
+
+li.border {
+    height: 100%;
+    border-right: 1px solid silver;
+    border-left: 1px solid silver;
+    display: block;;
+    float: left;
+    position: relative;
+    background-color: #FAFAFA;
+}
+
+.border:first-child {
+    border-right: none;
+}
+
+li.download {
+    width: 35%;
+}
+
+li.prev-download {
+    width: 15%;
+}
+
+p.percent-background {
+    width: 100%;
+    background-color: rgb(53, 142, 215);
+    position: absolute;
+    top: 0;
+    display: block;
+}
+
+p.percent-background.prev {
+    background-color: rgb(174, 210, 239);
+}
+
+span {
+    position: absolute;
+    transform: rotate(180deg) scaleX(-1);
+    color: white;
+    font-size: 12px;
+    padding-left: 50%;
+}
