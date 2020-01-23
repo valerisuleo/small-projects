@@ -1,0 +1,58 @@
+@import "~src/css-partials/_colors";
+
+div {
+    height: 768px;
+    margin: auto;
+    position: relative;
+
+    .chart-container {
+        width: 1024px;
+        height: 640px;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        border: none;
+
+        .black {
+            width: 1024px;
+            height: 640px;
+            background-color: rgba(0, 0, 0, 0.5);
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            border: none;
+            overflow: hidden;
+
+            div {
+                background-color: silver;
+                opacity: 0.5;
+                height: 87px;
+                background: repeating-linear-gradient(45deg, $blue, $blue 10px, $light-blue 10px, $light-blue 20px);
+                position: absolute;
+
+                &.high {
+                    margin-top: 90px;
+                }
+
+                &.medium {
+                    margin-top: 271px;
+                    width: 950px;
+                    margin-left: 70px;
+                    background: none !important;
+                    opacity: 0.9;
+
+                    .left, .right {
+                        float: left;
+                    }
+                }
+
+                &.low {
+                    margin-top: 450px;
+                }
+            }
+        }
+    }
+}

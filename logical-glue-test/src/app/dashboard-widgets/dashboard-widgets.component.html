@@ -1,0 +1,26 @@
+<div>
+    <div class="chart-container">
+
+        <bar-chart 
+            (outputAlias)="onToggleChanged($event)"
+            [seriesData]="seriesData">
+        </bar-chart>
+
+        <div [hidden]="!isFuzzy" class="black">
+            <div class="high"></div>
+            <div class="medium">
+                <div class="left"></div>
+                <div class="right"></div>
+            </div>
+            <div class="low"></div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+

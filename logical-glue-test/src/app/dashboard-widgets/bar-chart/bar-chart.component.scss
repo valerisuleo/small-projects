@@ -1,0 +1,39 @@
+@import "~src/css-partials/_colors";
+
+.container {
+    height: 100%;
+    width: 100%;
+}
+
+button {
+    border: 2px solid $blue;
+    color: $blue;
+    text-transform: uppercase;
+    font-weight: bold;
+    background-color: $light-blue;
+    width: 170px;
+    height: 41px;
+    margin-bottom: 20px;
+    cursor: pointer;
+    outline: none !important;
+    border-radius: 3px;
+    font-size: 14px;
+    margin: auto;
+    display: block;
+    margin-top: 10px;
+
+    &:hover {
+        color: #474745;
+        background: repeating-linear-gradient(45deg, $blue, $blue 10px, $light-blue 10px, $light-blue 20px);
+    }
+}
+
+.toggled {
+    opacity: 0.5;
+
+    &:hover {
+        color: $blue;
+        background: none;
+        background-color: $light-blue;
+    }
+}
