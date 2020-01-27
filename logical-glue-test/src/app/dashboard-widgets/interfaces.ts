@@ -10,7 +10,6 @@ export interface IRawData {
     upperEnd: number
 }
 
-
 export interface IUpperData {
     upperStart: number,
     upperTop1: number,

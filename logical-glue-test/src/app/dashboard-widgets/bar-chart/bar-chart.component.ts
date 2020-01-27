@@ -92,7 +92,7 @@ export class BarChartComponent implements OnChanges {
         const marginRight: number[] = [];
         const barsLenght: number[] = [];
         const colors = ['#939391', '#14A0C4', '#939391'];
-        const opacity = ['0.7', '1', '0.7'];
+        const opacity = ['0', '1', '0'];
         const maxValue: number = 200000;
 
         this.customObjs.forEach((item) => {
@@ -103,9 +103,9 @@ export class BarChartComponent implements OnChanges {
 
         data.push(marginRight, barsLenght, marginLeft);
 
-        this.seriesObj = colors.map((key, index) => {
+        this.seriesObj = colors.map((el, index) => {
             return {
-                color: colors[index],
+                color: el,
                 data: data[index],
                 opacity: opacity[index]
             }   
@@ -121,6 +121,12 @@ export class BarChartComponent implements OnChanges {
     chartInit(): void {
         Highcharts.chart(this.container.nativeElement, {
             chart: {
+                events: {
+                    render: (e) => {
+                        console.log('clicked')
+                         setTimeout(() => this.toggleFuzzyArea(), 1000)
+                        }
+                },
                 type: 'bar',
                 backgroundColor: {
                     linearGradient: { x1: 0, y1: 0, x2: 0, y2: 1 },
@@ -144,7 +150,7 @@ export class BarChartComponent implements OnChanges {
                 text: 'Logical Glue Code Test'
             },
             xAxis: {
-                categories: ['High', 'Medium', 'Low'],
+                categories: ['Low', 'Medium', 'High'],
                 labels: {
                     style: {
                         color: '#999',
@@ -167,7 +173,7 @@ export class BarChartComponent implements OnChanges {
                     showInLegend: false
                 }
             },
-            series: this.seriesObj
+            series: this.seriesObj,
         });
     }
 
