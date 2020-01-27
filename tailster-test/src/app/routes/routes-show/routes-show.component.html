@@ -8,6 +8,7 @@
         </section>
 
         <aside class="col-lg-4 text-center">
+            <h3 class="pb-4">You choosed <span>{{ routeName }}</span></h3>
             <h5>How many snack Newton needs ?</h5>
 
             <p>Newton will need <span>{{ snacksInMyPocket }}</span> snacks to cover <span>{{ distance }}</span> mt</p>
@@ -16,9 +17,11 @@
             <div>
                 <button (click)="takeMeHome()" class="btn btn-primary mt-5">Go Back to Routes List</button>
             </div>
+
             <div>
                 <button (click)="currentLocation()" class="btn btn-primary mt-5">Where Am I?</button>
             </div>
+            
         </aside>
     </div>
 </div>
