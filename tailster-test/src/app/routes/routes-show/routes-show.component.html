@@ -1,13 +1,24 @@
-<h3>{{ routeName }}</h3>
+<div class="container-fluid mb-5">
+    <div class="row">
+        <section class="col-lg-8">
+            <gmaps
+            [locationsData]="locationsData"
+            (snackHighlights)="snackHighlights($event)">
+        </gmaps> 
+        </section>
 
-<!-- <ul>
-    <li *ngFor="let location of locations">
-        {{ location | json }}
-    </li>
-</ul> -->
+        <aside class="col-lg-4 text-center">
+            <h5>How many snack Newton needs ?</h5>
 
+            <p>Newton will need <span>{{ snacksInMyPocket }}</span> snacks to cover <span>{{ distance }}</span> mt</p>
+            <p *ngIf="count < 0">He has also enough strenght left for <span>{{ - count }}</span> mt walk uphill!</p>
 
-<!-- here maps -->
-<gmaps [locationsData]="locationsData"></gmaps>
-
-<button (click)="takeMeHome()" class="btn btn-primary ml-3 mt-5">Routes List</button>
+            <div>
+                <button (click)="takeMeHome()" class="btn btn-primary mt-5">Go Back to Routes List</button>
+            </div>
+            <div>
+                <button (click)="currentLocation()" class="btn btn-primary mt-5">Where Am I?</button>
+            </div>
+        </aside>
+    </div>
+</div>

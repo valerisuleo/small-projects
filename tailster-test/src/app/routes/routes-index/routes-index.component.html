@@ -1,7 +1,14 @@
-<h1>Index</h1>
-<ul>
-    <li *ngFor="let route of routes">
-        <a [routerLink]="['/routes', route.id]">{{ route.name }}</a>
-    </li>
-</ul>
-<ul>
+<main class="container">
+    <div class="row">
+        <section class="col-md-12">
+            <div class="row">
+                <div class="col-md-6 col-lg-4 text-center" *ngFor="let route of routes; index as i">
+                    <a [routerLink]="['/routes', route.id]">
+                        <img src="../../../assets/images/image{{i+1}}.jpg" class="img-fluid img-thumbnail">
+                        <button class="btn btn-primary btn-md mt-3 mb-2">{{ route.name }}</button>
+                    </a>
+                </div>
+            </div>
+        </section>
+    </div>
+</main>

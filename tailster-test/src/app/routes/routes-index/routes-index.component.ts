@@ -14,9 +14,9 @@ export class RoutesIndexComponent implements OnInit {
 
     routesIndex() {
         this.service.getAll()
-            .subscribe((response) => {
-                this.routes = response;
-            });
+        .subscribe((response) => {
+            this.routes = response;
+        });
     }
 
     ngOnInit() {

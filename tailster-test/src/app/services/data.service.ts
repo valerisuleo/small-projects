@@ -16,5 +16,4 @@ export class DataService {
         return this.http.get(this.url + `/${id}`)
         .pipe(map(response => response.json()))
     }
-
 }

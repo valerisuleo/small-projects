@@ -11,6 +11,7 @@ import { HttpModule } from '@angular/http';
 import { RouterModule } from '@angular/router';
 import { RoutesIndexComponent } from './routes/routes-index/routes-index.component';
 import { RoutesShowComponent } from './routes/routes-show/routes-show.component';
+import { HeaderComponent } from './header/header.component';
 
 
 @NgModule({
@@ -18,7 +19,8 @@ import { RoutesShowComponent } from './routes/routes-show/routes-show.component'
         AppComponent,
         GmapsComponent,
         RoutesIndexComponent,
-        RoutesShowComponent
+        RoutesShowComponent,
+        HeaderComponent
     ],
     imports: [
         FormsModule,

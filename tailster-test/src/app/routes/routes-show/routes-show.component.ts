@@ -1,4 +1,4 @@
-import { Component, OnInit, ChangeDetectorRef } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { RoutesService } from '../../services/routes.service';
 
@@ -17,6 +17,10 @@ export class RoutesShowComponent implements OnInit {
 
     locationsData = [];
     routeName: string;
+    count: number;
+    snacksInMyPocket: number;
+    distance: number;
+    isClicked: boolean = false;
 
     routeShow() {
         const id = this.route.snapshot.paramMap.get('id');
@@ -24,12 +28,23 @@ export class RoutesShowComponent implements OnInit {
         this.service.getItem(id)
         .subscribe((response) => {
             this.routeName = response.name;
-            this.locationsData = response.locations;
+            this.locationsData = response.locations;            
         });
+    }
+
+    snackHighlights(data) {
+        this.count = data.count;
+        this.snacksInMyPocket = data.snacksInMyPocket;
+        this.distance = data.distance;
     }
     
     takeMeHome() {
         this.rotuer.navigate(['/routes']);
+    }
+
+    currentLocation() {
+        this.isClicked = true;
+        this.service.sendData(this.isClicked)
     }
     
     ngOnInit() {
