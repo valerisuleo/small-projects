@@ -1,0 +1,13 @@
+<h3>{{ routeName }}</h3>
+
+<!-- <ul>
+    <li *ngFor="let location of locations">
+        {{ location | json }}
+    </li>
+</ul> -->
+
+
+<!-- here maps -->
+<gmaps [locationsData]="locationsData"></gmaps>
+
+<button (click)="takeMeHome()" class="btn btn-primary ml-3 mt-5">Routes List</button>

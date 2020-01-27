@@ -1,0 +1,7 @@
+<h1>Index</h1>
+<ul>
+    <li *ngFor="let route of routes">
+        <a [routerLink]="['/routes', route.id]">{{ route.name }}</a>
+    </li>
+</ul>
+<ul>

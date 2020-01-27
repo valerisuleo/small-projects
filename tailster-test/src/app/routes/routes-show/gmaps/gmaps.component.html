@@ -1,0 +1,23 @@
+<agm-map 
+[zoom]="zoom" 
+[zoomControl]="false"
+[latitude]="lat" 
+[longitude]="lng"
+[disableDefaultUI]="false">
+
+    <agm-marker 
+        *ngFor="let marker of markers; index as i"
+        [latitude]="marker.lat" 
+        [longitude]="marker.lng">
+    
+        <agm-info-window>
+            <strong>{{ i }}</strong>
+        </agm-info-window>
+        
+    </agm-marker>
+    
+    
+    
+</agm-map>
+
+<h3>Distance: {{ distance }} mt</h3>
