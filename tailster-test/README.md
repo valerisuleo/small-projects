@@ -90,14 +90,14 @@ else response">
 
 ``` 
 
-######What could be improved?
+###### What could be improved?
 
 - Add Marker after calling the `setCurrentLocation()` method;
 - Add more unit test
 - Add the _autocomplete placeholder_ but I couldn't because of the actual `Google API KEY`
 
 
-######What went badly?
+###### What went badly?
 
 - I spent too much time trying to fix unit test: in particulary the one with _ActivatedRoute_
 - It took me a while to figure it out calculate the number of snack.
