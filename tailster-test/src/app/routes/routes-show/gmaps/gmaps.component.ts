@@ -21,7 +21,7 @@ export class GmapsComponent implements OnChanges {
 
     constructor(private service: RoutesService) {}
 
-    remapObj(): void {
+    public remapObj(): void {
         // AGM wants these specifics properties: lat, lng.
         this.markers = this.dataRaw.map((item) => {
             return {
@@ -32,14 +32,14 @@ export class GmapsComponent implements OnChanges {
         });
     }
 
-    calculateDistance(): void {
+    public calculateDistance(): void {
         const latLng: google.maps.LatLng[] = this.markers.map((item) => {
             return new google.maps.LatLng(item.lat, item.lng);
         });
         this.distance = +google.maps.geometry.spherical.computeLength(latLng).toFixed(1);
     }
 
-    calculateSnack(): void {
+    public calculateSnack(): void {
         let count = 0;
         const snacks: number[] = [];
         const altitudes: number[] = [];
@@ -69,7 +69,7 @@ export class GmapsComponent implements OnChanges {
         this.change.emit(snackHighlights);
     }
 
-    setCurrentLocation(): void {
+    public setCurrentLocation(): void {
         if ('geolocation' in navigator) {
             navigator.geolocation.getCurrentPosition((position) => {
                 this.lat = position.coords.latitude;
@@ -79,7 +79,7 @@ export class GmapsComponent implements OnChanges {
         }
     }
 
-    fromRouteShow(): void {
+    public fromRouteShow(): void {
         this.service.changedValue
         .subscribe((data: boolean) => {
             if (data === true) {
@@ -88,7 +88,7 @@ export class GmapsComponent implements OnChanges {
         });
     }
 
-    ngOnChanges(change: SimpleChanges): void {
+    public ngOnChanges(change: SimpleChanges): void {
         const currentValue: any = change.locationsData.currentValue;
         const firstChange: boolean = change.locationsData.firstChange;
 
@@ -101,7 +101,6 @@ export class GmapsComponent implements OnChanges {
             // start point
             this.lat = this.markers[1].lat
             this.lng = this.markers[1].lng
-
         }
     }
 }
