@@ -4,8 +4,10 @@ You're a developer at an awesome pet startup and the CEO has asked you to help h
 Newton is very snack driven: so **for every metre you go uphill, he must be given one snack**. However, **for every metre you go downhill, the dog can store that momentum to eventually walk back up one metre uphill**. **Walking on even ground requires no snacks** because he just kinda glides along. (Newton is a bit weird and defies some laws of physics.) You can assume that the dog starts immediately at the first point in the route and that no snacks are required to bring the dog to the starting point.
 To complete this test, we are providing the following REST endpoints:
 
-- `https://infinite-lake-80504.herokuapp.com/api/routes (to retrieve a list of walking routes)`
-- `https://infinite-lake-80504.herokuapp.com/api/routes/{id}` (to retrieve the detailed walking route specifying the id)
+- `https://infinite-lake-80504.herokuapp.com/api/routes`
+- `https://infinite-lake-80504.herokuapp.com/api/routes/{id}`
+
+
 Each 3D point is an object of 3 items, with the following values: "latitude, longitude and altitude". Every route is guaranteed to have at least one point and can contain up to 100.
 Also, to simplify the test, the altitude will always be an integer.
 
@@ -18,7 +20,7 @@ Given walking routes as an array of 3D points, build a mini-site (preferably in 
 - allows users to directly view a specific walking route via a URL
 You can use the following `Google API KEY: AIzaSyBp7- 48qKl3mat1o4U5zDMP_oLwY2alq8M`
 
--
+--
 
 
 ###### What went well?
