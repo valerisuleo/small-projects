@@ -28,7 +28,7 @@ You can use the following `Google API KEY: AIzaSyBp7- 48qKl3mat1o4U5zDMP_oLwY2al
 ![snack screenshot](https://www.dropbox.com/s/zekrn0re81saagc/tail.png?raw=1)
 
 - I really enjoyed the test;
-- I learned how to use better *Angula Google Maps*;
+- I learned how to use better *Angular Google Maps*;
 - I am pretty happy with the styles and design;
 
 > Bonus: I wanted to push myself a bit more so I added a feature to calculate the **total distance** covered by Newton for each route:
@@ -103,3 +103,8 @@ else response">
 
 - I spent too much time trying to fix unit test: in particulary the one with _ActivatedRoute_
 - It took me a while to figure it out calculate the number of snack.
+
+
+## Development server
+
+Run `npm i && ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
