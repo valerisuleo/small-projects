@@ -16,13 +16,13 @@ export class RoutesShowComponent implements OnInit {
         private service: RoutesService
     ) { }
 
-    routeName: string;
-    isClicked: boolean = false;
-    locationsData: IRoute[] = [];
-    count: number;
-    distance: number;
-    snacksInMyPocket: number;
-    id: any;
+    public routeName: string;
+    public isClicked: boolean = false;
+    public locationsData: IRoute[] = [];
+    public count: number;
+    public distance: number;
+    public snacksInMyPocket: number;
+    public id: any;
 
     public routeShow(): void {
         this.id = this.route.snapshot.paramMap.get('id');

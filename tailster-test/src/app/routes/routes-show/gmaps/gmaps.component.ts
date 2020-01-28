@@ -8,16 +8,16 @@ import { ISnackHighlights, IMarker, IRoute } from '../../interfaces';
     styleUrls: ['./gmaps.component.scss']
 })
 export class GmapsComponent implements OnChanges {
-    @Input() locationsData: any;
-    @Output('snackHighlights') change = new EventEmitter();
+    @Input() public locationsData: any;
+    @Output('snackHighlights') public change = new EventEmitter();
 
-    lat: number;
-    lng: number;
-    distance: number
-    zoom: number = 18;
+    public lat: number;
+    public lng: number;
+    public distance: number
+    public zoom: number = 18;
 
-    dataRaw: IRoute[] = [];
-    markers: IMarker[] = [];
+    public dataRaw: IRoute[] = [];
+    public markers: IMarker[] = [];
 
     constructor(private service: RoutesService) {}
 
