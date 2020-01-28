@@ -5,14 +5,13 @@ import { DataService } from './data.service';
 
 @Injectable()
 export class RoutesService extends DataService {
+    @Output() public changedValue = new EventEmitter();
+
     constructor(http: Http) {
         super('https://infinite-lake-80504.herokuapp.com/api/routes', http);
     }
 
-
-    @Output() changedValue = new EventEmitter();
-
-    sendData(arg: any) {
+    public sendData(arg: any): void {
         this.changedValue.emit(arg);
     }
 }

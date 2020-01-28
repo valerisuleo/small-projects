@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { RoutesService } from '../../services/routes.service';
+import { IRoute } from '../interfaces';
 
 @Component({
     selector: 'app-routes-show',
@@ -10,45 +11,45 @@ import { RoutesService } from '../../services/routes.service';
 export class RoutesShowComponent implements OnInit {
 
     constructor(
+        private router: Router,
         private route: ActivatedRoute,
-        private service: RoutesService,
-        private rotuer: Router,
-        ) { }
+        private service: RoutesService
+    ) { }
 
-    locationsData = [];
     routeName: string;
-    count: number;
-    snacksInMyPocket: number;
-    distance: number;
     isClicked: boolean = false;
+    locationsData: IRoute[] = [];
+    count: number;
+    distance: number;
+    snacksInMyPocket: number;
+    id: any;
 
-    routeShow() {
-        const id = this.route.snapshot.paramMap.get('id');
+    public routeShow(): void {
+        this.id = this.route.snapshot.paramMap.get('id');
 
-        this.service.getItem(id)
+        this.service.getItem(this.id)
         .subscribe((response) => {
             this.routeName = response.name;
-            this.locationsData = response.locations;            
+            this.locationsData = response.locations;
         });
     }
 
-    snackHighlights(data) {
+    public snackHighlights(data) {
         this.count = data.count;
         this.snacksInMyPocket = data.snacksInMyPocket;
         this.distance = data.distance;
     }
-    
-    takeMeHome() {
-        this.rotuer.navigate(['/routes']);
+
+    public takeMeHome(): void {
+        this.router.navigate(['/routes']);
     }
 
-    currentLocation() {
+    public currentLocation(): void {
         this.isClicked = true;
         this.service.sendData(this.isClicked)
     }
-    
-    ngOnInit() {
+
+    public ngOnInit(): void {
         this.routeShow();
     }
-
 }

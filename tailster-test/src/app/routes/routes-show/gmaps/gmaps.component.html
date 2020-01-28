@@ -1,20 +1,17 @@
 <agm-map 
-[zoom]="zoom" 
-[zoomControl]="true"
-[scrollwheel]="false"
-[latitude]="lat" 
-[longitude]="lng"
-[disableDefaultUI]="false">
+    [zoom]="zoom" 
+    [zoomControl]="true"
+    [scrollwheel]="false"
+    [latitude]="lat" 
+    [longitude]="lng"
+    [disableDefaultUI]="false">
 
     <agm-marker 
         *ngFor="let marker of markers; index as i"
         [latitude]="marker.lat" 
         [longitude]="marker.lng">
-    
-        <agm-info-window>
-            <strong>{{ i }}</strong>
-        </agm-info-window>
     </agm-marker>
+
 </agm-map>
 
  

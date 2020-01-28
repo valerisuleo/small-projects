@@ -1,6 +1,6 @@
 import { Component, Input, OnChanges, SimpleChanges, Output, EventEmitter } from '@angular/core';
-import { MouseEvent } from '@agm/core';
 import { RoutesService } from '../../../services/routes.service';
+import { ISnackHighlights, IMarker, IRoute } from '../../interfaces';
 
 @Component({
     selector: 'gmaps',
@@ -9,15 +9,15 @@ import { RoutesService } from '../../../services/routes.service';
 })
 export class GmapsComponent implements OnChanges {
     @Input() locationsData: any;
-    @Input() isClicked: any;
     @Output('snackHighlights') change = new EventEmitter();
 
-    zoom: number = 18;
     lat: number;
     lng: number;
-    dataRaw = [];
-    markers = [];
     distance: number
+    zoom: number = 18;
+
+    dataRaw: IRoute[] = [];
+    markers: IMarker[] = [];
 
     constructor(private service: RoutesService) {}
 
@@ -36,18 +36,17 @@ export class GmapsComponent implements OnChanges {
         const latLng: google.maps.LatLng[] = this.markers.map((item) => {
             return new google.maps.LatLng(item.lat, item.lng);
         });
-        this.distance = +google.maps.geometry.spherical.computeLength(latLng).toFixed(1)
+        this.distance = +google.maps.geometry.spherical.computeLength(latLng).toFixed(1);
     }
 
     calculateSnack(): void {
         let count = 0;
+        const snacks: number[] = [];
         const altitudes: number[] = [];
 
         this.markers.forEach((item) => {
             altitudes.push(item.altitude);
         });
-
-        const snacks = [];
 
         for (let i = 0; i < altitudes.length; i++) {
             if (altitudes[i + 1] !== undefined) {
@@ -60,14 +59,14 @@ export class GmapsComponent implements OnChanges {
             }
         }
 
-        let snacksInMyPocket = snacks.reduce((prev, curr) => prev + curr);
+        let snacksInMyPocket: number = snacks.reduce((prev, curr) => prev + curr);
 
-        const snackHighlights = {
+        const snackHighlights: ISnackHighlights = {
             count: count,
             snacksInMyPocket: snacksInMyPocket *= -1,
             distance: this.distance
         }
-        this.change.emit(snackHighlights)
+        this.change.emit(snackHighlights);
     }
 
     setCurrentLocation(): void {
