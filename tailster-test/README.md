@@ -23,7 +23,7 @@ You can use the following `Google API KEY: AIzaSyBp7- 48qKl3mat1o4U5zDMP_oLwY2al
 
 ###### What went well?
 
-![snack screenshot](https://www.dropbox.com/s/zekrn0re81saagc/tail.png?dl=1)
+![snack screenshot](https://www.dropbox.com/s/zekrn0re81saagc/tail.png?raw=1)
 
 - I really enjoyed the test;
 - I learned how to use better *Angula Google Maps*;
