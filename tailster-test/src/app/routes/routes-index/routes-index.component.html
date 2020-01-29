@@ -1,6 +1,6 @@
-<ng-container *ngIf="isError
-then error
-else response">
+<ng-container *ngIf="!isError
+then response
+else error">
 </ng-container>
 
 <ng-template #error>
