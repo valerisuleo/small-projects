@@ -97,6 +97,7 @@ else response">
 - Add Marker after calling the `setCurrentLocation()` method;
 - Add more unit test
 - Add the _autocomplete placeholder_ but I couldn't because of the actual `Google API KEY`
+- Add _spinners_ while we wait to get current location
 
 
 ###### What went badly?
