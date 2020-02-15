@@ -21,6 +21,7 @@ export class RoutesIndexComponent implements OnInit {
         this.service.getAll()
         .subscribe((response) => {
             this.routes = response;
+            console.log(response)
         }, (error: Response) => {
             if (error) {
                 this.isError = true;

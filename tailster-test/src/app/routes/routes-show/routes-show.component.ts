@@ -28,10 +28,11 @@ export class RoutesShowComponent implements OnInit {
         this.id = this.route.snapshot.paramMap.get('id');
 
         this.service.getItem(this.id)
-        .subscribe((response) => {
-            this.routeName = response.name;
-            this.locationsData = response.locations;
-        });
+            .subscribe((response) => {
+                console.log(response)
+                this.routeName = response.name;
+                this.locationsData = response.locations;
+            });
     }
 
     public snackHighlights(data) {
