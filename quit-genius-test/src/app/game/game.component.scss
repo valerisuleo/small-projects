@@ -1,0 +1,41 @@
+@import url(https://fonts.googleapis.com/css?family=Sniglet:800);
+@import "~src/css-partials/_common";
+
+h1 {
+    font-family: 'Sniglet', Helvetica, cursive;
+    letter-spacing: -2px;
+    font-size: 4.2rem;
+    text-align: center;
+    margin: 2rem auto;
+    line-height: 1.2;
+  }
+
+td {
+    text-align: center;
+    border: 1px solid $silver;
+
+    &:hover span {
+        color: $white;
+    }
+
+    &:hover {
+        background-color: $green;
+        transition-duration: .2s;
+        transition-timing-function: linear, ease-in;
+        cursor: pointer;
+    }
+}
+
+.selected {
+    background-color: $green;
+    border: 1px solid $silver;
+    opacity: 0.5;
+}
+
+.col-lg-6 {
+    margin: auto;
+}
+
+.disable {
+    cursor: not-allowed;
+}

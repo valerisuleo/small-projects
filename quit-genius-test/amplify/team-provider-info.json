@@ -1,0 +1,20 @@
+{
+    "node": {
+        "awscloudformation": {
+            "AuthRoleName": "amplify-quit-genius-test-node-132512-authRole",
+            "UnauthRoleArn": "arn:aws:iam::402973069136:role/amplify-quit-genius-test-node-132512-unauthRole",
+            "AuthRoleArn": "arn:aws:iam::402973069136:role/amplify-quit-genius-test-node-132512-authRole",
+            "Region": "eu-west-2",
+            "DeploymentBucketName": "amplify-quit-genius-test-node-132512-deployment",
+            "UnauthRoleName": "amplify-quit-genius-test-node-132512-unauthRole",
+            "StackName": "amplify-quit-genius-test-node-132512",
+            "StackId": "arn:aws:cloudformation:eu-west-2:402973069136:stack/amplify-quit-genius-test-node-132512/ec14b590-563f-11ea-a444-029d9e7b7264",
+            "AmplifyAppId": "drarwut8dkc6d"
+        },
+        "categories": {
+            "auth": {
+                "quitgeniustest30253690": {}
+            }
+        }
+    }
+}

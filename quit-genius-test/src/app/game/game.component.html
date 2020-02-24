@@ -1,0 +1,49 @@
+<ng-container *ngIf="contentList.length !== wordsHidden.length
+then title
+else win">
+</ng-container>
+
+<ng-template #title>
+    <div class="animated fadeIn delay-1s">
+        <h1 class="animated swing delay-1s">Words Puzzle Game</h1>
+    </div>
+</ng-template>
+
+<ng-template #win>
+        <h1 class="animated tada">You Win!</h1>
+</ng-template>
+
+<div class="container mt-5">
+    <div class="row">
+        <div [ngClass]="contentList.length > 0 ? 'col-md-6' : 'col-lg-6'">
+            <table class="table animated fadeInDown">
+                <thead>
+                    <tr *ngFor="let array of grid">
+                        <td *ngFor="let obj of array" [class.selected]="obj.isSelected" (click)="getLetters(obj)">
+                            <span>{{obj.value }}</span>
+                        </td>
+                    </tr>
+                </thead>
+                <tbody>
+                </tbody>
+            </table>
+        </div>
+        <aside *ngIf="contentList.length > 0" class="col-md-4 ml-5">
+            <ul class="list-group animated fadeIn">
+                <li class="list-group-item" *ngFor="let item of contentList">
+                    {{ item }}
+                </li>
+            </ul>
+            <div class="col text-center">
+                <button class="btn btn-danger m-3" (click)="resetGame()">Reset Game</button>
+            </div>
+        </aside>
+    </div>
+    <div class="row">
+        <div [ngClass]="contentList.length > 0 ? 'col-md-6 text-center' : 'col text-center'">
+            <button class="btn btn-secondary btn mt-5 mr-5 animated fadeInLeftBig" (click)="cleanGrid()">Clean Grid
+            </button>
+            <button class="btn btn-warning btn mt-5 ml-5 animated fadeInRightBig" (click)="signOut()">Sign Out</button>
+        </div>
+    </div>
+</div>
