@@ -1,6 +1,41 @@
 @import url(https://fonts.googleapis.com/css?family=Sniglet:800);
 @import "~src/css-partials/_common";
 
+
+div {
+    position: relative;
+
+    .modal-container {
+        left: 0;
+        top: 0;
+        position: fixed;
+        background-color: rgba(0, 0, 0, 0.5);
+        justify-content: center;
+        align-items: center;
+        height: 100%;
+        width: 100%;
+        padding: 0;
+        overflow-y: scroll;
+        z-index: 5;
+
+        ul {
+            height: 250px;
+            width: 250px;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            overflow: hidden;
+
+            li {
+                color: $white;
+                text-align: center;
+                background-color: rgba(29, 166, 74, 0.9);
+            }
+        }
+    }
+}
+
 h1 {
     font-family: 'Sniglet', Helvetica, cursive;
     letter-spacing: -2px;
@@ -8,7 +43,7 @@ h1 {
     text-align: center;
     margin: 2rem auto;
     line-height: 1.2;
-  }
+}
 
 td {
     text-align: center;

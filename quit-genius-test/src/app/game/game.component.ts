@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { GridService } from '../services/grid.service';
 import { Router } from '@angular/router';
+import { IGrid, ILetter } from './interfaces'
 
 @Component({
     selector: 'game',
@@ -9,14 +10,14 @@ import { Router } from '@angular/router';
 })
 export class GameComponent implements OnInit {
 
-    public grid: any[][];
-    public all: any;
+    public all: IGrid;
+    public grid: ILetter[][];
     public word: string;
-    public contentList = [];
-    public wordsHidden = [];
+    public contentList: string[] = [];
+    public wordsHidden: string[] = [];
 
     constructor(
-        private service: GridService, 
+        private service: GridService,   
         private router: Router
         ) { }
 
@@ -25,8 +26,8 @@ export class GameComponent implements OnInit {
         const { grid, wordsHidden } = this.all;
         this.wordsHidden = wordsHidden;
 
-        let gridShaped = grid.map(item => item.split(''))
-
+        let gridShaped: any = grid.map(item => item.split(''));
+        
         gridShaped = gridShaped.map((el) => {
             return el.map((item: string) => {
                 return {
@@ -39,40 +40,38 @@ export class GameComponent implements OnInit {
     }
 
     public getLetters(e): void {
-        const current = e;
-        const selectedValues = [];
-        let selected = [];
+        const current: ILetter = e;
+        const selectedValues: ILetter[][] = [];
 
         current.isSelected = !current.isSelected;
         
-        selected = this.grid.map(item => item.filter(obj => obj.isSelected === true));
+        const selected = this.grid.map(item => item.filter(obj => obj.isSelected === true));        
 
         selected.forEach(array => {
             if (array.length > 0) {
                 selectedValues.push(array);
             }
-        });
+        });        
         this.getValues(selectedValues);
         this.matchWord();
     }
 
-    public getValues(selectedValues: any[][]): void {
-        const values = [];
+    public getValues(selectedValues: ILetter[][]): void {
+        const values: string[] = [];
 
-        selectedValues.forEach((item: any[]) => {
+        selectedValues.forEach((item: ILetter[]) => {
             item.forEach((obj) => {
                 values.push(obj.value);
             });
-        });
+        });        
         this.word = values.join('');
     }
 
     public matchWord(): void {
-
-        this.wordsHidden.forEach((item) => {
+        this.wordsHidden.forEach((item: string) => {
             if (item === this.word) {
                 // deep cloning a string
-                const copy = (' ' + this.word).slice(1);
+                const copy: string = (' ' + this.word).slice(1);
                 this.contentList.push(copy);
                 // removing duplicates
                 this.contentList = [...new Set(this.contentList)];
@@ -82,13 +81,7 @@ export class GameComponent implements OnInit {
                 }, 500);
             }
         });
-
-        if (this.contentList.length === this.wordsHidden.length ) {
-            console.log('win');
-            
-        }
     }
-
 
     public cleanGrid(): void {
         this.renderGrid();
@@ -102,6 +95,20 @@ export class GameComponent implements OnInit {
     public signOut(): void {
         localStorage.clear();
         this.router.navigate(['/login']);
+    }
+    
+    isOpen = false;
+
+    public closeModal(e): void {
+        const current: HTMLElement = e.target;
+        const insideArea: boolean = current.classList.contains('list-group-item');
+        if (!insideArea) {
+            this.isOpen = false;
+        }
+    }
+
+    public openModal(): void {
+        this.isOpen = !this.isOpen
     }
 
     public ngOnInit() {
