@@ -15,6 +15,8 @@ export class GameComponent implements OnInit {
     public word: string;
     public contentList: string[] = [];
     public wordsHidden: string[] = [];
+    public isOpen = false;
+
 
     constructor(
         private service: GridService,   
@@ -97,7 +99,6 @@ export class GameComponent implements OnInit {
         this.router.navigate(['/login']);
     }
     
-    isOpen = false;
 
     public closeModal(e): void {
         const current: HTMLElement = e.target;
