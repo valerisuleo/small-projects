@@ -44,6 +44,6 @@ describe('TableComponent', () => {
         component.ngOnChanges(component.ratesIndex);
 
         expect(setDirections).toHaveBeenCalled();
-        expect(component.directionChanges.length).toBeGreaterThanOrEqual(0)
+        expect(component.directionChanges.length).toBeGreaterThanOrEqual(0);
     });
 });

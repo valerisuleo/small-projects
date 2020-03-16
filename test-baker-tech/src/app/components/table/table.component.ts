@@ -41,7 +41,7 @@ export class TableComponent implements OnChanges {
         this.setDirections(change)
     }
 
-    setDirections(change) {
+    public setDirections(change): void {
         const { previousValue, currentValue, firstChange } = change.ratesIndex;
         const directionChanges = [];
         if (change.ratesIndex && !firstChange) {
