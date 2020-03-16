@@ -1,0 +1,43 @@
+.row {
+    margin-top: 5em;
+}
+
+$success: #00a65a;
+$primary: #3c8dbc;
+$warning: DarkOrange;
+$default: #ecf0f5;
+
+.box {
+    position: relative;
+    border-radius: 3px;
+    border-top: 3px solid #d2d6de;
+    margin-bottom: 20px;
+    width: 100%;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
+    background-color: white;
+}
+
+.box-header {
+    color: #444;
+    display: block;
+    padding: 10px;
+    position: relative;
+}
+
+.box-primary {
+    border-top-color: $primary;
+}
+
+.box-success {
+    border-top-color: $success;
+}
+
+.box-body {
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 3px;
+    border-bottom-left-radius: 3px;
+    padding: 10px;
+    font-size: 14px;
+    font-weight: 400;
+}

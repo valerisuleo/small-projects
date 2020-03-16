@@ -1,0 +1,71 @@
+<ngx-spinner></ngx-spinner>
+
+<div class="row" *ngIf="directionChanges.length">
+    <div class="box box-primary animated fadeIn">
+        <div class="box-header">
+            <h2 class="text-muted">
+                Stocks
+            </h2>
+        </div>
+        <div class="box-body">
+            <table class="table text-center">
+                <thead>
+                    <tr>
+                        <th scope="col">Currency Pair</th>
+                        <th scope="col">Rate</th>
+                        <th scope="col">Direction</th>
+                        <th scope="col"></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let item of ratesIndex; index as i">
+                        <td>{{ pairs[i] }}</td>
+                        <td>{{ item }}</td>
+                        <td>
+                            <fa-icon [icon]="directionChanges[i]"></fa-icon>
+                        </td>
+                        <td>
+                            <button class="btn btn-primary btn-sm" (click)="addToBasket(item, i)">Buy</button>
+                        </td>
+                    </tr>
+                    <tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+
+<div class="row mt-5" *ngIf="basket.length">
+    <div class="box box-success animated fadeInUp">
+        <div class="box-header">
+            <h2 class="text-muted">
+                Trades
+            </h2>
+        </div>
+        <div class="box-body">
+            <table class="table text-center">
+                <thead>
+                    <tr>
+                        <th scope="col">Time</th>
+                        <th scope="col">Currency Pair</th>
+                        <th scope="col">Rate</th>
+                        <th scope="col"></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let item of basket">
+                        <td>{{ item.time }}</td>
+                        <td>{{ item.currencyPair }}</td>
+                        <td>{{ item.rate }}</td>
+                        <td>
+                            <button class="btn btn-warning btn-sm" (click)="removeFromBasket(item)">Remove
+                            </button>
+                        </td>
+                    </tr>
+                    <tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
