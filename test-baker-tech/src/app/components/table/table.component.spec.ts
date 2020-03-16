@@ -2,9 +2,11 @@ import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { TableComponent } from './table.component';
 import { CUSTOM_ELEMENTS_SCHEMA, SimpleChange } from '@angular/core';
 
-fdescribe('TableComponent', () => {
+describe('TableComponent', () => {
     let component: TableComponent;
     let fixture: ComponentFixture<TableComponent>;
+
+    const dummyRatesIndex = [1.2345, 0.2345];
 
     beforeEach(() => {
         TestBed.configureTestingModule({
@@ -14,6 +16,7 @@ fdescribe('TableComponent', () => {
 
         fixture = TestBed.createComponent(TableComponent);
         component = fixture.componentInstance;
+        component.ratesIndex = dummyRatesIndex;
     });
 
     it('should create', () => {
@@ -27,31 +30,20 @@ fdescribe('TableComponent', () => {
             item: 1.2345,
             index
         }
-
         let itemsInBasket = null;
         component.click.subscribe(el => itemsInBasket = el);
 
-        component.addToBasket(fakeItem, index)
+        component.addToBasket(fakeItem, index);
 
         expect(itemsInBasket).not.toBeNull();
     });
 
-    it('should extract data from input', () => {
+    it('should call setDirections method OnChanges', () => {
+        const setDirections: jasmine.Spy = spyOn(component, 'setDirections');
 
-        const directionChanges = [{
-            prefix: 'string',
-            iconName: 'string',
-            icon: []
-        }];
+        component.ngOnChanges(component.ratesIndex);
 
-        component.ngOnChanges({
-            directionChanges: new SimpleChange(null,directionChanges, false)
-        })
-
-        fixture.detectChanges();
-
-        expect(component.directionChanges).not.toBeNull()
+        expect(setDirections).toHaveBeenCalled();
+        expect(component.directionChanges.length).toBeGreaterThanOrEqual(0)
     });
-
-
 });

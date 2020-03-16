@@ -1,4 +1,4 @@
-import { Component, Input, OnChanges, SimpleChanges, Output, EventEmitter } from '@angular/core';
+import { Component, Input, OnChanges, Output, EventEmitter } from '@angular/core';
 import { NgxSpinnerService } from "ngx-spinner";
 import { IDirection, ITradeItem } from '../../common/interfaces';
 import { faCaretDown, faCaretUp } from '@fortawesome/free-solid-svg-icons';
@@ -9,7 +9,7 @@ import { faCaretDown, faCaretUp } from '@fortawesome/free-solid-svg-icons';
     styleUrls: ['./table.component.scss']
 })
 export class TableComponent implements OnChanges {
-    
+
     @Input() ratesIndex: number[];
     @Input() pairs: string[];
     @Input() basket: ITradeItem[];
@@ -36,12 +36,14 @@ export class TableComponent implements OnChanges {
         });
     }
 
-    public ngOnChanges(change: SimpleChanges): void {        
+    public ngOnChanges(change: any): void {
+        this.spinner.show();
+        this.setDirections(change)
+    }
+
+    setDirections(change) {
         const { previousValue, currentValue, firstChange } = change.ratesIndex;
         const directionChanges = [];
-        
-        this.spinner.show();
-
         if (change.ratesIndex && !firstChange) {
             for (let i = 0; i < previousValue.length; i++) {
                 const prev = previousValue[i];
@@ -49,12 +51,13 @@ export class TableComponent implements OnChanges {
                 directionChanges.push(current - prev > 0 ? faCaretUp : faCaretDown);
             }
             this.directionChanges = directionChanges;
-    
+
             if (this.directionChanges.length) {
                 this.spinner.hide();
             }
         }
     }
+
 }
 
 
