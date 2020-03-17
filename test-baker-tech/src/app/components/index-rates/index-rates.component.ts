@@ -35,7 +35,7 @@ export class IndexRatesComponent implements OnInit {
     }
 
     public ngOnInit(): void {
-        setInterval(() => this.getNewRates(), 1500);
+        setInterval(() => this.getNewRates(), 10);
     }
 
 }
