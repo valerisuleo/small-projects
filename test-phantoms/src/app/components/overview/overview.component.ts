@@ -34,12 +34,12 @@ export class OverviewComponent implements OnInit {
     }
 
     // save data to local storage
-    public saveData(arg): void {
+    public saveData(arg: any): void {
         const str: string = JSON.stringify(arg);
         localStorage.setItem('bookmarksIndex', str);
     }
 
-    public currentItem(data) {
+    public currentItem(data: any) {
         this.selectedItem = data;
         let foundIndex = this.all.findIndex((item) => {
             return item.id == data.id;
@@ -49,6 +49,7 @@ export class OverviewComponent implements OnInit {
         if (data.method === 'delete') {
             let index = this.all.indexOf(data.obj);
             this.all.splice(index, 1);
+            this.saveData(this.all);
         }
     }
 
