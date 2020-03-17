@@ -6,49 +6,112 @@ export class BookmarksService {
     getBookmarks() {
         return [
             {
-                _id: "5b21ca3eeb7f6fbccd471815",
                 title: "Terminator",
-                link: ''
+                link: 'www.google.com'
             },
             {
-                _id: "5b21ca3eeb7f6fbccd471816",
                 title: "Die Hard",
-                link: ''
+                link: 'www.google.com'
             },
             {
-                _id: "5b21ca3eeb7f6fbccd471817",
                 title: "Get Out",
-                link: ''
+                link: 'www.google.com'
             },
             {
-                _id: "5b21ca3eeb7f6fbccd471819",
                 title: "Trip to Italy",
-                link: ''
+                link: 'www.google.com'
             },
             {
-                _id: "5b21ca3eeb7f6fbccd47181a",
                 title: "Airplane",
-                link: ''
+                link: 'www.google.com'
             },
             {
-                _id: "5b21ca3eeb7f6fbccd47181b",
                 title: "Wedding Crashers",
-                link: ''
+                link: 'www.google.com'
             },
             {
-                _id: "5b21ca3eeb7f6fbccd47181e",
                 title: "Gone Girl",
-                link: ''
+                link: 'www.google.com'
             },
             {
-                _id: "5b21ca3eeb7f6fbccd47181f",
                 title: "The Sixth Sense",
-                link: ''
+                link: 'www.google.com'
             },
             {
-                _id: "5b21ca3eeb7f6fbccd471821",
                 title: "The Avengers",
-                link: ''
+                link: 'www.google.com'
+            },
+            {
+                title: "Terminator2",
+                link: 'www.google.com'
+            },
+            {
+                title: "Die Hard 2",
+                link: 'www.google.com'
+            },
+            {
+                title: "Get Out 2",
+                link: 'www.google.com'
+            },
+            {
+                title: "Trip to Italy 2",
+                link: 'www.google.com'
+            },
+            {
+                title: "Airplane 2",
+                link: 'www.google.com'
+            },
+            {
+                title: "Wedding Crashers 2",
+                link: 'www.google.com'
+            },
+            {
+                title: "Gone Girl 2",
+                link: 'www.google.com'
+            },
+            {
+                title: "The Sixth Sense 2",
+                link: 'www.google.com'
+            },
+            {
+                title: "The Avengers 2",
+                link: 'www.google.com'
+            },
+            {
+                title: "Terminator 3",
+                link: 'www.google.com'
+            },
+            {
+                title: "Die Hard 3",
+                link: 'www.google.com'
+            },
+            {
+                title: "Get Out 3",
+                link: 'www.google.com'
+            },
+            {
+                title: "Trip to Italy 3",
+                link: 'www.google.com'
+            },
+            {
+                title: "Airplane 3",
+                link: 'www.google.com'
+            },
+            {
+                title: "Wedding Crashers 3",
+                link: 'www.google.com'
+            },
+            {
+                title: "Gone Girl 3",
+                link: 'www.google.com'
+            },
+            {
+                title: "The Sixth Sense 3",
+                link: 'www.google.com'
+            },
+            {
+                title: "The Avengers 3",
+                link: 'www.google.com'
             }
         ];
     }

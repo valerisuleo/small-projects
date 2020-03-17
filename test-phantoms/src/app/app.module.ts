@@ -2,13 +2,19 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { FormsModule } from '@angular/forms';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ToastrModule } from 'ngx-toastr';
+import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 
 import { AppComponent } from './app.component';
-import { TableComponent } from './table/table.component';
-import { FormComponent } from './form/form.component';
-import { OverviewComponent } from './overview/overview.component';
-import { ResultsComponent } from './results/results.component';
+import { TableComponent } from './components/overview/table/table.component';
+import { FormComponent } from './components/overview/form/form.component';
+import { OverviewComponent } from './components/overview/overview.component';
+import { ResultsComponent } from './components/results/results.component';
+import { NavbarComponent } from './navbar/navbar.component';
+
 import { BookmarksService } from './services/seeds.service';
+import { FormClass } from './components/overview/form/form';
 
 @NgModule({
   declarations: [
@@ -16,12 +22,16 @@ import { BookmarksService } from './services/seeds.service';
     TableComponent,
     FormComponent,
     OverviewComponent,
-    ResultsComponent
+    ResultsComponent,
+    NavbarComponent
   ],
   imports: [
     BrowserModule,
+    BrowserAnimationsModule,
     RouterModule,
     FormsModule,
+    NgbModule,
+    ToastrModule.forRoot(),
     RouterModule.forRoot([
         { path: 'results', component: ResultsComponent},
         { path: 'overview', component: OverviewComponent},
@@ -29,7 +39,8 @@ import { BookmarksService } from './services/seeds.service';
     ])
   ],
   providers: [
-      BookmarksService
+      BookmarksService,
+      FormClass
   ],
   bootstrap: [AppComponent]
 })

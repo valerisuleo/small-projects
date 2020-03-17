@@ -1,0 +1,34 @@
+<div class="row mr-5">
+    <div class="col">
+        <table class="table table-striped">
+            <thead class="thead">
+                <tr>
+                    <th scope="col">Title</th>
+                    <th scope="col">Link</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                <tr *ngFor="let item of groupsAll">
+                    <td>{{ item.title }}</td>
+                    <td>{{ item.link }}</td>
+                    <td>
+                        <button class="btb btn-warning btn-sm" (click)="editItem(item)">edit</button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        
+        <div class="d-flex justify-content-between p-2">
+            <ngb-pagination [collectionSize]="collectionSize" [maxSize]="5" [(page)]="page" [pageSize]="pageSize">
+            </ngb-pagination>
+        
+            <select class="custom-select" style="width: auto" [(ngModel)]="pageSize">
+              <option [ngValue]="10">10 items per page</option>
+              <option [ngValue]="20">20 items per page</option>
+              <option [ngValue]="30">30 items per page</option>
+            </select>
+          </div>
+    </div>
+</div>

@@ -1,0 +1,11 @@
+<div class="row">
+    <section class="col-8 animated fadeInLeftBig">
+        <app-table (editCurrentItem)='editCurrentItem($event)' [itemIndex]="all">
+        </app-table>
+    </section>
+
+    <aside class="col-4 animated fadeInRightBig">
+        <app-form (onFormSubmitted)='onFormSubmitted($event)' [selectedItem]="selectedItem">
+        </app-form>
+    </aside>
+</div>

@@ -1,27 +1,42 @@
 # TestPhantoms
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 9.0.5.
+Developer Brief (front end)
 
-## Development server
+## App brief
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+Develop a JavaScript web app that maintains a list of bookmarks (links).
+ 
+- The user is able to add/edit/delete any link in the list.  
+- The application should only use front-end technologies (ie no backend database!).
 
-## Code scaffolding
+## Flow
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+### Overview page
 
-## Build
+- Displays a form on the top of the page that lets a user submit a link. 
+- The form should validate whether the input is a valid URL and exists.
+- Displays the a list of links with pagination so 20 links are shown per page. 
+- The pagination should include numbered pagination with next and previous links eg. < 1 2 3 >.
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+### Results page
 
-## Running unit tests
+- Contains a message thanking the user for a submission.
+- Displays the user's submission.
+- Includes a link back to the overview page.
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+#### Technologies to use
 
-## Running end-to-end tests
+- Basic layout (HTML/CSS).
+- Pure JavaScript (although Angular is permissible if you want want to use a framework).
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+### Deliverables
 
-## Further help
+- **Form validation** must be custom written.
+- All links entered in the list must persist page reload.
+- Where applicable, all code should follow the Google style guidelines.
+- All code should be commented.
+- The application should be accompanied by a brief TDD (Technical Design Document) outlining the solution's design and any limitations.
+- Source code to be linked to a repository (private or public).
+- A public link to the final app.
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+Feel free to add any additional features that further demonstrates your skills.
