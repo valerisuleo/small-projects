@@ -49,7 +49,7 @@ export class FormComponent implements OnChanges {
             this.click.emit(this.bookmark);
             this.router.navigate(['/results'], { state: { data: this.bookmark } });
         } else if (!this.isValidUrl && this.bookmark.title) {
-            this.toastr.error('Link must be valid url!', 'Ooops!');
+            this.toastr.warning('Link must be valid url!', 'Ooops!');
         }
     }
 
