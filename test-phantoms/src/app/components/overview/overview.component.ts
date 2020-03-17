@@ -39,7 +39,6 @@ export class OverviewComponent implements OnInit {
         localStorage.setItem('bookmarksIndex', str);
     }
 
-
     public editCurrentItem(obj: IBookmark) {
         this.selectedItem = obj;
         let foundIndex = this.all.findIndex((item) => {
@@ -54,7 +53,7 @@ export class OverviewComponent implements OnInit {
         });
 
         if (!isAlreadyHere) {
-            this.all.push(obj);
+            this.all.unshift(obj);
             this.saveData(this.all);
         } else {
             this.all[this.foundIndex] = obj;
