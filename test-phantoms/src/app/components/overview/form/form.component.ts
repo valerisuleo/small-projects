@@ -21,10 +21,31 @@ export class FormComponent implements OnChanges {
 
     public bookmark = this.formModel;
     public isValidUrl: boolean;
+    public isEdit: boolean = false;
+
+    ngOnChanges(change: SimpleChanges): void {        
+        const { currentValue, firstChange } = change.selectedItem;
+        if (currentValue && !firstChange) {
+            // prepopulate input fields;
+            this.bookmark.title = currentValue.title;
+            this.bookmark.link = currentValue.link;
+            this.bookmark.id = currentValue.id;
+            this.isEdit = true;
+        } else {
+            // clean up input fields after submit;
+            this.bookmark.title = '';
+            this.bookmark.link = '';
+        }
+    }
 
     public submit(): void {
         this.isValidUrl = this.urlValidator(this.bookmark.link);
         if (this.isValidUrl) {
+
+            if (!this.isEdit) {
+                this.bookmark.id = Math.floor(Math.random() * 1000000 + 1);
+            }
+
             this.click.emit(this.bookmark);
             this.router.navigate(['/results'], { state: { data: this.bookmark } });
         } else if (!this.isValidUrl && this.bookmark.title) {
@@ -32,7 +53,7 @@ export class FormComponent implements OnChanges {
         }
     }
 
-    public urlValidator(arg: string) {
+    public urlValidator(arg: string): boolean {
         const regexp = /^(?:(?:https?|ftp):\/\/)?(?:(?!(?:10|127)(?:\.\d{1,3}){3})(?!(?:169\.254|192\.168)(?:\.\d{1,3}){2})(?!172\.(?:1[6-9]|2\d|3[0-1])(?:\.\d{1,3}){2})(?:[1-9]\d?|1\d\d|2[01]\d|22[0-3])(?:\.(?:1?\d{1,2}|2[0-4]\d|25[0-5])){2}(?:\.(?:[1-9]\d?|1\d\d|2[0-4]\d|25[0-4]))|(?:(?:[a-z\u00a1-\uffff0-9]-*)*[a-z\u00a1-\uffff0-9]+)(?:\.(?:[a-z\u00a1-\uffff0-9]-*)*[a-z\u00a1-\uffff0-9]+)*(?:\.(?:[a-z\u00a1-\uffff]{2,})))(?::\d{2,5})?(?:\/\S*)?$/;
 
         if (regexp.test(arg)) {
@@ -42,16 +63,5 @@ export class FormComponent implements OnChanges {
         }
     }
 
-    ngOnChanges(change: SimpleChanges): void {        
-        const { currentValue, firstChange } = change.selectedItem;
-        if (currentValue && !firstChange) {
-            // prepopulate input fields;
-            this.bookmark.title = currentValue.title;
-            this.bookmark.link = currentValue.link;
-        } else {
-            // clean up input fields after submit;
-            this.bookmark.title = '';
-            this.bookmark.link = '';
-        }
-    }
+    
 }
