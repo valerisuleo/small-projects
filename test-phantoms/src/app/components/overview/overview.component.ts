@@ -39,12 +39,17 @@ export class OverviewComponent implements OnInit {
         localStorage.setItem('bookmarksIndex', str);
     }
 
-    public editCurrentItem(obj: IBookmark) {
-        this.selectedItem = obj;
+    public currentItem(data) {
+        this.selectedItem = data;
         let foundIndex = this.all.findIndex((item) => {
-            return item.id == obj.id;
+            return item.id == data.id;
         });
         this.foundIndex = foundIndex;
+        // delete item...
+        if (data.method === 'delete') {
+            let index = this.all.indexOf(data.obj);
+            this.all.splice(index, 1);
+        }
     }
 
     public onFormSubmitted(obj: IBookmark): void {
@@ -56,6 +61,7 @@ export class OverviewComponent implements OnInit {
             this.all.unshift(obj);
             this.saveData(this.all);
         } else {
+            // update item...
             this.all[this.foundIndex] = obj;
             this.saveData(this.all);
         }

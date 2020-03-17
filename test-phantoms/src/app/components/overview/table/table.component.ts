@@ -9,7 +9,7 @@ import { IBookmark } from '../interfaces';
 export class TableComponent implements OnChanges {
 
     @Input() itemIndex: any;
-    @Output('editCurrentItem') click = new EventEmitter();
+    @Output('currentItem') click = new EventEmitter();
 
     // variables
     results: number
@@ -31,6 +31,13 @@ export class TableComponent implements OnChanges {
 
     public editItem(obj: IBookmark) {
         this.click.emit(obj)
+    }
+    
+    public deleteItem(obj: IBookmark) {
+        this.click.emit({
+            obj,
+            method: 'delete'
+        });
     }
 
     ngOnChanges(change: SimpleChanges): void {

@@ -6,6 +6,7 @@
                     <th scope="col">Title</th>
                     <th scope="col">Link</th>
                     <th></th>
+                    <th></th>
                 </tr>
             </thead>
             <tbody>
@@ -15,6 +16,9 @@
                     <td>{{ item.link }}</td>
                     <td>
                         <button class="btb btn-warning btn-sm" (click)="editItem(item)">edit</button>
+                    </td>
+                    <td>
+                        <button class="btb btn-danger btn-sm" (click)="deleteItem(item)">delete</button>
                     </td>
                 </tr>
             </tbody>
