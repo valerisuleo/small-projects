@@ -15,8 +15,15 @@ Develop a JavaScript web app that maintains a list of bookmarks (links).
 
 - Displays a form on the top of the page that lets a user submit a link. 
 - The form should validate whether the input is a valid URL and exists.
+
+![snack screenshot](https://www.dropbox.com/s/hwulb11jsrdfoee/ezgif.com-video-to-gif.gif?raw=1)
+
+
 - Displays the a list of links with pagination so 20 links are shown per page. 
 - The pagination should include numbered pagination with next and previous links eg. < 1 2 3 >.
+
+
+![snack screenshot](https://www.dropbox.com/s/akk2qmxaz22fd29/pagination-video-to-gif.gif?raw=1)
 
 ### Results page
 
