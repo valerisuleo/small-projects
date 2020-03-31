@@ -9,6 +9,6 @@ import { DataService } from './data.service';
 export class ExchangeRatesService extends DataService {
 
     constructor(http: Http) {
-        super("https://cors-anywhere.herokuapp.com/https://freeforexapi.com/api/live?pairs=", http);
+        super("http://localhost:3000/donuts", http);
     }
 }
