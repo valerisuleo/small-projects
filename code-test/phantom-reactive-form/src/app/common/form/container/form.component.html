@@ -1,0 +1,22 @@
+<form (submit)="create()" [formGroup]="formGroup">
+    
+    <ng-content></ng-content>
+
+    <div class="row">
+
+        <div class="col-md-3">
+            <button 
+                type="submit" 
+                class="btn btn-primary" 
+                [disabled]="!formGroup.valid">Submit
+            </button>
+        </div>
+
+        <div class="col-md-2">
+            <div *ngIf="formGroup.pending">
+                <div id="loading"></div>
+            </div>
+        </div>
+        
+    </div>
+</form>

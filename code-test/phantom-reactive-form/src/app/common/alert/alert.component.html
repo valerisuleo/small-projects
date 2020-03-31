@@ -1,0 +1,13 @@
+<div class="alert alert-success" role="alert">
+    <h4 class="alert-heading">
+        <ng-content select=".heading"></ng-content>
+    </h4>
+    <ng-content select=".body"></ng-content>
+    <hr>
+    <p class="mb-0">
+        <button (click)="goTo()" class="btn btn-primary">
+            <ng-content select=".button"></ng-content>
+        </button>
+    </p>
+</div>
+

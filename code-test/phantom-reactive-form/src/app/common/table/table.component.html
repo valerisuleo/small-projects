@@ -1,0 +1,37 @@
+<table class="table table-striped">
+    <thead class="thead">
+        <tr>
+            <th *ngFor="let label of keys" scope="col">{{ label | uppercase }}</th>
+            <th></th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <tr *ngFor="let item of groupsAll">
+                <td>{{ item.name }}</td>
+                <td>{{ item.url }}</td>
+                <td>
+                    <button class="btb btn-warning btn-sm" (click)="getCurrentItem(item, $event)">Edit</button>
+                </td>
+                <td>
+                    <button class="btb btn-danger btn-sm" (click)="getCurrentItem(item, $event)">Delete</button>
+            </td>
+        </tr>
+    </tbody>
+</table>
+
+<div class="d-flex justify-content-between p-2">
+    <ngb-pagination 
+        [collectionSize]="collectionSize" 
+        [maxSize]="5" 
+        [(page)]="page" 
+        [pageSize]="pageSize">
+    </ngb-pagination>
+
+    <select class="custom-select" style="width: auto" [(ngModel)]="pageSize">
+      <option [ngValue]="10">10 items per page</option>
+      <option [ngValue]="20">20 items per page</option>
+      <option [ngValue]="30">30 items per page</option>
+    </select>
+  </div>

@@ -1,0 +1,26 @@
+<div class="row mt-5">
+    <h1>Favourites Bookmarks</h1>
+</div>
+
+<div class="row mt-5">
+    <section class="col-md-8 animated fadeInLeftBig">
+        <bootstrap-table 
+            [keys]='keys'
+            (handleSelection)="handleSelection($event)" 
+            [recordsIndex]="bookmarks">
+        </bootstrap-table>
+    </section>
+
+    <aside class="col-md-4 pl-5 animated fadeInRightBig">
+        <bootstrap-form 
+            [formGroup]="formObj" 
+            (handleSubmit)="handleSubmit($event)">
+
+            <bootsrap-form-group *ngFor="let key of keys"
+                [name]="key"
+                [formGroup]="formObj">
+            </bootsrap-form-group>
+            
+        </bootstrap-form>
+    </aside>
+</div>
