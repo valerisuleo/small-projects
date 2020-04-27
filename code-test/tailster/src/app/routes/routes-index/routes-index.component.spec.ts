@@ -61,7 +61,7 @@ describe('RoutesIndexComponent', () => {
         expect(component).toBeTruthy();
     });
 
-    describe('indexRoutes', () => {
+    fdescribe('indexRoutes', () => {
         it('should set all property with the item restured from the server', () => {
             // ARRANGE
             spyOn(service, 'getAll').and.callFake(() => {

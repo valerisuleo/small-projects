@@ -1,0 +1,40 @@
+<div class="row mt-5">
+
+    <div *ngFor="let col of columns; index as i" 
+    class="col-xl-6 col-lg-6 col-sm-12 p-5 animated"
+    [class.fadeInLeftBig]='i%2 === 0 && isFirstLoad'
+    [class.fadeInRightBig]='i%2 !== 0 && isFirstLoad'>
+
+        <bootstrap-card *ngFor="let user of col">
+            <ng-container class="aside">
+                <a [routerLink]="['/users', user.id]">
+                    <img [src]="user.avatar" class="card-img" alt="avatar">
+                </a>
+            </ng-container>
+
+            <ng-container class="section">
+                <a [routerLink]="['/users', user.id]">
+                    <h5 class="card-title">{{ user.first_name }}</h5>
+                </a>
+                <p class="card-text">
+                    <small class="text-muted">{{ user.email }}</small>
+                </p>
+            </ng-container>
+
+        </bootstrap-card>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col d-flex justify-content-center">
+        <button 
+            *ngFor="let btn of btnsControllers" 
+            (click)="loadMoreData($event)" 
+            [disabled]="((btn.name === 'next') && (page === totalPages)) || ((btn.name === 'back') && (page === 1))" 
+            [name]="btn.name" 
+            class="btn btn-primary m-5">
+                {{ btn.label}}
+        </button>
+    </div>
+</div>
+
