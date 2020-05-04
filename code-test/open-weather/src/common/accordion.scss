@@ -1,0 +1,29 @@
+.cardz {
+    height: 80px;
+    border-top: 0;
+    margin-bottom: 2%;
+    cursor: pointer;
+    
+    &.open {
+        height: 350px;
+        background-color: silver;
+        overflow: auto;
+    }
+
+    .header {
+        height: 80px;
+    }
+
+    .body {
+        display: none;
+
+        &.open {
+            display: block;
+            height: auto;
+        }
+    }
+}
+
+.transition {
+    transition: height 500ms ease-in-out;
+}

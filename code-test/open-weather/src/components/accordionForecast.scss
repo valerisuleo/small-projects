@@ -1,0 +1,48 @@
+.center-styles {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+
+.accordion-header {
+    height: 100%;
+
+    div {
+        height: 100%;
+        width: 33.33%;
+        float: left;
+        background-color: #5C5C61;
+        position: relative;
+
+        &:first-of-type {
+            width: 23.33%;
+        }
+
+        &:nth-of-type(2) {
+            width: 43.33%;
+        }
+
+        p {
+            margin-left: 1em;
+            @extend .center-styles;
+            left: 10%;
+            color: white;
+            font-weight: bold;
+            font-size: 18px;
+
+            sup {
+                padding-left: 2px;
+            }
+        }
+
+        img {
+            @extend .center-styles;
+        }
+    }
+}
+
+.table {
+    font-size: larger;
+}

@@ -1,0 +1,19 @@
+.progress-barz {
+    position: relative !important;
+    height: 20px !important;
+    width: 350px;
+    border-radius: 50px;
+    border: 1px solid #333;
+    margin: auto;
+}
+
+.filler {
+    background-color: #FC9A00;
+    height: 100% !important;
+    border-radius: inherit;
+    transition: width .2s ease-in;
+}
+
+.hide {
+    display: none;
+}
