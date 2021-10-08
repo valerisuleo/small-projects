@@ -1,0 +1,29 @@
+<div class="row mt-5">
+    <div class="col-md-12 col-xl-6">
+        <h1 class="mb-4">Find Your Pet</h1>
+        <bootstrap-form [formGroup]='formGroup' (handleSubmit)="handleSubmit($event)" [btnLabel]="'Search'">
+            <bootstrap-input 
+                *ngFor="let item of inputs" 
+                [formGroup]='formGroup' 
+                [name]='item.name' 
+                [type]='item.type' 
+                [label]='item.label'>
+            </bootstrap-input>
+        </bootstrap-form>
+    </div>
+    <div class="col-md-12 col-xl-6" *ngIf="myPet.photoUrls && myPet.photoUrls.length">
+        <ngb-carousel>
+            <ng-container *ngFor="let item of myPet.photoUrls">
+                <ng-template ngbSlide>
+                    <div class="picsum-img-wrapper">
+                        <img [src]="item" alt="Random first slide">
+                    </div>
+                    <div class="carousel-caption">
+                        <h3>{{myPet.name}}</h3>
+                        <p>Status: {{myPet.status}}</p>
+                    </div>
+                </ng-template>
+            </ng-container>
+        </ngb-carousel>
+    </div>
+</div>

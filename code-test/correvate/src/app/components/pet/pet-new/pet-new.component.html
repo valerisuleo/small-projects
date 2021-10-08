@@ -1,0 +1,62 @@
+<div class="row d-flex justify-content-center mt-5">
+    <div class="col-md-12 col-xl-6">
+        <h1 class="mb-4">Add Pet</h1>
+        <bootstrap-form [formGroup]='formGroup' (handleSubmit)="handleSubmit($event)" [btnLabel]="'Save'">
+            <bootstrap-input *ngFor="let item of inputs"
+                (handlePhoto)="handlePhoto($event)"
+                [formGroup]='formGroup' 
+                [name]='item.name' 
+                [className]='item.className' 
+                [type]='item.type' 
+                [label]='item.label'>
+            </bootstrap-input>
+
+            <bootstrap-select *ngFor="let item of selects" 
+                [formGroup]='formGroup'
+                [options]='status' 
+                [optionKey]="'name'" 
+                [name]='item.name' 
+                [label]='item.label'>
+             </bootstrap-select>
+        </bootstrap-form>
+    </div>
+
+    <div class="col-md-12 col-xl-6">
+        <div *ngIf="this.formGroup.value.photoUrls || this.photos.length || this.formGroup.value.name" class="card mt-3">
+            <img *ngIf="this.photos.length || this.formGroup.value.photoUrls" [src]="isPhotoSelected ? currentDisplay : photoMain" class="card-img-top" alt="...">
+            <div class="card-body">
+                <h2 class="card-title">
+                    {{this.formGroup.value.name}}
+                </h2>
+                <ul *ngIf="this.photos.length" class="list-group list-group-horizontal-md">
+                    <li *ngFor="let photo of photos" class="list-group-item" (click)="getCurrent(photo)">
+                        <img src="{{photo}}" class="card-img-top" alt="...">
+                    </li>
+                </ul>
+                <p class="text-muted mt-3">
+                    Status: {{this.formGroup.value.status.name | titlecase}}
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!-- JUST FOR TESTING -->
+<div class="m-5">
+    <p class="text-muted">
+        <small>Copy and paste these images url to test faster the form:</small>
+    </p>
+<ul>
+    <li class="text-muted">
+        <small>https://images.pexels.com/photos/2071555/pexels-photo-2071555.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500</small>
+    </li>
+    <li class="text-muted">
+        <small>https://images.pexels.com/photos/1633522/pexels-photo-1633522.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500</small>
+    </li>
+    <li class="text-muted">
+        <small>https://images.pexels.com/photos/1800314/pexels-photo-1800314.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260</small>
+    </li>
+</ul>
+</div>
+
